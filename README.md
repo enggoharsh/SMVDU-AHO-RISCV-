@@ -322,4 +322,8 @@ RISCV_CPU/
 
 # Author
 
+Harsh Mishra, Anupam Sarashwat, Om Kumar
+School of Electronics & Communication Engineering,
+Shri Mata Vaishno Devi University Katra - 182320
+Email: 23bec027@gmail.com, 23bec014@gmail.com, 23bec038@gmail.com
 Developed as part of academic processor design and FPGA implementation work.
