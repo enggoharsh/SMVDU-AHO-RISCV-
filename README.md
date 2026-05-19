@@ -1,46 +1,49 @@
 # SMVDU-AHO-32: 32-bit Single-Cycle RISC-V Processor (RV32I)
 
-A complete end-to-end implementation of a custom **32-bit single-cycle RISC-V processor** based on the **RV32I ISA**, designed in **Verilog HDL**, verified through **RTL simulation**, prototyped on **Xilinx PYNQ-Z2 FPGA**, and validated through implementation reports including timing, power, and physical placement analysis.
+A complete end-to-end implementation of a custom **32-bit single-cycle RISC-V processor** based on the **RV32I ISA**, designed in **Verilog HDL**, functionally verified through simulation, prototyped on **Xilinx PYNQ-Z2 FPGA**, and analyzed through timing, power, RTL netlist, and physical implementation reports.
 
 ---
 
 ## Project Overview
 
-SMVDU-AHO-32 is a custom-built 32-bit Harvard architecture RISC-V processor implementing the RV32I base integer instruction set.
+SMVDU-AHO-32 is a custom-designed **32-bit Harvard Architecture RISC-V processor** implementing the **RV32I base integer instruction set architecture**.
 
-This project demonstrates the full digital design workflow:
+This project demonstrates a complete digital hardware design workflow from RTL development to FPGA deployment.
 
-- RTL microarchitecture design
-- Functional simulation & verification
-- FPGA synthesis & implementation
+### Design Workflow
+- RTL microarchitecture design in Verilog HDL
+- Functional simulation and verification
+- FPGA synthesis and implementation using Vivado
 - Timing closure analysis
 - Power estimation
-- Hardware validation on FPGA
-- Physical floorplanning / placement visualization
+- FPGA hardware validation
+- RTL netlist generation
+- Physical floorplanning visualization
 
-The processor follows a **single-cycle datapath**, where each instruction completes in one clock cycle.
+The processor follows a **single-cycle datapath architecture**, where each instruction completes in one clock cycle.
 
 ---
 
 ## Key Features
 
-- RV32I ISA support
-- Single-cycle processor architecture
+- 32-bit RV32I compliant processor
+- Single-cycle datapath architecture
 - Harvard architecture
+- Modular RTL design
 - 32 × 32-bit register file
-- Arithmetic & logical instruction support
-- Load/store memory operations
-- Branch & jump instructions
-- Immediate generation unit
-- Modular Verilog implementation
-- FPGA deployment on PYNQ-Z2
-- Timing-clean implementation
+- Arithmetic and logical operations
+- Immediate generation support
+- Branch and jump execution
+- Load/store memory instructions
+- FPGA implementation on PYNQ-Z2
+- Timing-clean synthesized design
+- Low power FPGA implementation
 
 ---
 
 ## Supported Instructions
 
-### R-Type
+### R-Type Instructions
 - ADD
 - SUB
 - SLL
@@ -51,7 +54,7 @@ The processor follows a **single-cycle datapath**, where each instruction comple
 - OR
 - AND
 
-### I-Type
+### I-Type Instructions
 - ADDI
 - SLTI
 - XORI
@@ -61,12 +64,12 @@ The processor follows a **single-cycle datapath**, where each instruction comple
 - LW
 - JALR
 
-### S-Type
+### S-Type Instructions
 - SW
 - SH
 - SB
 
-### B-Type
+### B-Type Instructions
 - BEQ
 - BNE
 - BLT
@@ -74,60 +77,62 @@ The processor follows a **single-cycle datapath**, where each instruction comple
 - BLTU
 - BGEU
 
-### U-Type
+### U-Type Instructions
 - LUI
 - AUIPC
 
-### J-Type
+### J-Type Instructions
 - JAL
 
 ---
 
 # Architecture
 
-## Block Diagram
+## Processor Block Diagram
 
 <p align="center">
-  <img src="images/block_diagram.png" width="900">
+  <img src="images/aho_micro.png" width="900">
 </p>
 
 ---
 
-## Datapath Components
+## Core Datapath Components
 
-The processor consists of:
+The processor includes:
 
 - Program Counter (PC)
 - Instruction Memory
 - Register File
 - Immediate Generator
 - Arithmetic Logic Unit (ALU)
-- Main Control Unit
+- Main Decoder
 - ALU Decoder
 - Data Memory
-- Branch/Jump Logic
+- Branch Control Logic
+- PC Selection Logic
 - Multiplexer Network
 
 ---
 
-## Processor Microarchitecture
+## Microarchitecture Specifications
 
 | Parameter | Specification |
 |---------|--------------|
 | ISA | RV32I |
+| Processor Width | 32-bit |
 | Datapath | Single Cycle |
 | Architecture | Harvard |
 | Register File | 32 × 32-bit |
 | HDL | Verilog |
-| FPGA | Xilinx PYNQ-Z2 |
+| FPGA Board | Xilinx PYNQ-Z2 |
 | FPGA Device | XC7Z020 |
-| Clocking | Single synchronous domain |
+| Clock Domain | Single synchronous |
 
 ---
 
 # RTL Design
 
-## RTL Netlist
+## RTL Netlist View
 
 <p align="center">
   <img src="images/rtl_netlist.png" width="900">
@@ -139,13 +144,22 @@ The processor consists of:
 
 ## Simulation Waveform
 
-This waveform verifies correct execution of instruction fetch, decode, ALU execution, memory access, and write-back.
+Functional simulation validating:
+
+- Instruction fetch
+- Instruction decode
+- ALU execution
+- Memory access
+- Register write-back
+- Branch execution
 
 <p align="center">
-  <img src="images/simulation_waveform.png" width="1000">
+  <img src="images/sim_waveform.png" width="1000">
 </p>
 
-### Signals Observed
+---
+
+## Key Signals Observed
 
 - clk
 - reset
@@ -160,26 +174,26 @@ This waveform verifies correct execution of instruction fetch, decode, ALU execu
 
 # FPGA Implementation
 
-## Target Platform
+## Target Hardware
 
 **Board:** Xilinx PYNQ-Z2  
-**Device:** Zynq-7000 XC7Z020
+**FPGA Device:** XC7Z020
 
 ---
 
-## Hardware Deployment
+## Hardware Validation
 
-Bitstream successfully programmed onto FPGA board.
+Successful deployment and execution on FPGA board.
 
 <p align="center">
-  <img src="images/fpga_board.jpg" width="700">
+  <img src="images/fpga_board.png" width="700">
 </p>
 
 ---
 
 # Timing Analysis
 
-Implementation timing summary:
+## Implementation Timing Summary
 
 | Metric | Value |
 |--------|------|
@@ -188,8 +202,7 @@ Implementation timing summary:
 | WHS | +0.338 ns |
 | THS | 0.000 ns |
 
-### Interpretation
-
+### Results
 ✅ No setup violations  
 ✅ No hold violations  
 ✅ Timing closure achieved
@@ -206,7 +219,7 @@ Implementation timing summary:
 
 # Power Analysis
 
-## On-Chip Power Report
+## FPGA Power Summary
 
 | Parameter | Value |
 |----------|------|
@@ -216,7 +229,7 @@ Implementation timing summary:
 
 ### Observation
 
-The processor logic consumes minimal dynamic power; most power is due to FPGA static leakage.
+Dynamic logic power remains minimal, with static FPGA leakage dominating total power consumption.
 
 <p align="center">
   <img src="images/power_report.png" width="700">
@@ -224,14 +237,14 @@ The processor logic consumes minimal dynamic power; most power is due to FPGA st
 
 ---
 
-# Physical Implementation View
+# Physical Implementation
 
-## FPGA Placement / Floorplan
+## FPGA Floorplanning
 
-Visualization of logic placement across FPGA fabric.
+Placement visualization of synthesized logic across FPGA fabric.
 
 <p align="center">
-  <img src="images/floorplan.png" width="700">
+  <img src="images/floorplan_fpga.png" width="700">
 </p>
 
 ---
@@ -239,35 +252,74 @@ Visualization of logic placement across FPGA fabric.
 # Repository Structure
 
 ```bash
-riscv-single-cycle/
+RISCV_CPU/
 │
-├── rtl/
-│   ├── top.v
-│   ├── pc.v
-│   ├── alu.v
-│   ├── register_file.v
-│   ├── control_unit.v
-│   ├── alu_decoder.v
-│   ├── immediate_generator.v
-│   ├── instruction_memory.v
-│   ├── data_memory.v
+├── asic/
 │
-├── testbench/
-│   └── tb_top.v
+├── constr/
+│   ├── FPGA_single_cycle.xdc
+│   └── master xdc pynq z2.txt
 │
-├── constraints/
-│   └── design.xdc
-│
-├── bitstream/
-│   └── processor.bit
+├── docs/
+│   ├── datasheet/
+│   │   └── pynqz2_user_manual_v1_0-1525725.pdf
+│   │
+│   └── report/
+│       ├── desktop.ini
+│       └── Minor Report - VIth.pdf
 │
 ├── images/
-│   ├── block_diagram.png
-│   ├── rtl_netlist.png
-│   ├── simulation_waveform.png
-│   ├── fpga_board.jpg
-│   ├── timing_report.png
+│   ├── aho_micro.png
+│   ├── floorplan_fpga.png
+│   ├── fpga_board.png
 │   ├── power_report.png
-│   └── floorplan.png
+│   ├── rtl_netlist.png
+│   ├── sim_pynq.png
+│   ├── sim_waveform.png
+│   └── timing_report.png
+│
+├── resources/
+│   └── Resources_for_fpga_and_rtl.pdf
+│
+├── rtl/
+│   ├── design/
+│   │   ├── ALU_decoder.v
+│   │   ├── ALU_Mux.v
+│   │   ├── ALU.v
+│   │   ├── clk125_to_1hz.v
+│   │   ├── Control_Unit.v
+│   │   ├── Core_Datapath.v
+│   │   ├── Data_Memory.v
+│   │   ├── Extend.v
+│   │   ├── Instruction_Memory.v
+│   │   ├── Main_Decoder.v
+│   │   ├── PC_Mux.v
+│   │   ├── PC_Plus_4.v
+│   │   ├── PC_Target.v
+│   │   ├── PC.v
+│   │   ├── Register_File.v
+│   │   ├── Result_Mux.v
+│   │   ├── Single_Cycle_Core.v
+│   │   ├── Single_Cycle_FPGA.v
+│   │   └── Single_Cycle_Top.v
+│   │
+│   └── simulation/
+│       └── Single_Cycle_TB.v
 │
 └── README.md
+```
+
+---
+
+# Tools Used
+
+- Verilog HDL
+- Xilinx Vivado
+- PYNQ-Z2 FPGA Board
+- RV32I ISA Specification
+
+---
+
+# Author
+
+Developed as part of academic processor design and FPGA implementation work.
