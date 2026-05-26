@@ -1,0 +1,2777 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Sun May  3 03:23:36 2026                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v21.15-s110_1 (64bit) 09/23/2022 13:08 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: NanoRoute 21.15-s110_1 NR220912-2004/21_15-UB (database version 18.20.592) {superthreading v2.17}
+#@(#)CDS: AAE 21.15-s039 (64bit) 09/23/2022 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: CTE 21.15-s038_1 () Sep 20 2022 11:42:13 ( )
+#@(#)CDS: SYNTECH 21.15-s012_1 () Sep  5 2022 10:25:51 ( )
+#@(#)CDS: CPE v21.15-s076
+#@(#)CDS: IQuantus/TQuantus 21.1.1-s867 (64bit) Sun Jun 26 22:12:54 PDT 2022 (Linux 3.10.0-693.el7.x86_64)
+
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+suppressMessage ENCEXT-2799
+getVersion
+win
+set init_verilog {Single_Cycle_Top.v Instruction_Memory.v}
+set init_top_cell Single_Cycle_Top
+set init_lef_file {all.lef Single_Cycle_Core.lef sram_32x64_180nm.lef}
+set init_pwr_net VDD
+set init_gnd_net VSS
+init_design
+floorPlan -site tsm3site -s 2500 2500 150 150 150 150
+placeInstance core_top 300 750 R0
+placeInstance data_sram 1600 750 R0
+loadIoFile Single_Cycle_SoC.io
+setPinAssignMode -pinEditInBatch true
+editPin -pin {clk reset} -side Top -layer Metal3 -spreadType center
+editPin -pin MemWrite_SoC -side Bottom -layer Metal3 -spreadType center
+editPin -pin {DataAddr_SoC[*] PC_out_SoC[*]} -side Left -layer Metal3 -spreadType center
+editPin -pin {WriteData_SoC[*] read_dataout_SoC[*] Instr_out_SoC[*]} -side Right -layer Metal3 -spreadType center
+setPinAssignMode -pinEditInBatch false
+globalNetConnect VDD -type pgpin -pin vdd -inst *
+globalNetConnect VDD -type pgpin -pin VDD -inst *
+globalNetConnect VSS -type pgpin -pin gnd -inst *
+globalNetConnect VSS -type pgpin -pin VSS -inst *
+addRing -around core -offset {bottom 15 top 15 right 15 left 15} -width {bottom 30 top 30 right 30 left 30} -spacing {bottom 5 top 5 right 5 left 5} -layer {bottom Metal1 top Metal1 right Metal2 left Metal2} -nets {VSS VDD}
+addStripe -number_of_sets 10 -spacing 80 -layer Metal2 -width 20 -nets {VSS VDD}
+fit
+zoomBox -620.88400 898.42000 187.78350 1698.15200
+zoomBox -1010.15600 575.58650 306.62400 1877.81650
+zoomBox -1644.02100 49.90550 500.13500 2170.36900
+zoomBox -1933.90350 -190.50200 588.63300 2304.16100
+zoomBox -2274.94200 -473.33450 692.74800 2461.56350
+zoomBox -1496.94850 -197.88050 4742.03300 2882.12300
+zoomBox -835.65400 36.25550 4467.48050 2654.25850
+zoomBox -273.55350 235.27100 4234.11100 2460.57350
+zoomBox 1498.37700 862.63500 3498.45200 1850.01400
+zoomBox 1691.83150 939.25750 3391.89550 1778.52950
+zoomBox 2215.82800 1146.79800 3103.27350 1584.90400
+zoomBox 2616.44900 1326.38050 2900.94500 1466.82800
+zoomBox 2644.82400 1339.09050 2886.64600 1458.47100
+zoomBox 2668.94300 1349.89400 2874.49200 1451.36750
+zoomBox 2688.82450 1358.31950 2863.54100 1444.57200
+zoomBox 2705.76250 1365.46150 2854.27250 1438.77650
+zoomBox 2720.16000 1371.53200 2846.39350 1433.85000
+zoomBox 2732.39750 1376.69200 2839.69650 1429.66250
+zoomBox 2638.03800 1337.02500 2879.86500 1456.40800
+zoomBox 2425.37450 1247.62500 2970.39350 1516.68500
+zoomBox 1946.08450 1046.14000 3174.42250 1652.53450
+zoomBox 1794.04200 982.22400 3239.14550 1695.62950
+zoomBox 523.21950 447.99350 3780.12150 2055.83100
+fit
+zoomBox -1249.96250 -123.97300 4053.16600 2494.02700
+zoomBox -850.74700 -110.35000 3656.91200 2114.95000
+zoomBox 22.18600 -80.56200 2790.45350 1286.05100
+zoomBox 230.57900 -73.45050 2583.60650 1088.17050
+zoomBox 407.18750 -67.40600 2407.26100 919.97200
+zoomBox 557.30400 -62.26800 2257.36700 777.00350
+zoomBox 684.90300 -57.90100 2129.95700 655.48000
+zoomBox 793.36250 -54.18900 2021.65850 552.18500
+zoomBox 1200.99650 -16.90600 1594.76100 177.48400
+zoomBox 1296.43550 -8.35700 1501.98350 93.11600
+zoomBox 1312.06950 -6.95650 1486.78550 79.29550
+zoomBox 1325.35850 -5.76650 1473.86700 67.54800
+zoomBox 1336.65350 -5.26900 1462.88650 57.04850
+zoomBox 1361.35300 -4.32650 1438.87600 33.94450
+zoomBox 1367.24900 -4.10150 1433.14400 28.42900
+zoomBox 1383.05550 -2.85850 1417.45400 14.12300
+zoomBox 1391.28200 -2.02650 1409.23900 6.83850
+zoomBox 1392.62950 -1.89000 1407.89300 5.64500
+zoomBox 1395.54050 -1.33800 1404.91500 3.29000
+zoomBox 1396.23550 -1.20650 1404.20400 2.72750
+zoomBox 1396.82600 -1.09450 1403.59950 2.24950
+zoomBox 1397.32850 -0.99950 1403.08600 1.84300
+zoomBox 1397.75500 -0.91900 1402.64950 1.49750
+zoomBox 1397.32750 -1.00000 1403.08650 1.84300
+zoomBox 1397.75450 -0.91950 1402.65000 1.49750
+zoomBox 1397.32000 -1.00300 1403.08000 1.84050
+zoomBox 1396.80850 -1.10150 1403.58550 2.24400
+fit
+undo
+addRing -type core_rings -offset {bottom 15 top 15 right 15 left 15} -width {bottom 30 top 30 right 30 left 30} -spacing {bottom 5 top 5 right 5 left 5} -layer {bottom Metal1 top Metal1 right Metal2 left Metal2} -nets {VSS VDD}
+addStripe -number_of_sets 10 -spacing 80 -layer Metal2 -width 20 -nets {VSS VDD}
+setPinAssignMode -pinEditInBatch true
+editPin -pin {clk reset} -side Top -layer Metal3 -spreadType center -spacing 100
+editPin -pin MemWrite_SoC -side Bottom -layer Metal3 -spreadType center
+editPin -pin {DataAddr_SoC[*] PC_out_SoC[*]} -side Left -layer Metal3 -spreadType center -spacing 30
+editPin -pin {WriteData_SoC[*] read_dataout_SoC[*] Instr_out_SoC[*]} -side Right -layer Metal3 -spreadType center -spacing 20
+setPinAssignMode -pinEditInBatch false
+addRing -type core_rings -offset {bottom 15 top 15 right 15 left 15} -width {bottom 30 top 30 right 30 left 30} -spacing {bottom 5 top 5 right 5 left 5} -layer {bottom Metal1 top Metal1 right Metal2 left Metal2} -nets {VSS VDD}
+zoomBox -1983.60400 -405.61650 984.08300 2529.27850
+zoomBox -3089.37200 -1518.25250 1743.01100 3260.73400
+zoomBox -3595.06850 -2027.08950 2090.08800 3595.24750
+zoomBox -3142.76900 -1457.00400 1689.61450 3321.98300
+zoomBox -1463.70550 579.70300 358.82600 2382.09600
+zoomBox -809.65250 961.77350 309.61000 2068.66850
+zoomBox -655.67700 1045.56350 295.69650 1986.42450
+zoomBox -404.85250 1214.58300 179.41050 1792.39000
+zoomBox -345.29650 1254.93250 151.32700 1746.06850
+zoomBox -296.04550 1289.64150 126.08450 1707.10700
+zoomBox -254.88200 1320.31000 103.92850 1675.15550
+zoomBox -123.65050 1420.94250 35.55600 1578.39000
+zoomBox -107.95000 1432.81700 27.37600 1566.64750
+zoomBox -94.60450 1442.91000 20.42300 1556.66650
+zoomBox -302.73650 1290.76950 119.39800 1708.23950
+zoomBox -775.20150 945.40750 344.07550 2052.31700
+zoomBox -1066.54850 732.43900 482.62400 2264.49350
+zoomBox -1469.79700 437.67250 674.38650 2558.16350
+zoomBox -1726.23500 250.22150 796.33400 2744.91700
+zoomBox -2027.92700 29.69150 939.80150 2964.62750
+fit
+selectInst core_top
+gui_select -rect {645.63250 1058.73350 748.87250 1064.46950}
+deselectAll
+selectInst core_top
+uiSetTool addVia
+uiSetTool move
+setObjFPlanBox Instance core_top 1137.3925 1776.6665 1664.7325 2295.7865
+deselectAll
+selectInst data_sram
+setObjFPlanBox Instance data_sram 963.352 698.38 1881.552 1298.18
+setObjFPlanBox Instance data_sram 951.8785 709.851 1870.0785 1309.651
+setObjFPlanBox Instance data_sram 946.1445 715.5855 1864.3445 1315.3855
+uiSetTool move
+uiSetTool move
+fit
+placeInstance core_top 1000 1600 R0
+placeInstance data_sram 1000 400 R0
+getPlaceMode -place_hierarchical_flow -quiet
+report_message -start_cmd
+getRouteMode -maxRouteLayer -quiet
+getRouteMode -user -maxRouteLayer
+getPlaceMode -place_global_place_io_pins -quiet
+getPlaceMode -user -maxRouteLayer
+getPlaceMode -quiet -adaptiveFlowMode
+getPlaceMode -timingDriven -quiet
+getPlaceMode -adaptive -quiet
+getPlaceMode -relaxSoftBlockageMode -quiet
+getPlaceMode -user -relaxSoftBlockageMode
+getPlaceMode -ignoreScan -quiet
+getPlaceMode -user -ignoreScan
+getPlaceMode -repairPlace -quiet
+getPlaceMode -user -repairPlace
+getPlaceMode -inPlaceOptMode -quiet
+getPlaceMode -quiet -bypassFlowEffortHighChecking
+getDesignMode -quiet -siPrevention
+getPlaceMode -quiet -place_global_exp_enable_3d
+getPlaceMode -exp_slack_driven -quiet
+um::push_snapshot_stack
+getDesignMode -quiet -flowEffort
+getDesignMode -highSpeedCore -quiet
+getPlaceMode -quiet -adaptive
+set spgFlowInInitialPlace 1
+getPlaceMode -sdpAlignment -quiet
+getPlaceMode -softGuide -quiet
+getPlaceMode -useSdpGroup -quiet
+getPlaceMode -sdpAlignment -quiet
+getPlaceMode -enableDbSaveAreaPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+getPlaceMode -sdpPlace -quiet
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -sdpPlace -quiet
+getPlaceMode -groupHighLevelClkGate -quiet
+setvar spgRptErrorForScanConnection 0
+getPlaceMode -place_global_exp_allow_missing_scan_chain -quiet
+getPlaceMode -place_check_library -quiet
+getPlaceMode -trimView -quiet
+getPlaceMode -expTrimOptBeforeTDGP -quiet
+getPlaceMode -quiet -useNonTimingDeleteBufferTree
+getPlaceMode -congEffort -quiet
+getPlaceMode -relaxSoftBlockageMode -quiet
+getPlaceMode -user -relaxSoftBlockageMode
+getPlaceMode -ignoreScan -quiet
+getPlaceMode -user -ignoreScan
+getPlaceMode -repairPlace -quiet
+getPlaceMode -user -repairPlace
+getPlaceMode -congEffort -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -timingDriven -quiet
+getPlaceMode -user -timingDriven
+getPlaceMode -fastFp -quiet
+getPlaceMode -clusterMode -quiet
+get_proto_model -type_match {flex_module flex_instgroup} -committed -name -tcl
+getPlaceMode -inPlaceOptMode -quiet
+getPlaceMode -quiet -bypassFlowEffortHighChecking
+getPlaceMode -ultraCongEffortFlow -quiet
+getPlaceMode -forceTiming -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -timingDriven -quiet
+setPlaceMode -timingDriven 0
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -powerDriven -quiet
+getExtractRCMode -quiet -engine
+getAnalysisMode -quiet -clkSrcPath
+getAnalysisMode -quiet -clockPropagation
+getAnalysisMode -quiet -cppr
+setExtractRCMode -engine preRoute
+setAnalysisMode -clkSrcPath false -clockPropagation forcedIdeal
+getPlaceMode -exp_slack_driven -quiet
+isAnalysisModeSetup
+getPlaceMode -quiet -place_global_exp_solve_unbalance_path
+getPlaceMode -quiet -NMPsuppressInfo
+getPlaceMode -quiet -place_global_exp_wns_focus_v2
+getPlaceMode -quiet -place_incr_exp_isolation_flow
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -quiet -clusterMode
+getPlaceMode -wl_budget_mode -quiet
+setPlaceMode -reset -place_global_exp_balance_buffer_chain
+getPlaceMode -wl_budget_mode -quiet
+setPlaceMode -reset -place_global_exp_balance_pipeline
+getPlaceMode -place_global_exp_balance_buffer_chain -quiet
+getPlaceMode -place_global_exp_balance_pipeline -quiet
+getPlaceMode -tdgpMemFlow -quiet
+getPlaceMode -user -resetCombineRFLevel
+getPlaceMode -quiet -resetCombineRFLevel
+setPlaceMode -resetCombineRFLevel 1000
+setvar spgSpeedupBuildVSM 1
+getPlaceMode -tdgpResetCteTG -quiet
+getPlaceMode -macroPlaceMode -quiet
+getPlaceMode -place_global_replace_QP -quiet
+getPlaceMode -macroPlaceMode -quiet
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -place_global_ignore_spare -quiet
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -quiet -expNewFastMode
+setPlaceMode -expHiddenFastMode 1
+setPlaceMode -reset -ignoreScan
+getPlaceMode -quiet -place_global_exp_auto_finish_floorplan
+colorizeGeometry
+getPlaceMode -quiet -IOSlackAdjust
+getPlaceMode -tdgpCteZeroDelayModeDelBuf -quiet
+set_global timing_enable_zero_delay_analysis_mode true
+getPlaceMode -quiet -useNonTimingDeleteBufferTree
+getPlaceMode -quiet -prePlaceOptSimplifyNetlist
+getPlaceMode -quiet -enablePrePlaceOptimizations
+getPlaceMode -quiet -prePlaceOptDecloneInv
+deleteBufferTree -decloneInv
+getPlaceMode -tdgpCteZeroDelayModeDelBuf -quiet
+set_global timing_enable_zero_delay_analysis_mode false
+getPlaceMode -exp_slack_driven -quiet
+all_setup_analysis_views
+getPlaceMode -ignoreUnproperPowerInit -quiet
+getPlaceMode -quiet -expSkipGP
+all_setup_analysis_views
+getPlaceMode -quiet -tdgpAdjustNetWeightBySlack
+get_ccopt_clock_trees *
+getPlaceMode -exp_insert_guidance_clock_tree -quiet
+getPlaceMode -exp_cluster_based_high_fanout_buffering -quiet
+getPlaceMode -place_global_exp_incr_skp_preserve_mode_v2 -quiet
+getPlaceMode -quiet -place_global_exp_netlist_balance_flow
+getPlaceMode -quiet -timingEffort
+getPlaceMode -exp_slack_driven -quiet
+all_setup_analysis_views
+getPlaceMode -quiet -cong_repair_commit_clock_net_route_attr
+getPlaceMode -enableDbSaveAreaPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+setPlaceMode -reset -improveWithPsp
+getPlaceMode -quiet -debugGlobalPlace
+getPlaceMode -congRepair -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -user -rplaceIncrNPClkGateAwareMode
+getPlaceMode -user -congRepairMaxIter
+getPlaceMode -quiet -congRepairPDClkGateMode4
+setPlaceMode -rplaceIncrNPClkGateAwareMode 4
+getPlaceMode -quiet -expCongRepairPDOneLoop
+setPlaceMode -congRepairMaxIter 1
+getPlaceMode -quickCTS -quiet
+get_proto_model -type_match {flex_module flex_instgroup} -committed -name -tcl
+getPlaceMode -congRepairForceTrialRoute -quiet
+getPlaceMode -user -congRepairForceTrialRoute
+setPlaceMode -congRepairForceTrialRoute true
+::goMC::is_advanced_metrics_collection_running
+congRepair
+::goMC::is_advanced_metrics_collection_running
+::goMC::is_advanced_metrics_collection_running
+::goMC::is_advanced_metrics_collection_running
+setPlaceMode -reset -congRepairForceTrialRoute
+getPlaceMode -quiet -congRepairPDClkGateMode4
+setPlaceMode -reset -rplaceIncrNPClkGateAwareMode
+setPlaceMode -reset -congRepairMaxIter
+getPlaceMode -congRepairCleanupPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+all_setup_analysis_views
+getPlaceMode -place_global_exp_incr_skp_preserve_mode_v2 -quiet
+getPlaceMode -quiet -place_global_exp_netlist_balance_flow
+getPlaceMode -quiet -timingEffort
+getPlaceMode -tdgpDumpStageTiming -quiet
+getPlaceMode -quiet -tdgpAdjustNetWeightBySlack
+getPlaceMode -trimView -quiet
+getOptMode -quiet -viewOptPolishing
+getOptMode -quiet -fastViewOpt
+spInternalUse deleteViewOptManager
+spInternalUse tdgp clearSkpData
+setAnalysisMode -clkSrcPath true -clockPropagation sdcControl
+getPlaceMode -exp_slack_driven -quiet
+setExtractRCMode -engine preRoute
+setPlaceMode -reset -relaxSoftBlockageMode
+setPlaceMode -reset -ignoreScan
+setPlaceMode -reset -repairPlace
+getPlaceMode -quiet -NMPsuppressInfo
+setvar spgSpeedupBuildVSM 0
+getPlaceMode -macroPlaceMode -quiet
+getPlaceMode -place_global_replace_QP -quiet
+getPlaceMode -macroPlaceMode -quiet
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -place_global_ignore_spare -quiet
+getPlaceMode -tdgpMemFlow -quiet
+setPlaceMode -reset -resetCombineRFLevel
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -quiet -clusterMode
+getPlaceMode -quiet -place_global_exp_solve_unbalance_path
+getPlaceMode -enableDistPlace -quiet
+setPlaceMode -reset -expHiddenFastMode
+getPlaceMode -tcg2Pass -quiet
+getPlaceMode -quiet -wireLenOptEffort
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -doRPlace -quiet
+getPlaceMode -RTCPlaceDesignFlow -quiet
+getPlaceMode -quickCTS -quiet
+set spgFlowInInitialPlace 0
+getPlaceMode -user -maxRouteLayer
+spInternalUse TDGP resetIgnoreNetLoad
+getPlaceMode -place_global_exp_balance_pipeline -quiet
+getDesignMode -quiet -flowEffort
+report_message -end_cmd
+um::create_snapshot -name final -auto min
+um::pop_snapshot_stack
+um::create_snapshot -name place_design
+getPlaceMode -exp_slack_driven -quiet
+fit
+fit
+editDelete -type Stripe
+addStripe -number_of_sets 10 -spacing 80 -layer Metal2 -width 20 -nets {VSS VDD}
+getPlaceMode -place_hierarchical_flow -quiet
+report_message -start_cmd
+getRouteMode -maxRouteLayer -quiet
+getRouteMode -user -maxRouteLayer
+getPlaceMode -place_global_place_io_pins -quiet
+getPlaceMode -user -maxRouteLayer
+getPlaceMode -quiet -adaptiveFlowMode
+getPlaceMode -timingDriven -quiet
+getPlaceMode -relaxSoftBlockageMode -quiet
+getPlaceMode -user -relaxSoftBlockageMode
+getPlaceMode -ignoreScan -quiet
+getPlaceMode -user -ignoreScan
+getPlaceMode -repairPlace -quiet
+getPlaceMode -user -repairPlace
+getPlaceMode -inPlaceOptMode -quiet
+getPlaceMode -quiet -bypassFlowEffortHighChecking
+getPlaceMode -quiet -place_global_exp_enable_3d
+getPlaceMode -exp_slack_driven -quiet
+um::push_snapshot_stack
+getDesignMode -quiet -flowEffort
+getDesignMode -highSpeedCore -quiet
+getPlaceMode -quiet -adaptive
+set spgFlowInInitialPlace 1
+getPlaceMode -sdpAlignment -quiet
+getPlaceMode -softGuide -quiet
+getPlaceMode -useSdpGroup -quiet
+getPlaceMode -sdpAlignment -quiet
+getPlaceMode -enableDbSaveAreaPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+getPlaceMode -sdpPlace -quiet
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -sdpPlace -quiet
+getPlaceMode -groupHighLevelClkGate -quiet
+setvar spgRptErrorForScanConnection 0
+getPlaceMode -place_global_exp_allow_missing_scan_chain -quiet
+getPlaceMode -place_check_library -quiet
+getPlaceMode -trimView -quiet
+getPlaceMode -expTrimOptBeforeTDGP -quiet
+getPlaceMode -quiet -useNonTimingDeleteBufferTree
+getPlaceMode -congEffort -quiet
+getPlaceMode -relaxSoftBlockageMode -quiet
+getPlaceMode -user -relaxSoftBlockageMode
+getPlaceMode -ignoreScan -quiet
+getPlaceMode -user -ignoreScan
+getPlaceMode -repairPlace -quiet
+getPlaceMode -user -repairPlace
+getPlaceMode -congEffort -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -timingDriven -quiet
+getPlaceMode -user -timingDriven
+getPlaceMode -fastFp -quiet
+getPlaceMode -clusterMode -quiet
+get_proto_model -type_match {flex_module flex_instgroup} -committed -name -tcl
+getPlaceMode -inPlaceOptMode -quiet
+getPlaceMode -quiet -bypassFlowEffortHighChecking
+getPlaceMode -ultraCongEffortFlow -quiet
+getPlaceMode -forceTiming -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -timingDriven -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -powerDriven -quiet
+getExtractRCMode -quiet -engine
+getAnalysisMode -quiet -clkSrcPath
+getAnalysisMode -quiet -clockPropagation
+getAnalysisMode -quiet -cppr
+setExtractRCMode -engine preRoute
+setAnalysisMode -clkSrcPath false -clockPropagation forcedIdeal
+getPlaceMode -exp_slack_driven -quiet
+isAnalysisModeSetup
+getPlaceMode -quiet -place_global_exp_solve_unbalance_path
+getPlaceMode -quiet -NMPsuppressInfo
+getPlaceMode -quiet -place_global_exp_wns_focus_v2
+getPlaceMode -quiet -place_incr_exp_isolation_flow
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -quiet -clusterMode
+getPlaceMode -wl_budget_mode -quiet
+setPlaceMode -reset -place_global_exp_balance_buffer_chain
+getPlaceMode -wl_budget_mode -quiet
+setPlaceMode -reset -place_global_exp_balance_pipeline
+getPlaceMode -place_global_exp_balance_buffer_chain -quiet
+getPlaceMode -place_global_exp_balance_pipeline -quiet
+getPlaceMode -tdgpMemFlow -quiet
+getPlaceMode -user -resetCombineRFLevel
+getPlaceMode -quiet -resetCombineRFLevel
+setPlaceMode -resetCombineRFLevel 1000
+setvar spgSpeedupBuildVSM 1
+getPlaceMode -tdgpResetCteTG -quiet
+getPlaceMode -macroPlaceMode -quiet
+getPlaceMode -place_global_replace_QP -quiet
+getPlaceMode -macroPlaceMode -quiet
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -place_global_ignore_spare -quiet
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -quiet -expNewFastMode
+setPlaceMode -expHiddenFastMode 1
+setPlaceMode -reset -ignoreScan
+getPlaceMode -quiet -place_global_exp_auto_finish_floorplan
+colorizeGeometry
+getPlaceMode -quiet -IOSlackAdjust
+getPlaceMode -tdgpCteZeroDelayModeDelBuf -quiet
+set_global timing_enable_zero_delay_analysis_mode true
+getPlaceMode -quiet -useNonTimingDeleteBufferTree
+getPlaceMode -quiet -prePlaceOptSimplifyNetlist
+getPlaceMode -quiet -enablePrePlaceOptimizations
+getPlaceMode -quiet -prePlaceOptDecloneInv
+deleteBufferTree -decloneInv
+getPlaceMode -tdgpCteZeroDelayModeDelBuf -quiet
+set_global timing_enable_zero_delay_analysis_mode false
+getPlaceMode -exp_slack_driven -quiet
+all_setup_analysis_views
+getPlaceMode -ignoreUnproperPowerInit -quiet
+getPlaceMode -quiet -expSkipGP
+all_setup_analysis_views
+getPlaceMode -quiet -tdgpAdjustNetWeightBySlack
+get_ccopt_clock_trees *
+getPlaceMode -exp_insert_guidance_clock_tree -quiet
+getPlaceMode -exp_cluster_based_high_fanout_buffering -quiet
+getPlaceMode -place_global_exp_incr_skp_preserve_mode_v2 -quiet
+getPlaceMode -quiet -place_global_exp_netlist_balance_flow
+getPlaceMode -quiet -timingEffort
+getPlaceMode -exp_slack_driven -quiet
+all_setup_analysis_views
+getPlaceMode -quiet -cong_repair_commit_clock_net_route_attr
+getPlaceMode -enableDbSaveAreaPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+setPlaceMode -reset -improveWithPsp
+getPlaceMode -quiet -debugGlobalPlace
+getPlaceMode -congRepair -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -user -rplaceIncrNPClkGateAwareMode
+getPlaceMode -user -congRepairMaxIter
+getPlaceMode -quiet -congRepairPDClkGateMode4
+setPlaceMode -rplaceIncrNPClkGateAwareMode 4
+getPlaceMode -quiet -expCongRepairPDOneLoop
+setPlaceMode -congRepairMaxIter 1
+getPlaceMode -quickCTS -quiet
+get_proto_model -type_match {flex_module flex_instgroup} -committed -name -tcl
+getPlaceMode -congRepairForceTrialRoute -quiet
+getPlaceMode -user -congRepairForceTrialRoute
+setPlaceMode -congRepairForceTrialRoute true
+::goMC::is_advanced_metrics_collection_running
+congRepair
+::goMC::is_advanced_metrics_collection_running
+::goMC::is_advanced_metrics_collection_running
+::goMC::is_advanced_metrics_collection_running
+setPlaceMode -reset -congRepairForceTrialRoute
+getPlaceMode -quiet -congRepairPDClkGateMode4
+setPlaceMode -reset -rplaceIncrNPClkGateAwareMode
+setPlaceMode -reset -congRepairMaxIter
+getPlaceMode -congRepairCleanupPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+all_setup_analysis_views
+getPlaceMode -place_global_exp_incr_skp_preserve_mode_v2 -quiet
+getPlaceMode -quiet -place_global_exp_netlist_balance_flow
+getPlaceMode -quiet -timingEffort
+getPlaceMode -tdgpDumpStageTiming -quiet
+getPlaceMode -quiet -tdgpAdjustNetWeightBySlack
+getPlaceMode -trimView -quiet
+getOptMode -quiet -viewOptPolishing
+getOptMode -quiet -fastViewOpt
+spInternalUse deleteViewOptManager
+spInternalUse tdgp clearSkpData
+setAnalysisMode -clkSrcPath true -clockPropagation sdcControl
+getPlaceMode -exp_slack_driven -quiet
+setExtractRCMode -engine preRoute
+setPlaceMode -reset -relaxSoftBlockageMode
+setPlaceMode -reset -ignoreScan
+setPlaceMode -reset -repairPlace
+getPlaceMode -quiet -NMPsuppressInfo
+setvar spgSpeedupBuildVSM 0
+getPlaceMode -macroPlaceMode -quiet
+getPlaceMode -place_global_replace_QP -quiet
+getPlaceMode -macroPlaceMode -quiet
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -place_global_ignore_spare -quiet
+getPlaceMode -tdgpMemFlow -quiet
+setPlaceMode -reset -resetCombineRFLevel
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -quiet -clusterMode
+getPlaceMode -quiet -place_global_exp_solve_unbalance_path
+getPlaceMode -enableDistPlace -quiet
+setPlaceMode -reset -expHiddenFastMode
+getPlaceMode -tcg2Pass -quiet
+getPlaceMode -quiet -wireLenOptEffort
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -doRPlace -quiet
+getPlaceMode -RTCPlaceDesignFlow -quiet
+remove_rf_constraint
+getPlaceMode -quickCTS -quiet
+set spgFlowInInitialPlace 0
+getPlaceMode -user -maxRouteLayer
+spInternalUse TDGP resetIgnoreNetLoad
+getPlaceMode -place_global_exp_balance_pipeline -quiet
+getDesignMode -quiet -flowEffort
+report_message -end_cmd
+um::create_snapshot -name final -auto min
+um::pop_snapshot_stack
+um::create_snapshot -name place_design
+getPlaceMode -exp_slack_driven -quiet
+fit
+redraw
+setPinAssignMode -pinEditInBatch true
+editPin -pin {DataAddr_SoC[*] clk reset} -side Top -layer Metal3 -spreadType center -spacing 50
+editPin -pin {PC_out_SoC[*] MemWrite_SoC} -side Bottom -layer Metal3 -spreadType center -spacing 50
+editPin -pin {read_dataout_SoC[*] Instr_out_SoC[*]} -side Left -layer Metal3 -spreadType center -spacing 35
+editPin -pin {WriteData_SoC[*]} -side Right -layer Metal3 -spreadType center -spacing 50
+setPinAssignMode -pinEditInBatch false
+redraw
+setPinAssignMode -pinEditInBatch true
+editPin -pin {VDD_T VSS_T DataAddr_SoC[*] clk reset} -side Top -spreadType center -spacing 40
+editPin -pin {VDD_B VSS_B PC_out_SoC[*] MemWrite_SoC} -side Bottom -spreadType center -spacing 40
+editPin -pin {VDD_L VSS_L read_dataout_SoC[*] Instr_out_SoC[*]} -side Left -spreadType center -spacing 30
+editPin -pin {VDD_R VSS_R WriteData_SoC[*]} -side Right -spreadType center -spacing 40
+setPinAssignMode -pinEditInBatch false
+editPin -pin VDD_T -side Top -assign {500 2500} -layer Metal3 -width 10 -depth 10
+editPin -pin VSS_T -side Top -assign {2000 2500} -layer Metal3 -width 10 -depth 10
+editPin -pin VDD_B -side Bottom -assign {500 0} -layer Metal3 -width 10 -depth 10
+editPin -pin VSS_B -side Bottom -assign {2000 0} -layer Metal3 -width 10 -depth 10
+editPin -pin VDD_L -side Left -assign {0 500} -layer Metal3 -width 10 -depth 10
+editPin -pin VSS_L -side Left -assign {0 2000} -layer Metal3 -width 10 -depth 10
+editPin -pin VDD_R -side Right -assign {2500 500} -layer Metal3 -width 10 -depth 10
+editPin -pin VSS_R -side Right -assign {2500 2000} -layer Metal3 -width 10 -depth 10
+fit
+editPin -pin VDD_T -side Top -assign {500 2500} -layer Metal3 -pinWidth 10 -pinDepth 10
+editPin -pin VSS_T -side Top -assign {2000 2500} -layer Metal3 -pinWidth 10 -pinDepth 10
+editPin -pin VDD_B -side Bottom -assign {500 0} -layer Metal3 -pinWidth 10 -pinDepth 10
+editPin -pin VSS_B -side Bottom -assign {2000 0} -layer Metal3 -pinWidth 10 -pinDepth 10
+editPin -pin VDD_L -side Left -assign {0 500} -layer Metal3 -pinWidth 10 -pinDepth 10
+editPin -pin VSS_L -side Left -assign {0 2000} -layer Metal3 -pinWidth 10 -pinDepth 10
+editPin -pin VDD_R -side Right -assign {2500 500} -layer Metal3 -pinWidth 10 -pinDepth 10
+editPin -pin VSS_R -side Right -assign {2500 2000} -layer Metal3 -pinWidth 10 -pinDepth 10
+sroute -nets {VDD VSS} -connect {padPin pin} -layerChangeRange {Metal1 Metal6} -allowJogging 1
+redraw
+fit
+zoomBox 481.75850 281.90300 3738.54250 1889.68250
+zoomBox 842.59900 351.01550 3610.86650 1717.62850
+zoomBox 1141.58400 419.03700 3494.61150 1580.65800
+zoomBox 1951.42400 603.28150 3179.72000 1209.65550
+zoomBox 2292.69500 680.92300 3047.02350 1053.31300
+zoomBox 2369.70050 694.23450 3010.88000 1010.76600
+zoomBox 2435.15500 705.54900 2980.15800 974.60100
+zoomBox 2490.79100 715.16650 2954.04400 943.86100
+zoomBox 2538.08150 723.34150 2931.84700 917.73200
+zoomBox 2666.17600 745.48500 2871.72400 846.95800
+zoomBox 2704.99500 752.19550 2853.50400 825.51000
+zoomBox 2787.13450 767.56000 2808.26100 777.98950
+zoomBox 2789.09300 767.98250 2807.05050 776.84750
+zoomBox 2790.75750 768.34150 2806.02150 775.87700
+zoomBox 2792.17200 768.64650 2805.14700 775.05200
+getPinAssignMode -pinEditInBatch -quiet
+setPinAssignMode -pinEditInBatch true
+editPin -pinWidth 0.28 -pinDepth 0.28 -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Left -layer 1 -spreadType center -spacing 0.56 -pin clk
+setPinAssignMode -pinEditInBatch false
+fit
+zoomBox -1477.13000 90.65150 3825.99850 2708.65150
+zoomBox -421.25400 1094.94700 807.04100 1701.32050
+zoomBox -361.02850 1139.12150 683.02250 1654.53900
+zoomBox -309.83650 1176.67000 577.60700 1614.77500
+zoomBox -266.32400 1208.58600 488.00350 1580.97550
+zoomBox -229.33800 1235.71500 411.84050 1552.24600
+zoomBox -197.90000 1258.77450 347.10200 1527.82600
+zoomBox -148.46350 1295.03550 245.30100 1489.42550
+zoomBox -129.15650 1309.19700 205.54350 1474.42850
+zoomBox -112.74550 1321.23400 171.74950 1461.68100
+zoomBox -98.79650 1331.46550 143.02450 1450.84550
+zoomBox -86.93950 1340.16250 118.60850 1441.63550
+zoomBox -98.79650 1331.46550 143.02450 1450.84550
+zoomBox -115.47850 1317.83400 169.01700 1458.28100
+zoomBox -135.10450 1301.79650 199.59600 1467.02850
+zoomBox -254.91350 1203.89550 386.26850 1520.42850
+zoomBox -305.38000 1166.82500 448.95150 1539.21650
+zoomBox -364.75250 1123.21250 522.69650 1561.32000
+zoomBox -434.60300 1071.90350 609.45500 1587.32450
+zoomBox -516.78000 1011.54000 711.52400 1617.91800
+zoomBox -613.45900 940.52400 831.60500 1653.91000
+zoomBox -62.55700 1362.78500 63.67650 1425.10300
+zoomBox -5.56550 1397.15450 3.80900 1401.78250
+selectObject IO_Pin clk
+getPinAssignMode -pinEditInBatch -quiet
+setPinAssignMode -pinEditInBatch true
+editPin -pinWidth 0.28 -pinDepth 0.28 -fixOverlap 1 -layer 3 -pin clk
+setPinAssignMode -pinEditInBatch false
+fit
+zoomBox -1477.82650 89.95450 3825.30150 2707.95450
+zoomBox -1272.29600 285.41600 3235.36300 2510.71600
+zoomBox -424.98600 1091.21600 803.31000 1697.59000
+zoomBox -363.11450 1139.09500 680.93750 1654.51300
+zoomBox -310.52350 1179.79200 576.92100 1617.89750
+zoomBox -265.82100 1214.38400 488.50700 1586.77400
+zoomBox -227.82450 1243.78750 413.35500 1560.31900
+zoomBox -195.52700 1268.78050 349.47600 1537.83250
+zoomBox -265.82200 1214.38350 488.50750 1586.77400
+zoomBox -310.52500 1179.79100 576.92150 1617.89750
+zoomBox -497.78050 1034.88650 947.27950 1748.27050
+zoomBox -1299.19550 414.72300 2532.33700 2306.23900
+zoomBox -1525.75450 238.51050 2981.93100 2463.82350
+zoomBox -1792.29450 31.20150 3510.86500 2649.21700
+zoomBox -2105.87150 -212.69150 4133.14050 2867.32700
+editPin -pin {clk reset} -side Top -layer Metal3 -spreadType center -spacing 100
+moveGroupPins -loc {0.00000 0.00000}
+fit
+zoomBox 739.22950 1500.00200 2121.11200 2866.61500
+zoomBox 846.49700 1696.21350 2021.09750 2857.83500
+zoomBox 937.67450 1862.99350 1936.08500 2850.37200
+zoomBox 1137.04550 2227.67950 1750.19450 2834.05350
+zoomBox 1184.64050 2314.74000 1705.81750 2830.15800
+zoomBox 1225.09650 2388.74100 1668.09700 2826.84650
+zoomBox 1259.48350 2451.64200 1636.03450 2824.03200
+zoomBox 1288.71300 2505.10750 1608.78150 2821.63950
+zoomBox 1313.55800 2550.55350 1585.61650 2819.60600
+zoomBox 1334.67650 2589.18300 1565.92600 2817.87750
+moveGroupPins -loc {0.00000 2800.00000}
+zoomBox 1433.52250 2755.75100 1479.05050 2800.77600
+moveGroupPins -loc {2.47900 2800.00000}
+zoomBox 1429.83750 2750.54250 1483.40050 2803.51350
+zoomBox 1425.50300 2744.41500 1488.51850 2806.73400
+zoomBox 1434.64850 2760.38800 1480.17750 2805.41400
+zoomBox 1438.22050 2766.62650 1476.92000 2804.89850
+zoomBox 1446.03050 2780.26700 1469.79700 2803.77100
+zoomBox 1452.94500 2792.34350 1463.49050 2802.77250
+zoomBox 1455.58100 2796.94750 1461.08600 2802.39150
+deselectAll
+selectObject IO_Pin reset
+zoomBox 1455.11050 2796.31050 1461.58700 2802.71550
+zoomBox 1454.55700 2795.56100 1462.17650 2803.09650
+zoomBox 1453.13900 2793.64200 1463.68550 2804.07200
+zoomBox 1444.70250 2782.22250 1472.66650 2809.87750
+zoomBox 1427.72000 2759.23550 1490.74500 2821.56400
+zoomBox 1408.53900 2733.27200 1511.16550 2834.76450
+zoomBox 1399.76700 2721.39850 1520.50400 2840.80150
+zoomBox 1389.44750 2707.42950 1531.49100 2847.90350
+zoomBox 1326.44950 2622.15500 1598.56000 2891.25900
+zoomBox 1303.19100 2590.67250 1623.32150 2907.26550
+fit
+editPin -pin {clk reset} -side Top -layer Metal3 -spreadType center -spacing 100
+checkPinAssignment
+editPin -pin {clk reset} -side Top -layer Metal3 -spreadType center -spacing 100
+setPinAssignMode -pinEditInBatch true
+editPin -pin {DataAddr_SoC[*] clk reset} -side Top -layer Metal3 -spreadType center -spacing 50
+editPin -pin {PC_out_SoC[*] MemWrite_SoC} -side Bottom -layer Metal3 -spreadType center -spacing 50
+editPin -pin {read_dataout_SoC[*] Instr_out_SoC[*]} -side Left -layer Metal3 -spreadType center -spacing 35
+editPin -pin {WriteData_SoC[*]} -side Right -layer Metal3 -spreadType center -spacing 50
+setPinAssignMode -pinEditInBatch false
+checkPinAssignment
+setPinAssignMode -pinEditInBatch true
+editPin -pin {DataAddr_SoC[*] clk reset} -side Top -layer Metal3 -spreadType center -spacing 50
+editPin -pin {PC_out_SoC[*] MemWrite_SoC} -side Bottom -layer Metal3 -spreadType center -spacing 50
+editPin -pin {read_dataout_SoC[*] Instr_out_SoC[*]} -side Left -layer Metal3 -spreadType center -spacing 35
+editPin -pin {WriteData_SoC[*]} -side Right -layer Metal3 -spreadType center -spacing 50
+setPinAssignMode -pinEditInBatch false
+checkPinAssignment
+setPinAssignMode -pinEditInBatch true
+editPin -pin {DataAddr_SoC[*] clk reset} -side Top -layer Metal3 -spreadType center -spacing 50
+editPin -pin {PC_out_SoC[*] MemWrite_SoC} -side Bottom -layer Metal3 -spreadType center -spacing 50
+editPin -pin {read_dataout_SoC[*] Instr_out_SoC[*]} -side Left -layer Metal3 -spreadType center -spacing 35
+editPin -pin {WriteData_SoC[*]} -side Right -layer Metal3 -spreadType center -spacing 50
+setPinAssignMode -pinEditInBatch false
+checkPinAssignment
+setPinAssignMode -pinEditInBatch true
+editPin -pin {DataAddr_SoC[*] clk reset} -side Top -layer Metal3 -spreadType center -spacing 50 -snap TRACK
+editPin -pin {PC_out_SoC[*] MemWrite_SoC} -side Bottom -layer Metal3 -spreadType center -spacing 50 -snap TRACK
+editPin -pin {read_dataout_SoC[*] Instr_out_SoC[*]} -side Left -layer Metal3 -spreadType center -spacing 35 -snap TRACK
+editPin -pin {WriteData_SoC[*]} -side Right -layer Metal3 -spreadType center -spacing 50 -snap TRACK
+setPinAssignMode -pinEditInBatch false
+checkPinAssignment
+editPin -pin {clk reset} -side Top -layer Metal3 -spreadType center -spacing 100
+setPinAssignMode -pinEditInBatch true
+editPin -pin {DataAddr_SoC[*] clk reset} -side Top -layer Metal3 -spreadType center -spacing 50
+editPin -pin {PC_out_SoC[*] MemWrite_SoC} -side Bottom -layer Metal3 -spreadType center -spacing 50
+editPin -pin {read_dataout_SoC[*] Instr_out_SoC[*]} -side Left -layer Metal3 -spreadType center -spacing 35
+editPin -pin {WriteData_SoC[*]} -side Right -layer Metal3 -spreadType center -spacing 50
+setPinAssignMode -pinEditInBatch false
+checkPinAssignment
+legalizePin -pin *moveFixedPin
+checkPinAssignment
+zoomBox -3094.95150 -1365.45850 3924.15250 5576.08650
+fit
+uiSetTool move
+uiSetTool move
+uiSetTool select
+deselectAll
+setPtnPinStatus -pin * -status fixed
+verify_drc
+refinePlace -preserveRouting
+checkPlace
+set sprCreateIeRingOffset 1.0
+set sprCreateIeRingThreshold 1.0
+set sprCreateIeRingJogDistance 1.0
+set sprCreateIeRingLayers {}
+set sprCreateIeRingOffset 1.0
+set sprCreateIeRingThreshold 1.0
+set sprCreateIeRingJogDistance 1.0
+set sprCreateIeRingLayers {}
+set sprCreateIeStripeWidth 10.0
+set sprCreateIeStripeThreshold 1.0
+set sprCreateIeStripeWidth 10.0
+set sprCreateIeStripeThreshold 1.0
+set sprCreateIeRingOffset 1.0
+set sprCreateIeRingThreshold 1.0
+set sprCreateIeRingJogDistance 1.0
+set sprCreateIeRingLayers {}
+set sprCreateIeStripeWidth 10.0
+set sprCreateIeStripeThreshold 1.0
+fit
+verify_drc
+setPlaceMode -fp false -timingDriven false -reorderScan false -doCongOpt true
+getPlaceMode -place_hierarchical_flow -quiet
+report_message -start_cmd
+getRouteMode -maxRouteLayer -quiet
+getRouteMode -user -maxRouteLayer
+getPlaceMode -place_global_place_io_pins -quiet
+getPlaceMode -user -maxRouteLayer
+getPlaceMode -quiet -adaptiveFlowMode
+getPlaceMode -timingDriven -quiet
+getPlaceMode -relaxSoftBlockageMode -quiet
+getPlaceMode -user -relaxSoftBlockageMode
+getPlaceMode -ignoreScan -quiet
+getPlaceMode -user -ignoreScan
+getPlaceMode -repairPlace -quiet
+getPlaceMode -user -repairPlace
+getPlaceMode -inPlaceOptMode -quiet
+getPlaceMode -quiet -bypassFlowEffortHighChecking
+getPlaceMode -quiet -place_global_exp_enable_3d
+getPlaceMode -exp_slack_driven -quiet
+um::push_snapshot_stack
+getDesignMode -quiet -flowEffort
+getDesignMode -highSpeedCore -quiet
+getPlaceMode -quiet -adaptive
+set spgFlowInInitialPlace 1
+getPlaceMode -sdpAlignment -quiet
+getPlaceMode -softGuide -quiet
+getPlaceMode -useSdpGroup -quiet
+getPlaceMode -sdpAlignment -quiet
+getPlaceMode -enableDbSaveAreaPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+getPlaceMode -sdpPlace -quiet
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -sdpPlace -quiet
+getPlaceMode -groupHighLevelClkGate -quiet
+setvar spgRptErrorForScanConnection 0
+getPlaceMode -place_global_exp_allow_missing_scan_chain -quiet
+getPlaceMode -place_check_library -quiet
+getPlaceMode -trimView -quiet
+getPlaceMode -expTrimOptBeforeTDGP -quiet
+getPlaceMode -quiet -useNonTimingDeleteBufferTree
+getPlaceMode -congEffort -quiet
+getPlaceMode -relaxSoftBlockageMode -quiet
+getPlaceMode -user -relaxSoftBlockageMode
+getPlaceMode -ignoreScan -quiet
+getPlaceMode -user -ignoreScan
+getPlaceMode -repairPlace -quiet
+getPlaceMode -user -repairPlace
+getPlaceMode -congEffort -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -timingDriven -quiet
+getPlaceMode -user -timingDriven
+getPlaceMode -fastFp -quiet
+getPlaceMode -clusterMode -quiet
+get_proto_model -type_match {flex_module flex_instgroup} -committed -name -tcl
+getPlaceMode -inPlaceOptMode -quiet
+getPlaceMode -quiet -bypassFlowEffortHighChecking
+getPlaceMode -ultraCongEffortFlow -quiet
+getPlaceMode -forceTiming -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -timingDriven -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -powerDriven -quiet
+getExtractRCMode -quiet -engine
+getAnalysisMode -quiet -clkSrcPath
+getAnalysisMode -quiet -clockPropagation
+getAnalysisMode -quiet -cppr
+setExtractRCMode -engine preRoute
+setAnalysisMode -clkSrcPath false -clockPropagation forcedIdeal
+getPlaceMode -exp_slack_driven -quiet
+isAnalysisModeSetup
+getPlaceMode -quiet -place_global_exp_solve_unbalance_path
+getPlaceMode -quiet -NMPsuppressInfo
+getPlaceMode -quiet -place_global_exp_wns_focus_v2
+getPlaceMode -quiet -place_incr_exp_isolation_flow
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -quiet -clusterMode
+getPlaceMode -wl_budget_mode -quiet
+setPlaceMode -reset -place_global_exp_balance_buffer_chain
+getPlaceMode -wl_budget_mode -quiet
+setPlaceMode -reset -place_global_exp_balance_pipeline
+getPlaceMode -place_global_exp_balance_buffer_chain -quiet
+getPlaceMode -place_global_exp_balance_pipeline -quiet
+getPlaceMode -tdgpMemFlow -quiet
+getPlaceMode -user -resetCombineRFLevel
+getPlaceMode -quiet -resetCombineRFLevel
+setPlaceMode -resetCombineRFLevel 1000
+setvar spgSpeedupBuildVSM 1
+getPlaceMode -tdgpResetCteTG -quiet
+getPlaceMode -macroPlaceMode -quiet
+getPlaceMode -place_global_replace_QP -quiet
+getPlaceMode -macroPlaceMode -quiet
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -place_global_ignore_spare -quiet
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -quiet -expNewFastMode
+setPlaceMode -expHiddenFastMode 1
+setPlaceMode -reset -ignoreScan
+getPlaceMode -quiet -place_global_exp_auto_finish_floorplan
+colorizeGeometry
+getPlaceMode -quiet -IOSlackAdjust
+getPlaceMode -tdgpCteZeroDelayModeDelBuf -quiet
+set_global timing_enable_zero_delay_analysis_mode true
+getPlaceMode -quiet -useNonTimingDeleteBufferTree
+getPlaceMode -quiet -prePlaceOptSimplifyNetlist
+getPlaceMode -quiet -enablePrePlaceOptimizations
+getPlaceMode -quiet -prePlaceOptDecloneInv
+deleteBufferTree -decloneInv
+getPlaceMode -tdgpCteZeroDelayModeDelBuf -quiet
+set_global timing_enable_zero_delay_analysis_mode false
+getPlaceMode -exp_slack_driven -quiet
+all_setup_analysis_views
+getPlaceMode -ignoreUnproperPowerInit -quiet
+getPlaceMode -quiet -expSkipGP
+all_setup_analysis_views
+getPlaceMode -quiet -tdgpAdjustNetWeightBySlack
+get_ccopt_clock_trees *
+getPlaceMode -exp_insert_guidance_clock_tree -quiet
+getPlaceMode -exp_cluster_based_high_fanout_buffering -quiet
+getPlaceMode -place_global_exp_incr_skp_preserve_mode_v2 -quiet
+getPlaceMode -quiet -place_global_exp_netlist_balance_flow
+getPlaceMode -quiet -timingEffort
+getPlaceMode -exp_slack_driven -quiet
+all_setup_analysis_views
+getPlaceMode -quiet -cong_repair_commit_clock_net_route_attr
+getPlaceMode -enableDbSaveAreaPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+setPlaceMode -reset -improveWithPsp
+getPlaceMode -quiet -debugGlobalPlace
+getPlaceMode -congRepair -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -user -rplaceIncrNPClkGateAwareMode
+getPlaceMode -user -congRepairMaxIter
+getPlaceMode -quiet -congRepairPDClkGateMode4
+setPlaceMode -rplaceIncrNPClkGateAwareMode 4
+getPlaceMode -quiet -expCongRepairPDOneLoop
+setPlaceMode -congRepairMaxIter 1
+getPlaceMode -quickCTS -quiet
+get_proto_model -type_match {flex_module flex_instgroup} -committed -name -tcl
+getPlaceMode -congRepairForceTrialRoute -quiet
+getPlaceMode -user -congRepairForceTrialRoute
+setPlaceMode -congRepairForceTrialRoute true
+::goMC::is_advanced_metrics_collection_running
+congRepair
+::goMC::is_advanced_metrics_collection_running
+::goMC::is_advanced_metrics_collection_running
+::goMC::is_advanced_metrics_collection_running
+setPlaceMode -reset -congRepairForceTrialRoute
+getPlaceMode -quiet -congRepairPDClkGateMode4
+setPlaceMode -reset -rplaceIncrNPClkGateAwareMode
+setPlaceMode -reset -congRepairMaxIter
+getPlaceMode -congRepairCleanupPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+all_setup_analysis_views
+getPlaceMode -place_global_exp_incr_skp_preserve_mode_v2 -quiet
+getPlaceMode -quiet -place_global_exp_netlist_balance_flow
+getPlaceMode -quiet -timingEffort
+getPlaceMode -tdgpDumpStageTiming -quiet
+getPlaceMode -quiet -tdgpAdjustNetWeightBySlack
+getPlaceMode -trimView -quiet
+getOptMode -quiet -viewOptPolishing
+getOptMode -quiet -fastViewOpt
+spInternalUse deleteViewOptManager
+spInternalUse tdgp clearSkpData
+setAnalysisMode -clkSrcPath true -clockPropagation sdcControl
+getPlaceMode -exp_slack_driven -quiet
+setExtractRCMode -engine preRoute
+setPlaceMode -reset -relaxSoftBlockageMode
+setPlaceMode -reset -ignoreScan
+setPlaceMode -reset -repairPlace
+getPlaceMode -quiet -NMPsuppressInfo
+setvar spgSpeedupBuildVSM 0
+getPlaceMode -macroPlaceMode -quiet
+getPlaceMode -place_global_replace_QP -quiet
+getPlaceMode -macroPlaceMode -quiet
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -place_global_ignore_spare -quiet
+getPlaceMode -tdgpMemFlow -quiet
+setPlaceMode -reset -resetCombineRFLevel
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -quiet -clusterMode
+getPlaceMode -quiet -place_global_exp_solve_unbalance_path
+getPlaceMode -enableDistPlace -quiet
+setPlaceMode -reset -expHiddenFastMode
+getPlaceMode -tcg2Pass -quiet
+getPlaceMode -quiet -wireLenOptEffort
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -doRPlace -quiet
+getPlaceMode -RTCPlaceDesignFlow -quiet
+remove_rf_constraint
+getPlaceMode -quickCTS -quiet
+set spgFlowInInitialPlace 0
+getPlaceMode -user -maxRouteLayer
+spInternalUse TDGP resetIgnoreNetLoad
+getPlaceMode -place_global_exp_balance_pipeline -quiet
+getDesignMode -quiet -flowEffort
+report_message -end_cmd
+um::create_snapshot -name final -auto min
+um::pop_snapshot_stack
+um::create_snapshot -name place_design
+getPlaceMode -exp_slack_driven -quiet
+verify_drc
+refinePlace -preserveRouting true
+editDelete -regular_wire_with_drc
+verify_drc
+editDelete -regular_wire_with_drc
+verify_drc
+setObjFPlanBox Instance core_top 1001.5 1600.0
+editDelete -regular_wire_with_drc
+verify_drc
+setObjFPlanBox Instance core_top 1001.5 1600.0 1528.84 2119.12
+editDelete -regular_wire_with_drc
+verify_drc
+fit
+fit
+editDelete -regular_wire_with_drc
+verify_drc
+deleteRouteBlk -type stripe -layer Metal2
+editDelete -type stripe -layer Metal2
+editDelete -shape STRIPE -layer Metal2 -type Special -use POWER
+fit
+addStripe -block_ring_top_layer_limit Metal4 -block_ring_bottom_layer_limit Metal2 -padcore_ring_top_layer_limit Metal4 -padcore_ring_bottom_layer_limit Metal2 -max_same_layer_jog_length 0.8 -merge_stripes_value 0.05 -direction vertical -layer Metal2 -width 30 -spacing 10 -set_to_set_distance 200 -xleft_offset 25 -nets { VDD VSS }
+selectWire 2414.8200 105.0800 2444.8200 2694.9200 2 VSS
+deselectAll
+editDelete -shape STRIPE -layer Metal2 -type Special -use POWER
+editDelete -shape RING -type Special -use POWER
+addRing -nets {VDD VSS} -type core_ring -follow core -layer {top Metal11 bottom Metal11 left Metal10 right Metal10} -width 30 -spacing 10 -offset 5 -center 1
+addStripe -block_ring_top_layer_limit Metal4 -block_ring_bottom_layer_limit Metal2 -padcore_ring_top_layer_limit Metal11 -padcore_ring_bottom_layer_limit Metal10 -max_same_layer_jog_length 0.8 -merge_stripes_value 0.05 -direction vertical -layer Metal2 -width 30 -spacing 10 -set_to_set_distance 200 -xleft_offset 25 -nets { VDD VSS }
+editDelete -shape STRIPE -layer Metal2 -type Special -use POWER
+addRing -nets {VDD VSS} -type core_rings -follow core -layer {top Metal11 bottom Metal11 left Metal10 right Metal10} -width 30 -spacing 10 -offset 5 -center 1
+addRing -nets {VDD VSS} -type core_rings -follow core -layer {top Metal6 bottom Metal6 left Metal5 right Metal5} -width 30 -spacing 10 -offset 5 -center 1
+addStripe -block_ring_top_layer_limit Metal4 -block_ring_bottom_layer_limit Metal2 -padcore_ring_top_layer_limit Metal6 -padcore_ring_bottom_layer_limit Metal5 -max_same_layer_jog_length 0.8 -merge_stripes_value 0.05 -direction vertical -layer Metal2 -width 30 -spacing 10 -set_to_set_distance 200 -xleft_offset 25 -nets { VDD VSS }
+editDelete -regular_wire_with_drc
+verify_drc
+setPlaceMode -fp false -timingDriven false -reorderScan false
+getPlaceMode -place_hierarchical_flow -quiet
+report_message -start_cmd
+getRouteMode -maxRouteLayer -quiet
+getRouteMode -user -maxRouteLayer
+getPlaceMode -place_global_place_io_pins -quiet
+getPlaceMode -user -maxRouteLayer
+getPlaceMode -quiet -adaptiveFlowMode
+getPlaceMode -timingDriven -quiet
+getPlaceMode -relaxSoftBlockageMode -quiet
+getPlaceMode -user -relaxSoftBlockageMode
+getPlaceMode -ignoreScan -quiet
+getPlaceMode -user -ignoreScan
+getPlaceMode -repairPlace -quiet
+getPlaceMode -user -repairPlace
+getPlaceMode -inPlaceOptMode -quiet
+getPlaceMode -quiet -bypassFlowEffortHighChecking
+getPlaceMode -quiet -place_global_exp_enable_3d
+getPlaceMode -exp_slack_driven -quiet
+um::push_snapshot_stack
+getDesignMode -quiet -flowEffort
+getDesignMode -highSpeedCore -quiet
+getPlaceMode -quiet -adaptive
+set spgFlowInInitialPlace 1
+getPlaceMode -sdpAlignment -quiet
+getPlaceMode -softGuide -quiet
+getPlaceMode -useSdpGroup -quiet
+getPlaceMode -sdpAlignment -quiet
+getPlaceMode -enableDbSaveAreaPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+getPlaceMode -sdpPlace -quiet
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -sdpPlace -quiet
+getPlaceMode -groupHighLevelClkGate -quiet
+setvar spgRptErrorForScanConnection 0
+getPlaceMode -place_global_exp_allow_missing_scan_chain -quiet
+getPlaceMode -place_check_library -quiet
+getPlaceMode -trimView -quiet
+getPlaceMode -expTrimOptBeforeTDGP -quiet
+getPlaceMode -quiet -useNonTimingDeleteBufferTree
+getPlaceMode -congEffort -quiet
+getPlaceMode -relaxSoftBlockageMode -quiet
+getPlaceMode -user -relaxSoftBlockageMode
+getPlaceMode -ignoreScan -quiet
+getPlaceMode -user -ignoreScan
+getPlaceMode -repairPlace -quiet
+getPlaceMode -user -repairPlace
+getPlaceMode -congEffort -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -timingDriven -quiet
+getPlaceMode -user -timingDriven
+getPlaceMode -fastFp -quiet
+getPlaceMode -clusterMode -quiet
+get_proto_model -type_match {flex_module flex_instgroup} -committed -name -tcl
+getPlaceMode -inPlaceOptMode -quiet
+getPlaceMode -quiet -bypassFlowEffortHighChecking
+getPlaceMode -ultraCongEffortFlow -quiet
+getPlaceMode -forceTiming -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -timingDriven -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -powerDriven -quiet
+getExtractRCMode -quiet -engine
+getAnalysisMode -quiet -clkSrcPath
+getAnalysisMode -quiet -clockPropagation
+getAnalysisMode -quiet -cppr
+setExtractRCMode -engine preRoute
+setAnalysisMode -clkSrcPath false -clockPropagation forcedIdeal
+getPlaceMode -exp_slack_driven -quiet
+isAnalysisModeSetup
+getPlaceMode -quiet -place_global_exp_solve_unbalance_path
+getPlaceMode -quiet -NMPsuppressInfo
+getPlaceMode -quiet -place_global_exp_wns_focus_v2
+getPlaceMode -quiet -place_incr_exp_isolation_flow
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -quiet -clusterMode
+getPlaceMode -wl_budget_mode -quiet
+setPlaceMode -reset -place_global_exp_balance_buffer_chain
+getPlaceMode -wl_budget_mode -quiet
+setPlaceMode -reset -place_global_exp_balance_pipeline
+getPlaceMode -place_global_exp_balance_buffer_chain -quiet
+getPlaceMode -place_global_exp_balance_pipeline -quiet
+getPlaceMode -tdgpMemFlow -quiet
+getPlaceMode -user -resetCombineRFLevel
+getPlaceMode -quiet -resetCombineRFLevel
+setPlaceMode -resetCombineRFLevel 1000
+setvar spgSpeedupBuildVSM 1
+getPlaceMode -tdgpResetCteTG -quiet
+getPlaceMode -macroPlaceMode -quiet
+getPlaceMode -place_global_replace_QP -quiet
+getPlaceMode -macroPlaceMode -quiet
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -place_global_ignore_spare -quiet
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -quiet -expNewFastMode
+setPlaceMode -expHiddenFastMode 1
+setPlaceMode -reset -ignoreScan
+getPlaceMode -quiet -place_global_exp_auto_finish_floorplan
+colorizeGeometry
+getPlaceMode -quiet -IOSlackAdjust
+getPlaceMode -tdgpCteZeroDelayModeDelBuf -quiet
+set_global timing_enable_zero_delay_analysis_mode true
+getPlaceMode -quiet -useNonTimingDeleteBufferTree
+getPlaceMode -quiet -prePlaceOptSimplifyNetlist
+getPlaceMode -quiet -enablePrePlaceOptimizations
+getPlaceMode -quiet -prePlaceOptDecloneInv
+deleteBufferTree -decloneInv
+getPlaceMode -tdgpCteZeroDelayModeDelBuf -quiet
+set_global timing_enable_zero_delay_analysis_mode false
+getPlaceMode -exp_slack_driven -quiet
+all_setup_analysis_views
+getPlaceMode -ignoreUnproperPowerInit -quiet
+getPlaceMode -quiet -expSkipGP
+all_setup_analysis_views
+getPlaceMode -quiet -tdgpAdjustNetWeightBySlack
+get_ccopt_clock_trees *
+getPlaceMode -exp_insert_guidance_clock_tree -quiet
+getPlaceMode -exp_cluster_based_high_fanout_buffering -quiet
+getPlaceMode -place_global_exp_incr_skp_preserve_mode_v2 -quiet
+getPlaceMode -quiet -place_global_exp_netlist_balance_flow
+getPlaceMode -quiet -timingEffort
+getPlaceMode -exp_slack_driven -quiet
+all_setup_analysis_views
+getPlaceMode -quiet -cong_repair_commit_clock_net_route_attr
+getPlaceMode -enableDbSaveAreaPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+setPlaceMode -reset -improveWithPsp
+getPlaceMode -quiet -debugGlobalPlace
+getPlaceMode -congRepair -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -user -rplaceIncrNPClkGateAwareMode
+getPlaceMode -user -congRepairMaxIter
+getPlaceMode -quiet -congRepairPDClkGateMode4
+setPlaceMode -rplaceIncrNPClkGateAwareMode 4
+getPlaceMode -quiet -expCongRepairPDOneLoop
+setPlaceMode -congRepairMaxIter 1
+getPlaceMode -quickCTS -quiet
+get_proto_model -type_match {flex_module flex_instgroup} -committed -name -tcl
+getPlaceMode -congRepairForceTrialRoute -quiet
+getPlaceMode -user -congRepairForceTrialRoute
+setPlaceMode -congRepairForceTrialRoute true
+::goMC::is_advanced_metrics_collection_running
+congRepair
+::goMC::is_advanced_metrics_collection_running
+::goMC::is_advanced_metrics_collection_running
+::goMC::is_advanced_metrics_collection_running
+setPlaceMode -reset -congRepairForceTrialRoute
+getPlaceMode -quiet -congRepairPDClkGateMode4
+setPlaceMode -reset -rplaceIncrNPClkGateAwareMode
+setPlaceMode -reset -congRepairMaxIter
+getPlaceMode -congRepairCleanupPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+all_setup_analysis_views
+getPlaceMode -place_global_exp_incr_skp_preserve_mode_v2 -quiet
+getPlaceMode -quiet -place_global_exp_netlist_balance_flow
+getPlaceMode -quiet -timingEffort
+getPlaceMode -tdgpDumpStageTiming -quiet
+getPlaceMode -quiet -tdgpAdjustNetWeightBySlack
+getPlaceMode -trimView -quiet
+getOptMode -quiet -viewOptPolishing
+getOptMode -quiet -fastViewOpt
+spInternalUse deleteViewOptManager
+spInternalUse tdgp clearSkpData
+setAnalysisMode -clkSrcPath true -clockPropagation sdcControl
+getPlaceMode -exp_slack_driven -quiet
+setExtractRCMode -engine preRoute
+setPlaceMode -reset -relaxSoftBlockageMode
+setPlaceMode -reset -ignoreScan
+setPlaceMode -reset -repairPlace
+getPlaceMode -quiet -NMPsuppressInfo
+setvar spgSpeedupBuildVSM 0
+getPlaceMode -macroPlaceMode -quiet
+getPlaceMode -place_global_replace_QP -quiet
+getPlaceMode -macroPlaceMode -quiet
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -place_global_ignore_spare -quiet
+getPlaceMode -tdgpMemFlow -quiet
+setPlaceMode -reset -resetCombineRFLevel
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -quiet -clusterMode
+getPlaceMode -quiet -place_global_exp_solve_unbalance_path
+getPlaceMode -enableDistPlace -quiet
+setPlaceMode -reset -expHiddenFastMode
+getPlaceMode -tcg2Pass -quiet
+getPlaceMode -quiet -wireLenOptEffort
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -doRPlace -quiet
+getPlaceMode -RTCPlaceDesignFlow -quiet
+remove_rf_constraint
+getPlaceMode -quickCTS -quiet
+set spgFlowInInitialPlace 0
+getPlaceMode -user -maxRouteLayer
+spInternalUse TDGP resetIgnoreNetLoad
+getPlaceMode -place_global_exp_balance_pipeline -quiet
+getDesignMode -quiet -flowEffort
+report_message -end_cmd
+um::create_snapshot -name final -auto min
+um::pop_snapshot_stack
+um::create_snapshot -name place_design
+getPlaceMode -exp_slack_driven -quiet
+refinePlace -preserveRouting true
+selectInst data_sram
+deselectAll
+selectInst core_top
+init_design
+init_design
+setObjFPlanBox Instance data_sram -orient MX
+editDelete -regular_wire_with_drc
+verify_drc
+sroute -connect { blockPin } -layerChangeRange { Metal1 Metal6 } -blockPinTarget { nearestTarget }
+globalNetConnect VDD -type pgpin -pin VDD_PIN_NAME -inst * -verbose
+globalNetConnect VSS -type pgpin -pin VSS_PIN_NAME -inst * -verbose
+deselectAll
+selectInst core_top
+deselectAll
+selectInst data_sram
+deselectAll
+selectInst data_sram
+deselectAll
+selectInst data_sram
+deselectAll
+selectWire 1774.8200 80.0400 1804.8200 2719.9600 2 VDD
+deselectAll
+selectInst data_sram
+deselectAll
+selectInst core_top
+globalNetConnect VDD -type pgpin -pin vdd -inst * -verbose
+globalNetConnect VSS -type pgpin -pin gnd -inst * -verbose
+globalNetConnect VDD -type pgpin -pin vdd -inst * -verbose -override
+globalNetConnect VSS -type pgpin -pin gnd -inst * -verbose -override
+globalNetConnect VDD -type pgpin -pin vdd -inst {core_top data_sram} -verbose
+globalNetConnect VSS -type pgpin -pin gnd -inst {core_top data_sram} -verbose
+globalNetConnect VDD -type pgpin -pin vdd -inst * -module {} -verbose
+globalNetConnect VSS -type pgpin -pin gnd -inst * -module {} -verbose
+globalNetConnect VDD -type pgpin -pin vdd -inst core_top -verbose
+globalNetConnect VSS -type pgpin -pin gnd -inst core_top -verbose
+globalNetConnect VDD -type pgpin -pin vdd -inst data_sram -verbose
+globalNetConnect VSS -type pgpin -pin gnd -inst data_sram -verbose
+globalNetConnect VDD -type pgpin -pin vdd -inst core_top -verbose
+globalNetConnect VSS -type pgpin -pin gnd -inst core_top -verbose
+globalNetConnect VDD -type pgpin -pin vdd -inst data_sram -verbose
+globalNetConnect VSS -type pgpin -pin gnd -inst data_sram -verbose
+globalNetConnect VDD -type pgpin -pin vdd -inst core_top -verbose -override
+globalNetConnect VSS -type pgpin -pin gnd -inst core_top -verbose -override
+globalNetConnect VDD -type pgpin -pin vdd -inst data_sram -verbose -override
+globalNetConnect VSS -type pgpin -pin gnd -inst data_sram -verbose -override
+globalNetConnect VDD -type tiehi -inst core_top -verbose -override
+globalNetConnect VSS -type tielo -inst core_top -verbose -override
+globalNetConnect VDD -type pgpin -pin vdd -inst core_top -module Single_Cycle_Core -verbose
+globalNetConnect VSS -type pgpin -pin gnd -inst core_top -module Single_Cycle_Core -verbose
+globalNetConnect VDD -type tiehi -inst core_top -verbose -override
+globalNetConnect VSS -type tielo -inst core_top -verbose -override
+sroute -connect { blockPin } -layerChangeRange { Metal1 Metal6 } -blockPinTarget { nearestTarget }
+globalNetConnect VDD -type pgpin -pin vdd -inst * -verbose -override
+globalNetConnect VSS -type pgpin -pin gnd -inst * -verbose -override
+sroute -connect { blockPin padPin } -layerChangeRange { Metal1 Metal6 } -blockPinTarget { nearestTarget } -allowJogging 1 -crossoverViaLayerRange { Metal1 Metal6 }
+globalNetConnect VDD -type pgpin -pin vdd -inst data_sram -override -verbose
+globalNetConnect VSS -type pgpin -pin gnd -inst data_sram -override -verbose
+sroute -connect { blockPin } -layerChangeRange { Metal1 Metal6 } -inst data_sram
+globalNetConnect VDD -type tiehi -inst core_top -override
+globalNetConnect VSS -type tielo -inst core_top -override
+sroute -connect { corePin } -layerChangeRange { Metal1 Metal6 }
+deselectAll
+selectWire 1918.6200 920.8000 2649.9000 921.6000 1 VSS
+zoomBox 574.65100 833.25500 2200.39450 2441.03450
+zoomBox -157.34800 -140.00100 2957.06650 2940.00000
+zoomBox 433.57950 645.68900 2346.22000 2537.19550
+zoomBox 574.65000 833.25450 2200.39450 2441.03500
+zoomBox 956.75750 1341.30000 1805.40650 2180.57150
+zoomBox 1019.35100 1424.52350 1740.70300 2137.90500
+zoomBox 1100.25400 1493.86900 1713.40300 2100.24300
+zoomBox 1169.02100 1552.81250 1690.19800 2068.23050
+zoomBox 1227.47350 1602.91450 1670.47400 2041.02000
+zoomBox 1316.69100 1678.68900 1636.75950 1995.22100
+zoomBox 1351.43900 1708.04350 1623.49700 1977.09550
+zoomBox 1380.97450 1732.99450 1612.22400 1961.68900
+zoomBox 1438.82000 1782.32950 1580.83650 1922.77700
+zoomBox 1452.62950 1794.02050 1573.34350 1913.40050
+zoomBox 1464.36750 1803.95750 1566.97450 1905.43050
+zoomBox 1482.82500 1819.58300 1556.95900 1892.89800
+zoomBox 1490.03300 1825.68550 1553.04750 1888.00350
+zoomBox 1496.16050 1830.87300 1549.72250 1883.84300
+zoomBox 1490.03300 1825.68550 1553.04750 1888.00350
+zoomBox 1482.82450 1819.58250 1556.95900 1892.89800
+zoomBox 1438.81800 1782.32700 1580.83750 1922.77700
+zoomBox 1323.39200 1684.60800 1643.46900 2001.14800
+zoomBox 1286.77600 1653.60900 1663.33750 2026.00950
+deselectAll
+selectInst core_top
+fit
+zoomBox -1868.79500 -1621.33850 5150.30900 5320.20650
+verify_drc
+deselectAll
+fit
+verify_connectivity -type power -error 1000
+routeDesign -globalDetail
+fit
+fit
+fit
+verify_connectivity -type regular -error 1000
+extractRC
+zoomBox -3817.93800 -771.63450 4817.32100 3491.34150
+zoomBox -2683.71650 -430.21050 4656.25400 3193.31900
+fit
+create_analysis_view -name typical_view -delay_corner typical_delay
+set_analysis_view -setup {typical_view} -hold {typical_view}
+create_library_set -name macro_libs -timing {sram_32x64_180nm_TT_5p0V_25C.lib Single_Cycle_Core.lib}
+selectInst data_sram
+deselectAll
+selectWire 1012.6300 2166.7800 1012.9100 2769.6200 2 {DataAddr_SoC[21]}
+deselectAll
+selectInst core_top
+deselectAll
+selectInst core_top
+zoomBox -308.15900 -482.11000 3355.85700 3141.41950
+zoomBox -484.39350 -884.59200 3826.21350 3378.38400
+zoomBox -308.15900 -482.11000 3355.85700 3141.41950
+zoomBox -158.36000 -140.00050 2956.05400 2940.00000
+create_library_set -name macro_libs -timing {sram_32x64_180nm_TT_5p0V_25C.lib Single_Cycle_Core.lib}
+create_constraint_mode -name typical_constraints -sdc_files {}
+create_rc_corner -name typical_rc
+create_delay_corner -name typical_delay -timing_condition typical_cond -rc_corner typical_rc
+create_analysis_view -name typical_view -constraint_mode typical_constraints -delay_corner typical_delay
+set_analysis_view -setup {typical_view} -hold {typical_view}
+create_constraint_mode -name typical_constraints -sdc_files {}
+create_delay_corner -name typical_delay \
+    -library_set macro_libs \
+    -rc_corner typical_rc
+create_analysis_view -name typical_view \
+    -constraint_mode typical_constraints \
+    -delay_corner typical_delay
+set_analysis_view -setup {typical_view} -hold {typical_view}
+deselectAll
+fit
+fit
+create_constraint_mode -name typical_constraints -sdc_files {dummy.sdc}
+create_analysis_view -name typical_view \
+    -constraint_mode typical_constraints \
+    -delay_corner typical_delay
+set_analysis_view -setup {typical_view} -hold {typical_view}
+freeDesign
+set init_verilog {Single_Cycle_Top.v Instruction_Memory.v}
+set init_top_cell Single_Cycle_Top
+set init_lef_file {all.lef Single_Cycle_Core.lef sram_32x64_180nm.lef}
+set init_pwr_net VDD
+set init_gnd_net VSS
+set init_mmmc_file viewDefinition.tcl
+init_design
+gui_select -rect {720.19500 462.23450 857.84850 502.38350}
+globalNetConnect VDD -type tiehi -inst core_top -override
+globalNetConnect VSS -type tielo -inst core_top -override
+globalNetConnect VDD -type pgpin -pin vdd -inst data_sram -override
+globalNetConnect VSS -type pgpin -pin gnd -inst data_sram -override
+zoomBox 210.02300 515.23350 1835.76650 2123.01300
+sroute -connect { corePin } -layerChangeRange { Metal1 Metal6 }
+zoomBox -367.92050 45.89650 2746.49500 3125.89850
+zoomBox -581.48650 -127.18300 3082.53200 3496.34900
+zoomBox -32.08900 318.06300 2218.07650 2543.36500
+zoomBox 108.39050 426.22000 2021.03150 2317.72700
+set_analysis_view -setup {typical_view} -hold {typical_view}
+extractRC
+timeDesign -postRoute
+zoomBox 12.04350 275.79450 2262.20950 2501.09700
+fit
+zoomBox -15.84000 27.72550 1008.64650 1040.89150
+zoomBox -103.52350 -150.54050 1314.45150 1251.76650
+zoomBox -159.28400 -263.90500 1508.92200 1385.86800
+zoomBox 380.77400 260.84450 1009.93750 883.05600
+zoomBox 429.96000 308.81400 964.74900 837.69350
+zoomBox 325.55600 206.30150 1065.74850 938.31500
+zoomBox 259.16200 141.11050 1129.97700 1002.30300
+zoomBox 89.15800 -25.81400 1294.43800 1166.14800
+zoomBox -11.11950 -130.00800 1406.85750 1272.30050
+zoomBox -129.09200 -252.58950 1539.11600 1397.18550
+set_analysis_view -setup {typical_view} -hold {typical_view}
+freeDesign
+set init_mmmc_file viewDefinition.tcl
+set init_verilog {Single_Cycle_Top.v Instruction_Memory.v}
+set init_top_cell Single_Cycle_Top
+set init_lef_file {all.lef Single_Cycle_Core.lef sram_32x64_180nm.lef}
+init_design
+floorPlan -site tsm3site -s 2500 2500 150 150 150 150
+placeInstance core_top 1001.5 1600.0 R0
+placeInstance data_sram 1000.0 400.0 MX
+globalNetConnect VDD -type tiehi -inst core_top -override
+globalNetConnect VSS -type tielo -inst core_top -override
+globalNetConnect VDD -type pgpin -pin vdd -inst data_sram -override
+globalNetConnect VSS -type pgpin -pin gnd -inst data_sram -override
+sroute -connect { corePin } -layerChangeRange { Metal1 Metal6 }
+routeDesign -globalDetail
+fit
+zoomBox -1280.62300 112.25350 4022.50550 2730.25350
+zoomBox -907.46900 326.66900 3600.19000 2551.96900
+zoomBox -590.28800 508.92200 3241.22200 2400.42700
+zoomBox -321.11300 663.83700 2935.67100 2271.61650
+zoomBox -92.31350 795.51500 2675.95300 2162.12750
+zoomBox 102.16550 907.44100 2455.19250 2069.06200
+zoomBox 267.47300 1002.57800 2267.54600 1989.95600
+zoomBox 527.41800 1152.18100 1972.47200 1865.56200
+zoomBox 715.22900 1260.26900 1759.28100 1775.68700
+zoomBox 628.93700 1210.60650 1857.23400 1816.98100
+zoomBox 527.41700 1152.18000 1972.47300 1865.56200
+zoomBox 407.98200 1083.44300 2108.04800 1922.71600
+zoomBox 267.47000 1002.57550 2267.54800 1989.95600
+zoomBox -45.80150 888.25250 2307.23250 2049.87700
+zoomBox -414.35550 753.75500 2353.92000 2120.37200
+zoomBox -847.94800 595.52300 2408.84650 2203.30750
+fit
+fit
+extractRC
+timeDesign -postRoute
+floorPlan -site tsm3site -s 2500 2500 150 150 150 150
+placeInstance core_top 1001.5 1600.0 R0
+placeInstance data_sram 1000.0 400.0 MX
+setPinAssignMode -pinEditInBatch true
+editPin -pin {DataAddr_SoC[*] clk reset} -side Top -layer Metal3 -spreadType center -spacing 50
+editPin -pin {PC_out_SoC[*] MemWrite_SoC} -side Bottom -layer Metal3 -spreadType center -spacing 50
+editPin -pin {read_dataout_SoC[*] Instr_out_SoC[*]} -side Left -layer Metal3 -spreadType center -spacing 35
+editPin -pin {WriteData_SoC[*]} -side Right -layer Metal3 -spreadType center -spacing 50
+setPinAssignMode -pinEditInBatch false
+globalNetConnect VDD -type tiehi -inst core_top -override
+globalNetConnect VSS -type tielo -inst core_top -override
+globalNetConnect VDD -type pgpin -pin vdd -inst data_sram -override
+globalNetConnect VSS -type pgpin -pin gnd -inst data_sram -override
+addRing -type core_rings -nets {VSS VDD} -layer {bottom Metal1 top Metal1 right Metal2 left Metal2} -width 30 -spacing 5 -offset 15
+sroute -connect { corePin } -layerChangeRange { Metal1 Metal6 }
+routeDesign -globalDetail
+addNet VDD -type power
+addNet VSS -type ground
+globalNetConnect VDD -type tiehi -inst core_top -override
+globalNetConnect VSS -type tielo -inst core_top -override
+globalNetConnect VDD -type pgpin -pin vdd -inst data_sram -override
+globalNetConnect VSS -type pgpin -pin gnd -inst data_sram -override
+addRing -type core_rings -nets {VSS VDD} -layer {bottom Metal1 top Metal1 right Metal2 left Metal2} -width 30 -spacing 5 -offset 15
+sroute -connect { corePin } -layerChangeRange { Metal1 Metal6 }
+addRing -type core_rings -nets {VSS VDD} -layer {bottom Metal1 top Metal1 right Metal2 left Metal2} -width 30 -spacing 5 -offset 15
+sroute -connect { corePin } -layerChangeRange { Metal1 Metal6 }
+set_analysis_view -setup {typical_view} -hold {typical_view}
+routeDesign -globalDetail
+extractRC
+zoomBox 541.37350 630.34350 2791.53800 2855.64450
+zoomBox 1046.19950 1186.91700 2671.94400 2794.69750
+zoomBox 814.25200 931.19300 2726.89300 2822.70000
+zoomBox 541.37250 630.34200 2791.53850 2855.64450
+zoomBox 220.33750 276.39950 2867.59200 2894.40250
+zoomBox -157.35000 -140.00300 2957.06700 2940.00050
+zoomBox 261.63350 163.69550 2908.88800 2781.69850
+zoomBox 617.76950 421.83900 2867.93600 2647.14200
+zoomBox 1637.04300 1150.77200 2811.64450 2312.39450
+timeDesign -postRoute
+addNet VDD -power
+addNet VSS -ground
+globalNetConnect VDD -type tiehi -inst core_top -override
+globalNetConnect VSS -type tielo -inst core_top -override
+globalNetConnect VDD -type pgpin -pin vdd -inst data_sram -override
+globalNetConnect VSS -type pgpin -pin gnd -inst data_sram -override
+addRing -type core_rings -nets {VSS VDD} -layer {bottom Metal1 top Metal1 right Metal2 left Metal2} -width 30 -spacing 5 -offset 15
+sroute -connect { corePin } -layerChangeRange { Metal1 Metal6 }
+fit
+fit
+fit
+set_analysis_view -setup {typical_view} -hold {typical_view}
+extractRC
+timeDesign -postRoute
+zoomBox -27.69500 658.99300 2222.46900 2884.29350
+zoomBox 24.51850 972.27550 1937.15800 2863.78100
+zoomBox 106.62450 1464.91200 1488.50700 2831.52500
+zoomBox 138.69050 1657.30650 1313.29050 2818.92750
+zoomBox 189.11350 1959.84700 1037.76250 2799.11850
+zoomBox 160.15400 1823.59950 1158.56450 2810.97800
+zoomBox 126.08350 1663.30850 1300.68450 2824.93050
+fit
+zoomBox -66.15150 285.00550 2581.10000 2903.00550
+zoomBox 11.36450 646.26000 2261.52850 2871.56050
+selectInst core_top
+deselectAll
+freeDesign
+set init_mmmc_file viewDefinition.tcl
+set init_verilog {Single_Cycle_Top.v Instruction_Memory.v}
+set init_top_cell Single_Cycle_Top
+set init_lef_file {all.lef Single_Cycle_Core.lef sram_32x64_180nm.lef}
+set init_pwr_net VDD
+set init_gnd_net VSS
+init_design
+addNet VDD -power
+addNet VSS -ground
+floorPlan -site tsm3site -s 2500 2500 150 150 150 150
+placeInstance core_top 1001.5 1600.0 R0
+placeInstance data_sram 1000.0 400.0 MX
+globalNetConnect VDD -type tiehi -inst core_top -override
+globalNetConnect VSS -type tielo -inst core_top -override
+globalNetConnect VDD -type pgpin -pin vdd -inst data_sram -override
+globalNetConnect VSS -type pgpin -pin gnd -inst data_sram -override
+addRing -type core_rings -nets {VSS VDD} -layer {bottom Metal1 top Metal1 right Metal2 left Metal2} -width 30 -spacing 5 -offset 15
+sroute -connect { corePin } -layerChangeRange { Metal1 Metal6 }
+routeDesign -globalDetail
+extractRC
+timeDesign -postRoute
+freeDesign
+set init_mmmc_file viewDefinition.tcl
+set init_verilog {Single_Cycle_Top.v Instruction_Memory.v}
+set init_top_cell Single_Cycle_Top
+set init_lef_file {all.lef Single_Cycle_Core.lef sram_32x64_180nm.lef}
+set init_pwr_net VDD
+set init_gnd_net VSS
+init_design
+addNet VDD -power
+addNet VSS -ground
+floorPlan -site tsm3site -s 2500 2500 150 150 150 150
+placeInstance core_top 1001.5 1600.0 R0
+placeInstance data_sram 1000.0 400.0 MX
+globalNetConnect VDD -type tiehi -inst core_top -override
+globalNetConnect VSS -type tielo -inst core_top -override
+globalNetConnect VDD -type pgpin -pin vdd -inst data_sram -override
+globalNetConnect VSS -type pgpin -pin gnd -inst data_sram -override
+addRing -type core_rings -nets {VSS VDD} -layer {bottom Metal1 top Metal1 right Metal2 left Metal2} -width 30 -spacing 5 -offset 15
+sroute -connect { corePin } -layerChangeRange { Metal1 Metal6 }
+selectWire 149.8200 411.7600 999.9000 412.5600 1 VDD
+deselectAll
+fit
+routeDesign -globalDetail
+extractRC
+timeDesign -postRoute
+routeDesign -globalDetail
+extractRC
+timeDesign -postRoute
+zoomBox 851.78650 1115.12000 2026.38650 2276.74100
+zoomBox 773.53050 1045.26250 2155.41300 2411.87550
+zoomBox 681.46500 963.07700 2307.20900 2570.85700
+zoomBox 1080.04700 1244.97200 2078.45750 2232.35050
+zoomBox 1175.19900 1312.26800 2023.84850 2151.54000
+zoomBox 1324.82600 1418.09100 1937.97550 2024.46550
+zoomBox 1383.26150 1459.41950 1904.43850 1974.83750
+zoomBox 1432.93150 1494.54850 1875.93200 1932.65400
+zoomBox 1475.15050 1524.40800 1851.70150 1896.79800
+zoomBox 1511.03700 1549.78850 1831.10550 1866.32050
+zoomBox 1541.54050 1571.36200 1813.59900 1840.41450
+zoomBox 1567.46800 1589.69950 1798.71850 1818.39450
+fit
+zoomBox -1435.32000 -107.94550 3867.80850 2510.05450
+zoomBox -1188.32750 -77.14550 3319.33150 2148.15450
+zoomBox -975.36350 -42.40650 2856.14700 1849.09850
+zoomBox -640.47750 12.22050 2127.78900 1378.83300
+zoomBox -509.69100 33.55450 1843.33550 1195.17500
+zoomBox -398.52250 51.68850 1601.55000 1039.06600
+zoomBox -304.02900 67.10200 1396.03250 906.37300
+zoomBox -241.36950 76.97550 1203.68350 790.35600
+zoomBox -189.56050 96.50450 1038.73450 702.87800
+zoomBox -145.79750 115.43650 898.25350 630.85400
+zoomBox -108.83200 133.51100 778.61150 571.61600
+zoomBox -77.60950 149.27050 676.71750 521.66000
+zoomBox -51.07100 162.66650 590.10750 479.19750
+zoomBox -28.51300 174.05300 516.48900 443.10450
+zoomBox -9.33900 183.73150 453.91300 412.42550
+zoomBox 6.95900 191.95800 400.72350 386.34800
+zoomBox -9.34000 183.73100 453.91300 412.42550
+zoomBox -28.51450 174.05200 516.48900 443.10450
+zoomBox -51.07350 162.66550 590.10800 479.19800
+zoomBox -145.56800 114.96800 898.48900 630.38850
+zoomBox -369.80400 1.78250 1630.28200 989.16650
+zoomBox -664.56800 -147.00350 2592.23950 1460.78750
+selectInst data_sram
+fit
+deselectAll
+fit
+fit
+fit
+fit
+fit
+refinePlace -preserveRouting true
+routeDesign -globalDetail
+extractRC
+fit
+timeDesign -postRoute
+verify_connectivity -type regular
+selectWire 149.8200 1999.3600 1001.2200 2000.1600 1 VSS
+deselectAll
+selectWire 2664.9000 105.0800 2694.9000 2694.9200 2 VSS
+floorPlan -site tsm3site -s 2500 2500 150 150 150 150
+addNet VDD -power
+addNet VSS -ground
+placeInstance core_top 1001.5 1600.0 R0
+placeInstance data_sram 1000.0 400.0 MX
+setPinAssignMode -pinEditInBatch true
+editPin -pin {DataAddr_SoC[*] clk reset} -side Top -layer Metal3 -spreadType center -spacing 50
+editPin -pin {PC_out_SoC[*] MemWrite_SoC} -side Bottom -layer Metal3 -spreadType center -spacing 50
+editPin -pin {read_dataout_SoC[*] Instr_out_SoC[*]} -side Left -layer Metal3 -spreadType center -spacing 35
+editPin -pin {WriteData_SoC[*]} -side Right -layer Metal3 -spreadType center -spacing 50
+setPinAssignMode -pinEditInBatch false
+globalNetConnect VDD -type tiehi -inst core_top -override
+globalNetConnect VSS -type tielo -inst core_top -override
+globalNetConnect VDD -type pgpin -pin vdd -inst data_sram -override
+globalNetConnect VSS -type pgpin -pin gnd -inst data_sram -override
+addRing -type core_rings -nets {VSS VDD} -layer {bottom Metal1 top Metal1 right Metal2 left Metal2} -width 30 -spacing 5 -offset 15
+sroute -connect { corePin } -layerChangeRange { Metal1 Metal6 }
+routeDesign -globalDetail
+extractRC
+timeDesign -postRoute
+legalizePin -pin *
+addRing -type core_rings -nets {VSS VDD} -layer {bottom Metal1 top Metal1 right Metal2 left Metal2} -width 30 -spacing 5 -offset 15
+addStripe -number_of_sets 10 -spacing 80 -layer Metal2 -width 20 -nets {VSS VDD}
+sroute -connect { corePin } -layerChangeRange { Metal1 Metal6 }
+editDelete -type Regular
+routeDesign -globalDetail
+zoomBox 66.34000 112.07800 2713.59150 2730.07800
+zoomBox 256.47400 326.34400 2506.63800 2551.64450
+zoomBox 66.33950 112.07750 2713.59150 2730.07800
+zoomBox -157.34800 -140.00100 2957.06650 2940.00000
+zoomBox -420.50950 -436.56350 3243.50750 3186.96700
+zoomBox -136.09250 -128.86700 2978.32200 2951.13400
+fit
+extractRC
+timeDesign -postRoute
+fit
+legalizePin -pin *
+addStripe -number_of_sets 10 -spacing 80 -layer Metal2 -width 20 -nets {VSS VDD}
+sroute -connect { blockPin corePin } -layerChangeRange { Metal1 Metal6 }
+set_ccopt_property target_max_trans 0.5ns
+set_ccopt_property target_skew 0.1ns
+create_ccopt_clock_tree_spec
+ccopt_design
+routeDesign -globalDetail
+fit
+zoomBox -1391.41950 293.43000 3911.70900 2911.43000
+zoomBox -1114.81200 675.46800 3392.84750 2900.76850
+zoomBox -250.56000 2024.10550 636.88500 2462.21150
+zoomBox -214.08450 2074.35900 540.24400 2446.74900
+zoomBox -156.36850 2152.73800 388.63450 2421.79000
+zoomBox -133.48150 2182.50400 329.77150 2411.19850
+zoomBox -113.87150 2207.28750 279.89350 2401.67800
+zoomBox -97.20350 2228.35350 237.49700 2393.58550
+zoomBox -113.87200 2207.28700 279.89350 2401.67750
+zoomBox -164.43550 2150.07950 380.56950 2419.13250
+gui_select -rect {-87.73700 2368.00000 -82.46150 2309.56350}
+zoomBox -192.65150 2126.51850 448.53100 2443.05150
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 -1
+zoomBox -228.37450 2388.48200 525.95800 2760.87400
+zoomBox -101.82950 2454.72250 232.87300 2619.95550
+zoomBox -45.68150 2484.11350 102.82850 2557.42850
+zoomBox -24.01200 2496.64000 53.51250 2534.91150
+zoomBox -12.61750 2503.64800 27.85200 2523.62650
+zoomBox -6.66900 2507.30600 14.45700 2517.73550
+zoomBox -5.69000 2507.78250 12.26750 2516.64750
+zoomBox -4.85800 2508.18750 10.40600 2515.72300
+zoomBox -4.15050 2508.53200 8.82400 2514.93700
+zoomBox -3.54950 2508.82450 7.47900 2514.26900
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+zoomBox -3.03850 2478.03650 6.33600 2482.66450
+zoomBox -2.60450 2478.24800 5.36450 2482.18200
+zoomBox -3.03900 2478.03650 6.33600 2482.66450
+zoomBox -4.15250 2477.49450 8.82400 2483.90050
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+zoomBox -5.69650 2451.76300 12.26400 2460.62950
+zoomBox -6.67900 2451.28850 14.45150 2461.72000
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+zoomBox -4.84600 2436.78900 10.42150 2444.32600
+zoomBox -4.13000 2437.23750 8.84750 2443.64400
+zoomBox -3.52150 2437.61850 7.51000 2443.06450
+zoomBox -4.13100 2437.23700 8.84850 2443.64450
+zoomBox -5.69000 2436.26050 12.27450 2445.12900
+zoomBox -6.68150 2435.63950 14.45350 2446.07300
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+zoomBox -5.69000 2401.83050 12.27450 2410.69900
+zoomBox -4.84800 2402.35800 10.42250 2409.89650
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+zoomBox -17.69900 2286.20350 38.34450 2313.87050
+zoomBox -46.02350 2267.52650 102.57450 2340.88500
+zoomBox -87.86750 2239.15750 196.80000 2379.68950
+zoomBox -103.31600 2228.68350 231.58700 2394.01550
+fit
+zoomBox -1470.85850 184.72400 3832.27000 2802.72400
+zoomBox -1259.40450 460.73950 3248.25450 2686.03950
+zoomBox -1079.66850 695.35250 2751.84150 2586.85750
+zoomBox -926.89350 894.77350 2329.89050 2502.55300
+zoomBox -797.03450 1064.28150 1971.23200 2430.89400
+zoomBox -592.83200 1330.83250 1407.24150 2318.21050
+zoomBox -513.08300 1434.93150 1186.98000 2274.20300
+zoomBox -387.67700 1598.62700 840.61900 2205.00100
+zoomBox -328.96050 1662.00800 715.09150 2177.42600
+zoomBox -279.05150 1715.88200 608.39300 2153.98750
+zoomBox -236.62850 1761.67500 517.69900 2134.06450
+zoomBox -200.56900 1800.59900 440.60950 2117.13000
+zoomBox -237.04950 1762.18050 517.27800 2134.57000
+zoomBox -279.96800 1716.98200 607.47600 2155.08750
+zoomBox -237.05050 1762.18000 517.27800 2134.57000
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+zoomBox -190.62800 1461.90900 450.55100 1778.44050
+zoomBox -161.40950 1491.48550 383.59250 1760.53700
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 1
+panPage 0 -1
+panPage 0 -1
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+zoomBox 1682.87150 2646.88550 2146.12300 2875.57950
+zoomBox 1722.14200 2669.54800 2115.90650 2863.93800
+zoomBox 1755.52250 2688.81100 2090.22250 2854.04250
+zoomBox 1783.89600 2705.18450 2068.39100 2845.63150
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage 1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+zoomBox 21.05700 2565.27700 775.38700 2937.66800
+zoomBox -167.70750 2480.92600 876.34900 2996.34650
+zoomBox -779.90800 2205.43550 1220.17800 3192.81950
+zoomBox -364.15650 2360.41200 1080.90550 3073.79700
+zoomBox -555.17750 2289.20650 1144.89550 3128.48300
+zoomBox -478.08550 2329.27150 966.97650 3042.65650
+zoomBox -412.55750 2363.32650 815.74550 2969.70400
+zoomBox -356.85900 2392.27350 687.19900 2907.69450
+fit
+zoomBox -284.90800 -18.27750 1715.16450 969.10000
+zoomBox -178.57550 -6.43800 1521.48650 832.83300
+zoomBox -11.36750 12.17950 1216.92750 618.55300
+zoomBox -87.87050 -9.28650 1357.18250 704.09400
+zoomBox -177.87400 -34.54100 1522.18850 804.73050
+zoomBox -83.50450 -32.26250 1361.54950 681.11850
+zoomBox -3.28950 -30.32600 1225.00650 576.04800
+zoomBox 122.84850 -27.28100 1010.29250 410.82450
+zoomBox 326.34850 -17.81550 661.04900 147.41650
+zoomBox 383.40850 -2.80650 558.12500 83.44600
+zoomBox 371.30950 -4.13800 576.85850 97.33550
+zoomBox 357.07550 -5.70450 598.89800 113.67600
+zoomBox 394.31750 -3.87100 542.82650 69.44350
+zoomBox 403.20800 -3.70550 529.44100 58.61200
+zoomBox 410.76500 -3.56450 518.06300 49.40550
+zoomBox 431.56400 -2.00900 479.17350 21.49450
+zoomBox 441.29850 -1.31900 462.42400 9.11000
+zoomBox 444.47250 -1.10700 457.44650 5.29800
+zoomBox 445.23000 -1.05650 456.25850 4.38800
+zoomBox 445.87400 -1.01350 455.24850 3.61450
+zoomBox 446.45400 -0.93850 454.42250 2.99550
+zoomBox 446.94650 -0.87450 453.72000 2.46950
+zoomBox 447.72100 -0.77400 452.61550 1.64250
+zoomBox 448.28050 -0.70100 451.81750 1.04500
+zoomBox 448.49950 -0.67250 451.50600 0.81150
+zoomBox 448.68550 -0.64850 451.24100 0.61300
+zoomBox 448.49950 -0.67250 451.50600 0.81150
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+panPage -1 0
+create_clock -name clk -period 10 [get_ports clk]
+create_ccopt_clock_tree_spec
+ccopt_design
+all_constraint_modes -active
+set_interactive_constraint_modes [all_constraint_modes -active]
+create_clock -name clk -period 10 [get_ports clk]
+create_ccopt_clock_tree_spec
+ccopt_design
+routeDesign -globalDetail
+sroute -connect { blockPin corePin } -layerChangeRange { Metal1 Metal6 }
+legalizePin -pin *
+addRing -type core_rings -nets {VSS VDD} -layer {bottom Metal1 top Metal1 right Metal2 left Metal2} -width 30 -spacing 5 -offset 15
+addStripe -number_of_sets 10 -spacing 80 -layer Metal2 -width 20 -nets {VSS VDD}
+sroute -connect { blockPin corePin } -layerChangeRange { Metal1 Metal6 }
+ccopt_design
+routeDesign -globalDetail
+extractRC
+selectObject IO_Pin {PC_out_SoC[3]}
+deselectAll
+fit
+zoomBox -4074.70250 -4290.22700 7354.73700 7012.92050
+zoomBox -12938.82000 -13780.04800 17365.97700 16189.88950
+zoomBox -30781.58000 -32882.29650 37517.79950 34662.39350
+zoomBox -12938.82050 -13780.04850 17365.97700 16189.88950
+zoomBox -10804.09050 -11494.63150 14954.98750 13979.81600
+zoomBox -7447.22750 -7900.81300 11163.70650 10504.47550
+zoomBox -6136.23650 -6497.28100 9683.05750 9147.21400
+zoomBox -5021.89400 -5304.27950 8424.50600 7993.54150
+zoomBox -4074.70300 -4290.22800 7354.73700 7012.92000
+zoomBox -3269.59100 -3428.28400 6445.43350 6179.39200
+zoomBox -4074.70350 -4290.22800 7354.73700 7012.92050
+zoomBox -6136.23800 -6497.28200 9683.05750 9147.21450
+zoomBox -15450.27200 -16468.77750 20202.43650 18789.97850
+zoomBox -3269.59250 -3428.28550 6445.43350 6179.39200
+zoomBox -2585.24700 -2695.63350 5672.52550 5470.89300
+zoomBox -2003.55300 -2072.87900 5015.55350 4868.66850
+zoomBox -2573.84150 -2754.94350 5683.93100 5411.58300
+zoomBox -2003.55350 -2077.44150 5015.55350 4864.10650
+zoomBox -1518.80900 -1501.56450 4447.43250 4398.75150
+zoomBox -1106.77550 -1012.06900 3964.52950 4003.19950
+zoomBox -458.85350 -242.33750 3205.16450 3381.19400
+zoomBox 9.27000 313.79300 2656.52350 2931.79500
+zoomBox 192.09150 530.98450 2442.25700 2756.28650
+zoomBox 9.26950 313.79250 2656.52350 2931.79500
+zoomBox -205.81450 58.27250 2908.60200 3138.27550
+legalizePin -pin *
+selectWire 149.8200 1273.6000 2649.9000 1274.4000 1 VSS
+deselectAll
+fit
+fit
+fit
+timeDesign -postRoute
+gui_select -rect {-1101.76950 310.61850 -1069.25050 357.07400}
+fit
+zoomBox -568.28350 -366.72350 3095.73250 3256.80600
+legalizePin -pin *
+legalizePin -pin *
+addStripe -number_of_sets 10 -spacing 80 -layer Metal2 -width 20 -nets {VSS VDD}
+globalNetConnect VDD -type pgpin -pin vdd -inst data_sram -override
+globalNetConnect VSS -type pgpin -pin gnd -inst data_sram -override
+sroute -connect { blockPin corePin } -layerChangeRange { Metal1 Metal6 }
+routeDesign -globalDetail
+create_ccopt_clock_tree_spec
+ccopt_design
+extractRC
+timeDesign -postRoute
+addInst -inst dummy_buffer -cell 0x0
+placeInstance dummy_buffer 200 200 R0 -placed
+setPlaceMode -place_global_place_io_pins false
+report_message -start_cmd
+getRouteMode -maxRouteLayer -quiet
+getRouteMode -user -maxRouteLayer
+getPlaceMode -place_global_place_io_pins -quiet
+getPlaceMode -user -maxRouteLayer
+getPlaceMode -quiet -adaptiveFlowMode
+getPlaceMode -timingDriven -quiet
+getPlaceMode -adaptive -quiet
+getPlaceMode -relaxSoftBlockageMode -quiet
+getPlaceMode -user -relaxSoftBlockageMode
+getPlaceMode -ignoreScan -quiet
+getPlaceMode -user -ignoreScan
+getPlaceMode -repairPlace -quiet
+getPlaceMode -user -repairPlace
+getPlaceMode -inPlaceOptMode -quiet
+getPlaceMode -quiet -bypassFlowEffortHighChecking
+getDesignMode -quiet -siPrevention
+getPlaceMode -quiet -place_global_exp_enable_3d
+getPlaceMode -exp_slack_driven -quiet
+um::push_snapshot_stack
+getDesignMode -quiet -flowEffort
+getDesignMode -highSpeedCore -quiet
+getPlaceMode -quiet -adaptive
+set spgFlowInInitialPlace 1
+getPlaceMode -sdpAlignment -quiet
+getPlaceMode -softGuide -quiet
+getPlaceMode -useSdpGroup -quiet
+getPlaceMode -sdpAlignment -quiet
+getPlaceMode -enableDbSaveAreaPadding -quiet
+getPlaceMode -quiet -wireLenOptEffort
+getPlaceMode -sdpPlace -quiet
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -sdpPlace -quiet
+getPlaceMode -groupHighLevelClkGate -quiet
+setvar spgRptErrorForScanConnection 0
+getPlaceMode -place_global_exp_allow_missing_scan_chain -quiet
+getPlaceMode -place_check_library -quiet
+getPlaceMode -trimView -quiet
+getPlaceMode -expTrimOptBeforeTDGP -quiet
+getPlaceMode -quiet -useNonTimingDeleteBufferTree
+getPlaceMode -congEffort -quiet
+getPlaceMode -relaxSoftBlockageMode -quiet
+getPlaceMode -user -relaxSoftBlockageMode
+getPlaceMode -ignoreScan -quiet
+getPlaceMode -user -ignoreScan
+getPlaceMode -repairPlace -quiet
+getPlaceMode -user -repairPlace
+getPlaceMode -congEffort -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -timingDriven -quiet
+getPlaceMode -user -timingDriven
+getPlaceMode -fastFp -quiet
+getPlaceMode -clusterMode -quiet
+get_proto_model -type_match {flex_module flex_instgroup} -committed -name -tcl
+getPlaceMode -inPlaceOptMode -quiet
+getPlaceMode -quiet -bypassFlowEffortHighChecking
+getPlaceMode -ultraCongEffortFlow -quiet
+getPlaceMode -forceTiming -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -timingDriven -quiet
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -powerDriven -quiet
+getExtractRCMode -quiet -engine
+getAnalysisMode -quiet -clkSrcPath
+getAnalysisMode -quiet -clockPropagation
+getAnalysisMode -quiet -cppr
+setExtractRCMode -engine preRoute
+setAnalysisMode -clkSrcPath false -clockPropagation forcedIdeal
+getPlaceMode -exp_slack_driven -quiet
+isAnalysisModeSetup
+getPlaceMode -quiet -place_global_exp_solve_unbalance_path
+getPlaceMode -quiet -NMPsuppressInfo
+getPlaceMode -quiet -place_global_exp_wns_focus_v2
+getPlaceMode -quiet -place_incr_exp_isolation_flow
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -quiet -clusterMode
+getPlaceMode -wl_budget_mode -quiet
+setPlaceMode -reset -place_global_exp_balance_buffer_chain
+getPlaceMode -wl_budget_mode -quiet
+setPlaceMode -reset -place_global_exp_balance_pipeline
+getPlaceMode -place_global_exp_balance_buffer_chain -quiet
+getPlaceMode -place_global_exp_balance_pipeline -quiet
+getPlaceMode -tdgpMemFlow -quiet
+getPlaceMode -user -resetCombineRFLevel
+getPlaceMode -quiet -resetCombineRFLevel
+setPlaceMode -resetCombineRFLevel 1000
+setvar spgSpeedupBuildVSM 1
+getPlaceMode -tdgpResetCteTG -quiet
+getPlaceMode -macroPlaceMode -quiet
+getPlaceMode -place_global_replace_QP -quiet
+getPlaceMode -macroPlaceMode -quiet
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -exp_slack_driven -quiet
+getPlaceMode -place_global_ignore_spare -quiet
+getPlaceMode -enableDistPlace -quiet
+getPlaceMode -quiet -expNewFastMode
+setPlaceMode -expHiddenFastMode 1
+setPlaceMode -reset -ignoreScan
+colorizeGeometry
+getPlaceMode -quiet -IOSlackAdjust
+getAnalysisMode -quiet -honorClockDomains
+getPlaceMode -honorUserPathGroup -quiet
+getAnalysisMode -quiet -honorClockDomains
+set delaycal_use_default_delay_limit 101
+set delaycal_default_net_delay 0
+set delaycal_default_net_load 0
+set delaycal_default_net_load_ignore_for_ilm 0
+set delaycal_input_transition_delay 1ps
+getAnalysisMode -clkSrcPath -quiet
+getAnalysisMode -clockPropagation -quiet
+getAnalysisMode -checkType -quiet
+buildTimingGraph
+getDelayCalMode -ignoreNetLoad -quiet
+get_global timing_enable_path_group_priority
+get_global timing_constraint_enable_group_path_resetting
+set_global timing_enable_path_group_priority false
+set_global timing_constraint_enable_group_path_resetting false
+getOptMode -allowPreCTSClkSrcPaths -quiet
+set_global _is_ipo_interactive_path_groups 1
+group_path -name in2reg_tmp.108117 -from {0x5 0x8} -to 0x9 -ignore_source_of_trigger_arc
+getOptMode -allowPreCTSClkSrcPaths -quiet
+set_global _is_ipo_interactive_path_groups 1
+group_path -name in2out_tmp.108117 -from {0xc 0xf} -to 0x10 -ignore_source_of_trigger_arc
+set_global _is_ipo_interactive_path_groups 1
+group_path -name reg2reg_tmp.108117 -from 0x12 -to 0x13
+set_global _is_ipo_interactive_path_groups 1
+group_path -name reg2out_tmp.108117 -from 0x16 -to 0x17
+setPathGroupOptions reg2reg_tmp.108117 -effortLevel high
+isAnalysisModeSetup
+getAnalysisMode -analysisType -quiet
+isAnalysisModeSetup
+all_setup_analysis_views
+all_hold_analysis_views
+get_analysis_view $view -delay_corner
+get_delay_corner $dcCorner -power_domain_list
+get_delay_corner $dcCorner -library_set
+get_library_set $libSetName -si
+get_delay_corner $dcCorner -late_library_set
+get_delay_corner $dcCorner -early_library_set
+reset_path_group -name reg2out_tmp.108117
+set_global _is_ipo_interactive_path_groups 0
+reset_path_group -name in2reg_tmp.108117
+set_global _is_ipo_interactive_path_groups 0
+reset_path_group -name in2out_tmp.108117
+set_global _is_ipo_interactive_path_groups 0
+reset_path_group -name reg2reg_tmp.108117
+set_global _is_ipo_interactive_path_groups 0
+setDelayCalMode -ignoreNetLoad false
+set delaycal_use_default_delay_limit 1000
+set delaycal_default_net_delay 1000ps
+set delaycal_input_transition_delay 0ps
+set delaycal_default_net_load 0.5pf
+set delaycal_default_net_load_ignore_for_ilm 0
+all_setup_analysis_views
+getPlaceMode -place_global_exp_ignore_low_effort_path_groups -quiet
+getPlaceMode -exp_slack_driven -quiet
+getAnalysisMode -quiet -honorClockDomains
+getAnalysisMode -quiet -honorClockDomains
+set delaycal_use_default_delay_limit 101
+set delaycal_default_net_delay 0
+set delaycal_default_net_load 0
+set delaycal_default_net_load_ignore_for_ilm 0
+getAnalysisMode -clkSrcPath -quiet
+getAnalysisMode -clockPropagation -quiet
+getAnalysisMode -checkType -quiet
+buildTimingGraph
+getDelayCalMode -ignoreNetLoad -quiet
+getDelayCalMode -ignoreNetLoad -quiet
+setDelayCalMode -ignoreNetLoad true -quiet
+get_global timing_enable_path_group_priority
+get_global timing_constraint_enable_group_path_resetting
+set_global timing_enable_path_group_priority false
+set_global timing_constraint_enable_group_path_resetting false
+getOptMode -allowPreCTSClkSrcPaths -quiet
+set_global _is_ipo_interactive_path_groups 1
+group_path -name in2reg_tmp.108117 -from {0x1b 0x1e} -to 0x1f -ignore_source_of_trigger_arc
+getOptMode -allowPreCTSClkSrcPaths -quiet
+set_global _is_ipo_interactive_path_groups 1
+group_path -name in2out_tmp.108117 -from {0x22 0x25} -to 0x26 -ignore_source_of_trigger_arc
+set_global _is_ipo_interactive_path_groups 1
+group_path -name reg2reg_tmp.108117 -from 0x28 -to 0x29
+set_global _is_ipo_interactive_path_groups 1
+group_path -name reg2out_tmp.108117 -from 0x2c -to 0x2d
+setPathGroupOptions reg2reg_tmp.108117 -effortLevel high
+reset_path_group -name reg2out_tmp.108117
+set_global _is_ipo_interactive_path_groups 0
+reset_path_group -name in2reg_tmp.108117
+set_global _is_ipo_interactive_path_groups 0
+reset_path_group -name in2out_tmp.108117
+set_global _is_ipo_interactive_path_groups 0
+reset_path_group -name reg2reg_tmp.108117
+set_global _is_ipo_interactive_path_groups 0
+setDelayCalMode -ignoreNetLoad false
+set delaycal_use_default_delay_limit 1000
+set delaycal_default_net_delay 1000ps
+set delaycal_default_net_load 0.5pf
+set delaycal_default_net_load_ignore_for_ilm 0
+getPlaceMode -ignoreUnproperPowerInit -quiet
+getPlaceMode -tcg2Pass -quiet
+getPlaceMode -quiet -wireLenOptEffort
+getPlaceMode -fp -quiet
+getPlaceMode -fastfp -quiet
+getPlaceMode -doRPlace -quiet
+getPlaceMode -RTCPlaceDesignFlow -quiet
+remove_rf_constraint
+getPlaceMode -quickCTS -quiet
+set spgFlowInInitialPlace 0
+getPlaceMode -user -maxRouteLayer
+spInternalUse TDGP resetIgnoreNetLoad
+getPlaceMode -place_global_exp_balance_pipeline -quiet
+getDesignMode -quiet -flowEffort
+report_message -end_cmd
+um::create_snapshot -name final -auto min
+um::pop_snapshot_stack
+um::create_snapshot -name place_design
+getPlaceMode -exp_slack_driven -quiet
+editDelete -type Regular
+routeDesign -globalDetail
+extractRC
+timeDesign -postRoute -reportOnly
+zoomBox -258.56300 -251.33800 2855.85100 2828.66250
+zoomBox 4.69950 -153.26000 2651.95150 2464.74050
+zoomBox 228.47250 -69.89400 2478.63700 2155.40700
+zoomBox 4.69900 -153.26050 2651.95150 2464.74050
+zoomBox -258.56350 -251.33850 2855.85100 2828.66250
+zoomBox -568.28450 -366.72500 3095.73300 3256.80600
+zoomBox -250.46650 -209.84050 2863.94850 2870.16100
+zoomBox 19.67850 -76.48850 2666.93150 2541.51300
+zoomBox 751.40250 284.71250 2133.28550 1651.32600
+zoomBox 871.26750 343.49950 2045.86800 1505.12100
+zoomBox 973.15250 393.46850 1971.56300 1380.84700
+zoomBox 1195.93750 502.73200 1809.08650 1109.10600
+zoomBox 1133.36700 472.04450 1854.71900 1185.42600
+zoomBox 871.26650 343.49800 2045.86850 1505.12100
+zoomBox 610.38300 215.54900 2236.13000 1823.33200
+zoomBox 249.29900 38.45700 2499.46800 2263.76250
+zoomBox 19.67450 -74.16100 2666.93250 2543.84550
+zoomBox -250.47150 -206.65300 2863.94950 2873.35450
+zoomBox -568.29000 -361.51350 3095.73450 3262.02450
+report_timing > smvdu_aho32_final_timing.txt
+report_constraint -all_violators > smvdu_aho32_drvs.txt
+streamOut smvdu_aho32.gds -mapFile <your_foundry_gds_map_file> -merge {all.gds Single_Cycle_Core.gds sram_32x64_180nm.gds}
+zoomBox -354.04850 325.88550 1896.12050 2551.19100
+zoomBox -301.21350 489.36450 1611.43050 2380.87450
+zoomBox -256.30350 628.32200 1369.44400 2236.10550
+zoomBox -218.13000 746.43550 1163.75550 2113.05150
+zoomBox -185.68250 846.83200 988.92050 2008.45600
+zoomBox -97.79400 1118.76900 515.35650 1725.14450
+zoomBox -83.39700 1163.31550 437.78100 1678.73450
+zoomBox -61.02400 1233.63100 315.52750 1606.02150
+zoomBox -52.28650 1261.09150 267.78250 1577.62400
+zoomBox -38.54700 1304.27400 192.70350 1532.96900
+zoomBox -60.11650 1292.32400 211.94300 1561.37750
+zoomBox -85.49250 1278.26550 234.57750 1594.79900
+zoomBox -115.34650 1261.72650 261.20650 1634.11850
+gui_group_hinst
+fit
+setDrawView fplan
+setDrawView fplan
+setDrawView fplan
+setDrawView fplan
+setDrawView fplan
+setDrawView fplan
+setDrawView ameba
+setDrawView place
+setDrawView fplan
+setDrawView ameba
+setDrawView place
+setDrawView ameba
+ui_view_box
+ui_view_box
+dbquery -area {-1719.6275 -140.0 4519.347 2940.0} -objType inst
+dbquery -area {-1719.6275 -140.0 4519.347 2940.0} -objType regular
+dbquery -area {-1719.6275 -140.0 4519.347 2940.0} -objType special
+setDrawView place
+setDrawView place
+setDrawView place
+streamOut smvdu_aho32.gds -mapFile scl180.map -merge {all.gds Single_Cycle_Core.gds sram_32x64_180nm.gds}
+setDrawView fplan
+setDrawView ameba
+setDrawView place
+ui_view_box
+ui_view_box
+dbquery -area {-1719.6275 -140.0 4519.347 2940.0} -objType inst
+dbquery -area {-1719.6275 -140.0 4519.347 2940.0} -objType regular
+dbquery -area {-1719.6275 -140.0 4519.347 2940.0} -objType special
+streamOut smvdu_aho32.gds -merge {all.gds Single_Cycle_Core.gds sram_32x64_180nm.gds}
+fit
+fit
+setDrawView ameba
+setDrawView place
+ui_view_box
+ui_view_box
+dbquery -area {-1719.6275 -140.0 4519.347 2940.0} -objType inst
+dbquery -area {-1719.6275 -140.0 4519.347 2940.0} -objType regular
+dbquery -area {-1719.6275 -140.0 4519.347 2940.0} -objType special
+fit
+selectInst core_top
+deselectAll
+selectInst data_sram
+deselectAll
+zoomBox 47.41250 137.02800 2694.66400 2755.02800
+zoomBox -157.34750 -140.00000 2957.06600 2940.00000
+zoomBox -398.24150 -465.91550 3265.77450 3157.61400
+zoomBox -681.64600 -849.34550 3628.96100 3413.63050
+fit
+zoomBox -2475.48600 -434.30950 4864.48400 3189.22000
+zoomBox -3416.81300 -780.55600 5218.44600 3482.42000
+zoomBox -4523.12200 -1187.90450 5636.00650 3827.36150
+zoomBox -6878.20400 -3716.15350 990.52550 4065.62850
+fit
+zoomBox -895.27100 -1009.08800 3415.33650 3253.88850
+zoomBox -1381.38750 -1526.02450 3689.91550 3489.24200
+fit
+fit
+streamOut smvdu_aho32_merged.gds -merge {/home/student/ANUPAM/Project_Test1/Physical_Design/Single_Cycle_Core.gds /home/student/ANUPAM/Project_Test1/Memory_Macros/sram_32x64_180nm.gds}
+timeDesign -preCTS
+saveDesign -cellview {ANUPAM_PROCESSER Single_Cycle_Top layout}
+saveDesign -cellview {ANUPAM_PROCESSER Single_Cycle_Top layout}
+timeDesign -postCTS -reportOnly -outDir timingReports/preRoute
+timeDesign -postRoute -reportOnly -outDir timingReports/postRoute
+report_timing -max_paths 10 > smvdu_aho32_critical_paths.txt
+report_ccopt_skew_groups > smvdu_aho32_clock_skew.txt
+report_ccopt_clock_trees > smvdu_aho32_clock_tree.txt
+report_power > smvdu_aho32_power_report.txt
+verify_connectivity -type all -error 1000 -report smvdu_aho32_connectivity.txt
+verify_drc -report smvdu_aho32_drc.txt
+zoomBox 1453.80500 1281.81500 2628.40550 2443.43650
+zoomBox 1724.53100 1521.32650 2573.18000 2360.59800
+zoomBox 1830.26050 1614.86500 2551.61200 2328.24600
+zoomBox 1920.13050 1694.37300 2533.27950 2300.74700
+zoomBox 1996.52000 1761.95500 2517.69700 2277.37300
+zoomBox 1724.53050 1521.32550 2573.18050 2360.59800
+zoomBox 1600.14250 1411.27900 2598.55450 2398.65900
+zoomBox 1453.80400 1281.81300 2628.40650 2443.43650
+zoomBox 1281.64100 1129.50000 2663.52650 2496.11600
+zoomBox 1079.09600 950.30800 2704.84400 2558.09200
+zoomBox 1165.77250 1094.02050 2547.65850 2460.63700
+zoomBox 1384.50250 1547.75950 1997.65300 2154.13500
+zoomBox 1406.35250 1619.06800 1927.53050 2134.48700
+zoomBox 1424.92450 1679.68000 1867.92600 2117.78650
+zoomBox 1454.12950 1774.99250 1774.19850 2091.52500
+zoomBox 1483.24300 1870.74950 1679.80600 2065.14050
+zoomBox 1490.19350 1893.60950 1657.27200 2058.84200
+zoomBox 1496.10100 1913.04000 1638.11800 2053.48800
+zoomBox 1501.12200 1929.55600 1621.83700 2048.93700
+zoomBox 1505.39000 1943.59500 1607.99800 2045.06900
+zoomBox 1514.72300 1974.29250 1577.73750 2036.61050
+selectWire 1529.2200 2024.5600 2649.9000 2025.3600 1 VDD
+zoomBox 1516.91600 1981.89950 1570.47850 2034.87000
+zoomBox 1518.78050 1988.36550 1564.30850 2033.39050
+zoomBox 1520.36500 1993.86150 1559.06400 2032.13300
+deselectAll
+selectInst core_top
+zoomBox 1519.19500 1991.76100 1564.72350 2036.78650
+zoomBox 1517.81900 1989.29000 1571.38200 2042.26100
+zoomBox 1516.20000 1986.38300 1579.21550 2048.70200
+zoomBox 1514.29550 1982.96250 1588.43150 2056.27950
+zoomBox 1512.05500 1978.93900 1599.27350 2065.19400
+zoomBox 1509.41850 1974.20550 1612.02900 2075.68200
+zoomBox 1506.31700 1968.63600 1627.03550 2088.02050
+zoomBox 1502.66800 1962.08400 1644.69000 2102.53650
+zoomBox 1498.37550 1954.37550 1665.46000 2119.61400
+zoomBox 1493.32500 1945.30700 1689.89550 2139.70550
+zoomBox 1487.38350 1934.63850 1718.64300 2163.34250
+zoomBox 1480.39400 1922.08700 1752.46400 2191.15050
+zoomBox 1472.17100 1907.32050 1792.25350 2223.86600
+zoomBox 1462.49650 1889.94800 1839.06450 2262.35500
+zoomBox 1437.72500 1845.46600 1958.92600 2360.90800
+zoomBox 1403.43850 1783.89900 2124.82450 2497.31400
+deselectAll
+fit
+zoomBox -1475.73600 253.01350 3827.39200 2871.01350
+zoomBox -1268.42850 587.07500 3239.23050 2812.37500
+zoomBox -1092.21700 871.02750 2739.29300 2762.53250
+zoomBox -942.43700 1112.38700 2314.34650 2720.16600
+zoomBox -815.12400 1317.54200 1953.14200 2684.15450
+zoomBox -706.90900 1491.92400 1646.11800 2653.54500
+zoomBox -614.92600 1642.25150 1385.14750 2629.62950
+zoomBox -537.63400 1776.50800 1162.42900 2615.77950
+zoomBox -617.38400 1642.25100 1382.69050 2629.62950
+zoomBox -711.20750 1484.30150 1641.82150 2645.92350
+zoomBox -1319.25450 696.56800 3188.41050 2921.87100
+fit
+uiSetTool ruler
+zoomBox -363.19550 2080.26750 1081.85850 2793.64850
+panPage 0 1
+zoomBox -449.78150 2205.03800 1250.28250 3044.31000
+zoomBox -551.64700 2100.04500 1448.42850 3087.42400
+zoomBox -671.48850 1976.52400 1681.54150 3138.14650
+zoomBox -812.47900 1831.20500 1955.79250 3197.82000
+zoomBox -978.35000 1660.24150 2278.44000 3268.02400
+zoomBox -1173.49250 1459.10800 2658.02550 3350.61700
+zoomBox -1487.65300 1216.94250 3020.01500 3442.24700
+zoomBox -1857.25350 932.04200 3445.88500 3550.04700
+zoomBox -1160.69850 1209.24250 3346.96950 3434.54700
+zoomBox -568.62650 1444.86300 3262.89150 3336.37200
+zoomBox -65.36550 1645.14050 3191.42500 3252.92300
+zoomBox 1872.22100 2416.22050 2916.27450 2931.63950
+zoomBox 1593.25100 2256.96000 3038.30800 2970.34250
+zoomBox 1416.47200 2156.13350 3116.53900 2995.40700
+zoomBox 675.96400 1733.78150 3444.23950 3100.39850
+zoomBox 337.31000 1540.62900 3594.10550 3148.41400
+zoomBox -61.10550 1313.39050 3770.41850 3204.90250
+uiSetTool ruler
+uiSetTool ruler
+uiSetTool ruler
+uiSetTool ruler
+zoomBox -587.72850 1144.22700 3919.94700 3369.53500
+zoomBox -1207.28450 945.21100 4095.86300 3563.22050
+zoomBox -1936.17400 711.07450 4302.82300 3791.08550
+zoomBox -2809.26750 677.46250 4530.72900 4301.00500
+zoomBox -3836.43600 637.91850 4798.85400 4900.91000
+fit
+zoomBox -386.44750 -100.03700 4121.21200 2125.26350
+zoomBox 572.46950 -71.16400 3829.25450 1536.61600
+zoomBox 946.76850 -59.88800 3715.03700 1306.72550
+zoomBox 1699.20500 -27.27750 3399.26800 811.99400
+zoomBox 1878.83150 -19.49250 3323.88550 693.88850
+zoomBox 2031.51450 -12.87550 3259.81050 593.49850
+fit
+zoomBox -2688.63450 -289.20400 4651.33550 3334.32550
+zoomBox -3828.64300 -464.73850 4806.61600 3798.23750
+fit
+fit
+uiSetTool ruler
+uiSetTool ruler
+uiSetTool select
+uiSetTool ruler
+highlight -index 1
+highlight -index 11
+dehighlight
+zoomSelected -margin 50
+report_area > smvdu_aho32_area_report.txt
+uiSetTool ruler
+uiSetTool select
+zoomBox -2546.66950 -1036.05150 3419.56900 4864.26150
+saveDesign smvdu_aho32_final.db

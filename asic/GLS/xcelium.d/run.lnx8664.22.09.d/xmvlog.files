@@ -1,0 +1,11 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+/home/student/ANUPAM/Project_Test1/GLS/patch.v
+/home/student/ANUPAM/Project_Test1/GLS/core_netlist.v
+/home/student/ANUPAM/Project_Test1/Golden_Design_RTL/Single_Cycle_Top.v
+/home/student/ANUPAM/Project_Test1/Golden_Design_RTL/Instruction_Memory.v
+/home/student/ANUPAM/Project_Test1/Golden_Design_RTL/Data_Memory.v
+/home/student/ANUPAM/Project_Test1/GLS/tb_Single_Cycle_Top.v
+/home/student/ANUPAM/Fresh_GPDK180/slow_vdd1v0_basicCells.v

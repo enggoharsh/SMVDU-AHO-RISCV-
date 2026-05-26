@@ -1,0 +1,202 @@
+irun(64): 15.20-s086: (c) Copyright 1995-2020 Cadence Design Systems, Inc.
+TOOL:	irun(64)	15.20-s086: Started on May 01, 2026 at 10:24:07 EDT
+irun
+	-coverage all
+	-covoverwrite
+	../TESTBENCHES/tb_Single_Cycle_Top.v
+	../Golden_Design_RTL/ALU_decoder.v
+	../Golden_Design_RTL/ALU_Mux.v
+	../Golden_Design_RTL/ALU.v
+	../Golden_Design_RTL/Control_Unit.v
+	../Golden_Design_RTL/Core_Datapath.v
+	../Golden_Design_RTL/Data_Memory.v
+	../Golden_Design_RTL/Extend.v
+	../Golden_Design_RTL/Instruction_Memory.v
+	../Golden_Design_RTL/Main_Decoder.v
+	../Golden_Design_RTL/PC_Mux.v
+	../Golden_Design_RTL/PC_Plus_4.v
+	../Golden_Design_RTL/PC_Target.v
+	../Golden_Design_RTL/PC.v
+	../Golden_Design_RTL/Register_File.v
+	../Golden_Design_RTL/Result_Mux.v
+	../Golden_Design_RTL/Single_Cycle_Core.v
+	../Golden_Design_RTL/Single_Cycle_Top.v
+file: ../TESTBENCHES/tb_Single_Cycle_Top.v
+	module worklib.tb_Single_Cycle_Top:v
+		errors: 0, warnings: 0
+file: ../Golden_Design_RTL/ALU_decoder.v
+	module worklib.ALU_Decoder:v
+		errors: 0, warnings: 0
+file: ../Golden_Design_RTL/ALU_Mux.v
+	module worklib.ALU_Mux:v
+		errors: 0, warnings: 0
+file: ../Golden_Design_RTL/ALU.v
+	module worklib.ALU:v
+		errors: 0, warnings: 0
+file: ../Golden_Design_RTL/Control_Unit.v
+	module worklib.Control_Unit:v
+		errors: 0, warnings: 0
+file: ../Golden_Design_RTL/Core_Datapath.v
+	module worklib.Core_Datapath:v
+		errors: 0, warnings: 0
+file: ../Golden_Design_RTL/Data_Memory.v
+	module worklib.Data_Memory:v
+		errors: 0, warnings: 0
+file: ../Golden_Design_RTL/Extend.v
+	module worklib.Extend:v
+		errors: 0, warnings: 0
+file: ../Golden_Design_RTL/Instruction_Memory.v
+	module worklib.Instruction_Memory:v
+		errors: 0, warnings: 0
+file: ../Golden_Design_RTL/Main_Decoder.v
+	module worklib.Main_Decoder:v
+		errors: 0, warnings: 0
+file: ../Golden_Design_RTL/PC_Mux.v
+	module worklib.PC_Mux:v
+		errors: 0, warnings: 0
+file: ../Golden_Design_RTL/PC_Plus_4.v
+	module worklib.PC_Plus_4:v
+		errors: 0, warnings: 0
+file: ../Golden_Design_RTL/PC_Target.v
+	module worklib.PC_Target:v
+		errors: 0, warnings: 0
+file: ../Golden_Design_RTL/PC.v
+	module worklib.PC:v
+		errors: 0, warnings: 0
+file: ../Golden_Design_RTL/Register_File.v
+	module worklib.Register_File:v
+		errors: 0, warnings: 0
+file: ../Golden_Design_RTL/Result_Mux.v
+	module worklib.Result_Mux:v
+		errors: 0, warnings: 0
+file: ../Golden_Design_RTL/Single_Cycle_Core.v
+	module worklib.Single_Cycle_Core:v
+		errors: 0, warnings: 0
+file: ../Golden_Design_RTL/Single_Cycle_Top.v
+	module worklib.Single_Cycle_Top:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		tb_Single_Cycle_Top
+
+	Extracting FSMs for coverage:
+		worklib.Main_Decoder
+		worklib.ALU_Decoder
+		worklib.Control_Unit
+		worklib.PC
+		worklib.PC_Plus_4
+		worklib.PC_Target
+		worklib.PC_Mux
+		worklib.Register_File
+		worklib.Extend
+		worklib.ALU_Mux
+		worklib.ALU
+		worklib.Result_Mux
+		worklib.Core_Datapath
+		worklib.Single_Cycle_Core
+		worklib.Instruction_Memory
+		worklib.Data_Memory
+		worklib.Single_Cycle_Top
+		worklib.tb_Single_Cycle_Top
+	Total FSMs extracted = 0
+			      .ResultSrc(ResultSrc),
+			                         |
+ncelab: *W,CUVMPW (../Golden_Design_RTL/Core_Datapath.v,82|28): port sizes differ in port connection (2/32).
+	Building instance overlay tables: .................... Done
+	Enabling instrumentation for coverage types: block expression FSM toggle functional
+ncelab: *W,COVDCL: By default expression coverage is scored only for Verilog logical operators (|| and &&) and VHDL logical operators (OR, AND, NOR, and NAND), and is scored only in condition expressions. To score coverage for other operators and for expressions in other statements, use the "set_expr_coverable_operators" and "set_expr_coverable_statements" coverage configuration file commands with suitable options at elaboration.
+	Generating native compiled code:
+		worklib.ALU:v <0x3974168d>
+			streams:   7, words:  4215
+		worklib.ALU_Decoder:v <0x58bc73af>
+			streams:   1, words:  5991
+		worklib.ALU_Mux:v <0x2a54173d>
+			streams:   1, words:   194
+		worklib.Control_Unit:v <0x04452d5d>
+			streams:   0, words:     0
+		worklib.Data_Memory:v <0x694ce392>
+			streams:   4, words:  1748
+		worklib.Extend:v <0x2b00ce22>
+			streams:   1, words:  2596
+		worklib.Instruction_Memory:v <0x1d53efa4>
+			streams:   2, words:  3204
+		worklib.Main_Decoder:v <0x5ef330e8>
+			streams:   2, words:  4992
+		worklib.PC:v <0x32cf3588>
+			streams:   2, words:   677
+		worklib.PC_Mux:v <0x03298b56>
+			streams:   1, words:   194
+		worklib.PC_Plus_4:v <0x76034e44>
+			streams:   1, words:   129
+		worklib.PC_Target:v <0x3288f9c1>
+			streams:   1, words:   144
+		worklib.Register_File:v <0x0b9afb2e>
+			streams:   4, words:  1924
+		worklib.Result_Mux:v <0x7323617c>
+			streams:   1, words:   312
+		worklib.Single_Cycle_Top:v <0x325d5cff>
+			streams:   3, words:   391
+		worklib.tb_Single_Cycle_Top:v <0x1555c6de>
+			streams:   5, words:  9151
+   reg [31:0] 				REG_MEM_BLOCK[31:0];
+              				            |
+ncelab: *W,COVMDD (../Golden_Design_RTL/Register_File.v,10|30): Toggle coverage for bit, logic, reg, wire, and struct multi-dimensional static arrays and vectors is not supported by default. To enable toggle coverage on for these types specify 'set_toggle_scoring -sv_mda [<max_bit_base2_exponent>] [-sv_mda_of_struct]' ccf command in the coverage configuration file.
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                18      18
+		Registers:              10      10
+		Scalar wires:           14       -
+		Expanded wires:         34       2
+		Vectored wires:         19       -
+		Always blocks:           8       8
+		Initial blocks:          5       5
+		Cont. assignments:      18      24
+		Pseudo assignments:      1       1
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tb_Single_Cycle_Top:v
+Loading snapshot worklib.tb_Single_Cycle_Top:v .................... Done
+ncsim> source /home/install/INCISIVE152/tools/inca/files/ncsimrc
+ncsim> run
+==================================================
+   SMVDU-AHO-32 Processor Simulation Started      
+==================================================
+Time: 24000 | PC: 00000000 | Instr: 00500113 | MemWrite: 0 | Addr: 00000005 | WData: xxxxxxxx
+Time: 36000 | PC: 00000004 | Instr: 00c00193 | MemWrite: 0 | Addr: 0000000c | WData: xxxxxxxx
+Time: 48000 | PC: 00000008 | Instr: ff718393 | MemWrite: 0 | Addr: 00000003 | WData: xxxxxxxx
+Time: 60000 | PC: 0000000c | Instr: 0023e233 | MemWrite: 0 | Addr: 00000007 | WData: 00000005
+Time: 72000 | PC: 00000010 | Instr: 0041f2b3 | MemWrite: 0 | Addr: 00000004 | WData: 00000007
+Time: 84000 | PC: 00000014 | Instr: 004282b3 | MemWrite: 0 | Addr: 0000000b | WData: 00000007
+Time: 96000 | PC: 00000018 | Instr: 02728863 | MemWrite: 0 | Addr: 00000008 | WData: 00000003
+Time: 108000 | PC: 0000001c | Instr: 0041a233 | MemWrite: 0 | Addr: 00000000 | WData: 00000007
+Time: 120000 | PC: 00000020 | Instr: 00020463 | MemWrite: 0 | Addr: 00000000 | WData: 00000000
+Time: 132000 | PC: 00000028 | Instr: 0023a233 | MemWrite: 0 | Addr: 00000001 | WData: 00000005
+Time: 144000 | PC: 0000002c | Instr: 005203b3 | MemWrite: 0 | Addr: 0000000c | WData: 0000000b
+Time: 156000 | PC: 00000030 | Instr: 402383b3 | MemWrite: 0 | Addr: 00000007 | WData: 00000005
+Time: 168000 | PC: 00000034 | Instr: 0471aa23 | MemWrite: 1 | Addr: 00000060 | WData: 00000007
+Time: 180000 | PC: 00000038 | Instr: 06002103 | MemWrite: 0 | Addr: 00000060 | WData: 00000000
+Time: 192000 | PC: 0000003c | Instr: 005104b3 | MemWrite: 0 | Addr: 00000012 | WData: 0000000b
+Time: 204000 | PC: 00000040 | Instr: 008001ef | MemWrite: 0 | Addr: xxxxxxxx | WData: xxxxxxxx
+Time: 216000 | PC: 00000048 | Instr: 00910133 | MemWrite: 0 | Addr: 00000019 | WData: 00000012
+Time: 228000 | PC: 0000004c | Instr: 0221a023 | MemWrite: 1 | Addr: 00000064 | WData: 00000019
+Time: 240000 | PC: 00000050 | Instr: 00210063 | MemWrite: 0 | Addr: 00000000 | WData: 00000019
+Time: 252000 | PC: 00000050 | Instr: 00210063 | MemWrite: 0 | Addr: 00000000 | WData: 00000019
+==================================================
+   Test Program Completed Successfully.           
+==================================================
+Simulation complete via $finish(1) at time 254 NS + 0
+../TESTBENCHES/tb_Single_Cycle_Top.v:60         $finish;
+ncsim> exit
+
+coverage setup:
+  workdir  :  ./cov_work
+  dutinst  :  tb_Single_Cycle_Top(tb_Single_Cycle_Top)
+  scope    :  scope
+  testname :  test
+
+coverage files:
+  model(design data) :  ./cov_work/scope/icc_4fd46403_00000000.ucm
+  data               :  ./cov_work/scope/test/icc_4fd46403_00000000.ucd
+TOOL:	irun(64)	15.20-s086: Exiting on May 01, 2026 at 10:24:09 EDT  (total: 00:00:02)

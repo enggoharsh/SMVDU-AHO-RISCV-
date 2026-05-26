@@ -1,0 +1,118 @@
+Clock tree timing engine global stage delay update for typical_delay:both.early...
+Turning off fast DC mode.
+Clock tree timing engine global stage delay update for typical_delay:both.early done. (took cpu=0:00:00.0 real=0:00:00.1)
+Clock tree timing engine global stage delay update for typical_delay:both.late...
+Clock tree timing engine global stage delay update for typical_delay:both.late done. (took cpu=0:00:00.0 real=0:00:00.0)
+
+Skew Group Structure:
+=====================
+
+------------------------------------------------------------------------------
+Skew Group                 Sources    Constrained Sinks    Unconstrained Sinks
+------------------------------------------------------------------------------
+clk/typical_constraints       1               2                     0
+------------------------------------------------------------------------------
+
+Skew Group Summary:
+===================
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Timing Corner               Skew Group                 ID Target    Min ID    Max ID    Avg ID    Std.Dev. ID    Skew Target Type    Skew Target    Skew     Skew window occupancy
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+typical_delay:both.early    clk/typical_constraints        -        0.758     2.949     1.853        1.549       ignored                  -         2.191              -
+typical_delay:both.late     clk/typical_constraints    none         0.758     2.949     1.853        1.549       explicit            *0.100         2.191    50% {0.758, 0.858}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+* - indicates that target was not met.
+
+Skew Group Min/Max path pins:
+=============================
+
+-------------------------------------------------------------------------------------------
+Timing Corner               Skew Group                 Min ID    PathID    Max ID    PathID
+-------------------------------------------------------------------------------------------
+typical_delay:both.early    clk/typical_constraints    0.758       1       2.949       2
+-    min core_top/clk
+-    max data_sram/clk0
+typical_delay:both.late     clk/typical_constraints    0.758       3       2.949       4
+-    min core_top/clk
+-    max data_sram/clk0
+-------------------------------------------------------------------------------------------
+
+Timing for timing corner typical_delay:both.early, min clock_path:
+==================================================================
+
+PathID    : 1
+Path type : skew group clk/typical_constraints (path 1 of 1)
+Start     : clk
+End       : core_top/clk
+Delay     : 0.758
+
+-----------------------------------------------------------------------------------------------------------
+Name  Lib cell           Event  Incr   Arrival  Slew   Cap    Location             Distance  Fanout  Status
+                                (ns)   (ns)     (ns)   (pF)                        (um)              
+-- Clockpath trace ----------------------------------------------------------------------------------------
+clk
+-     -                  rise   -       0.000   0.000  7.553  (2320.230,2800.000)  -           2     
+core_top/clk
+-     Single_Cycle_Core  rise   0.758   0.758   1.312  -      (1252.960,2118.900)  1748.370  -       
+-----------------------------------------------------------------------------------------------------------
+
+Timing for timing corner typical_delay:both.early, max clock_path:
+==================================================================
+
+PathID    : 2
+Path type : skew group clk/typical_constraints (path 1 of 1)
+Start     : clk
+End       : data_sram/clk0
+Delay     : 2.949
+
+----------------------------------------------------------------------------------------------------------
+Name  Lib cell          Event  Incr   Arrival  Slew   Cap    Location             Distance  Fanout  Status
+                               (ns)   (ns)     (ns)   (pF)                        (um)              
+-- Clockpath trace ---------------------------------------------------------------------------------------
+clk
+-     -                 rise   -       0.000   0.000  7.553  (2320.230,2800.000)  -           2     
+data_sram/clk0
+-     sram_32x64_180nm  rise   2.949   2.949   9.245  -      (1084.800,999.200)   3036.230  -       
+----------------------------------------------------------------------------------------------------------
+
+Timing for timing corner typical_delay:both.late, min clock_path:
+=================================================================
+
+PathID    : 3
+Path type : skew group clk/typical_constraints (path 1 of 1)
+Start     : clk
+End       : core_top/clk
+Delay     : 0.758
+
+-----------------------------------------------------------------------------------------------------------
+Name  Lib cell           Event  Incr   Arrival  Slew   Cap    Location             Distance  Fanout  Status
+                                (ns)   (ns)     (ns)   (pF)                        (um)              
+-- Clockpath trace ----------------------------------------------------------------------------------------
+clk
+-     -                  rise   -       0.000   0.000  7.553  (2320.230,2800.000)  -           2     
+core_top/clk
+-     Single_Cycle_Core  rise   0.758   0.758   1.312  -      (1252.960,2118.900)  1748.370  -       
+-----------------------------------------------------------------------------------------------------------
+
+Timing for timing corner typical_delay:both.late, max clock_path:
+=================================================================
+
+PathID    : 4
+Path type : skew group clk/typical_constraints (path 1 of 1)
+Start     : clk
+End       : data_sram/clk0
+Delay     : 2.949
+
+----------------------------------------------------------------------------------------------------------
+Name  Lib cell          Event  Incr   Arrival  Slew   Cap    Location             Distance  Fanout  Status
+                               (ns)   (ns)     (ns)   (pF)                        (um)              
+-- Clockpath trace ---------------------------------------------------------------------------------------
+clk
+-     -                 rise   -       0.000   0.000  7.553  (2320.230,2800.000)  -           2     
+data_sram/clk0
+-     sram_32x64_180nm  rise   2.949   2.949   9.245  -      (1084.800,999.200)   3036.230  -       
+----------------------------------------------------------------------------------------------------------
+
+

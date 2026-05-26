@@ -1,0 +1,553 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.15-s110_1, built Fri Sep 23 13:08:12 PDT 2022
+Options:	
+Date:		Sat May  2 12:04:50 2026
+Host:		A17 (x86_64 w/Linux 4.18.0-425.3.1.el8.x86_64) (4cores*8cpus*Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz 8192KB)
+OS:		Red Hat Enterprise Linux release 8.7 (Ootpa)
+
+License:
+		[12:04:50.382305] Configured Lic search path (21.01-s002): 5280@172.17.7.7
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (31 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> getVersion
+[INFO] Loading PVS 22.20 fill procedures
+<CMD> win
+<CMD> set init_lef_file {/home/install/FOUNDRY/digital/180nm/dig/lef/all.lef ./inputs/sram_32x64_180nm.lef}
+<CMD> set init_mmmc_file ./scripts/mmmc.tcl
+<CMD> set init_verilog ./inputs/core_dft_netlist.v
+<CMD> set init_top_cell Single_Cycle_Core
+<CMD> set init_pwr_net VDD
+<CMD> set init_gnd_net VSS
+<CMD> init_design
+#% Begin Load MMMC data ... (date=05/02 12:05:21, mem=997.0M)
+#% End Load MMMC data ... (date=05/02 12:05:21, total cpu=0:00:00.0, real=0:00:00.0, peak res=997.9M, current mem=997.9M)
+rc_typ
+
+Loading LEF file /home/install/FOUNDRY/digital/180nm/dig/lef/all.lef ...
+Set DBUPerIGU to M2 pitch 1320.
+
+Loading LEF file ./inputs/sram_32x64_180nm.lef ...
+**ERROR: (IMPLF-53):	The layer 'METAL4' referenced in pin 'din0[0]' in macro 'sram_32x64_180nm' is not found in the database. A layer must be defined in the LEF technology LAYER section before it can be referenced from a macro. Review the LEF files specified in the init_lef_file variable to see if the layer does not exist or is specified after the one that defines the macro.
+Type 'man IMPLF-53' for more detail.
+**ERROR: (IMPLF-3):	Error found when processing LEF file './inputs/sram_32x64_180nm.lef'. The subsequent file content is ignored. Refer to error messages above for details. Fix the errors, and restart 'Innovus'.
+Type 'man IMPLF-3' for more detail.
+**ERROR: (IMPSYT-16013):	Loading LEF file(s) failed, and has aborted. Refer to error messages above for details. Please exit the tools and fix the errors first, then re-load design again.
+
+<CMD> set init_lef_file {/home/install/FOUNDRY/digital/180nm/dig/lef/all.lef ./inputs/sram_32x64_180nm.lef}
+<CMD> set init_mmmc_file ./scripts/mmmc.tcl
+<CMD> set init_verilog ./inputs/core_dft_netlist.v
+<CMD> set init_top_cell Single_Cycle_Core
+<CMD> set init_pwr_net VDD
+<CMD> set init_gnd_net VSS
+<CMD> init_design
+#% Begin Load MMMC data ... (date=05/02 12:07:01, mem=1008.4M)
+Extraction setup Started 
+Innovus terminated by internal (SEGV) error/signal...
+*** Stack trace:
+*** Stack trace:
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus[0x18b77a86]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(syStackTrace+0xad)[0x18b77fb8]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus[0x6a108e6]
+/lib64/libpthread.so.0(+0x12cef)[0x7f8507be5cef]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(_ZN8pesTrack8getPitchEi+0xa)[0x10fbb87a]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(_ZN14peEngineClient16getLayerInfoByIdERSt6vectorI11eeLayerInfoSaIS1_EE+0x4d1)[0x10fb2911]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(_ZN14peEngineClient12getLayerInfoERSt6vectorI11eeLayerInfoSaIS1_EE+0x6ca)[0x10fb336a]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(_ZN21eeExtEngineDesignData12setLayerInfoEv+0x37)[0x719ffc7]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus[0x10ea8131]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(_Z10dbMCRCInitv+0x27)[0x10eb0a87]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(_Z28peiInitializeExtractionSetUpb+0x2d)[0x10eb0d6d]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus[0x14d13c15]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(_ZN6TAMmmc14updateRcCornerEP14TAMmmcRcCornerPKcf9tabooleanR18TAMmmcTripleFactorS4_fS4_S6_S4_S6_S4_fS4_fS4_S6_S4_S6_S4_S6_S4_S3_S3_S3_fS4_S3_+0x3f6)[0x18f1c1b6]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(_Z30TaCmd_createOrUpdate_rc_cornerPvP10Tcl_InterpiPPc9tabooleanP6tcmCmd+0xd8a)[0x1a6dd5aa]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(_ZN10tcmBaseCmd7executeEP10Tcl_InterpiPPc+0x234)[0x1b7d9804]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(_ZN6tcmMgr9cmdParserEPvP10Tcl_InterpiPPc+0xb03)[0x1b7cd093]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(TclInvokeStringCommand+0x7a)[0x292c661a]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(TclNRRunCallbacks+0x71)[0x292cb111]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus[0x292cd323]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(Tcl_EvalEx+0x12)[0x292cdd72]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(TclNREvalObjEx+0x71)[0x292cde21]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus[0x2938396f]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus[0x292e14a4]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(TclNRRunCallbacks+0x71)[0x292cb111]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus[0x292cd323]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(Tcl_EvalEx+0x12)[0x292cdd72]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(TclNREvalObjEx+0x71)[0x292cde21]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus[0x2938396f]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus[0x292e14a4]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(TclNRRunCallbacks+0x71)[0x292cb111]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(Tcl_RecordAndEvalObj+0xd3)[0x29368dd3]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(Tcl_RecordAndEval+0x38)[0x29368f48]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(_Z17rdaEditCmdLineEndPc+0x1c6)[0x6b0bdd6]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(_ZN9seConsole7sesMode9DoExecuteERKSsPv+0xee)[0x14debf9e]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(_ZN7Redline9EmacsMode10AcceptLineEv+0x3f)[0x1648a0bf]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(_ZN7Redline11ModeCommandINS_9EmacsModeEE15CommandFnNoKeysERKN5boost8functionIFvRS1_EEERNS_6EditorE+0x60)[0x16491880]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(_ZN5boost6detail8function26void_function_obj_invoker2INS_3_bi6bind_tINS3_11unspecifiedENS_8functionIFvRN7Redline6EditorEEEENS3_5list1INS_3argILi1EEEEEEEvS9_RKNS7_14KeyCombinationEE6invokeERNS1_15function_bufferES9_SJ_+0x1a)[0x1649fa1a]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(_ZNK7Redline7Command3RunERNS_6EditorERKNS_14KeyCombinationE+0x1b)[0x1649f23b]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(_ZN7Redline6Editor9Internals3RunEb+0xc6)[0x16486df6]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus[0x293cf2dd]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(Tcl_ServiceEvent+0x88)[0x2938fae8]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(Tcl_DoOneEvent+0x148)[0x2938fdf8]
+/home/install/INNOVUS211/tools.lnx86/lib/64bit/libtq.so(_ZN17TqEventDispatcher13processEventsE6QFlagsIN10QEventLoop17ProcessEventsFlagEE+0x69)[0x7f85100f8239]
+/home/install/INNOVUS211/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Core.so.5(_ZN10QEventLoop4execE6QFlagsINS_17ProcessEventsFlagEE+0xe9)[0x7f850f2b70c9]
+/home/install/INNOVUS211/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Core.so.5(_ZN16QCoreApplication4execEv+0x83)[0x7f850f2bf953]
+/home/install/INNOVUS211/tools.lnx86/lib/64bit/libtq.so(_ZN13TqApplication4execEv+0x176)[0x7f85100f7896]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(_Z12edi_app_initP10Tcl_Interp+0x2cb)[0x6ae92db]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(Tcl_MainEx+0x17b)[0x2938a53b]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(main+0x800)[0x5e7a680]
+/lib64/libc.so.6(__libc_start_main+0xe4)[0x7f8507031d84]
+/home/install/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus[0x6a0de66]
+========================================
+               pstack
+========================================
+Thread 9 (Thread 0x7f84f64d7700 (LWP 74141)):
+#0  0x00007f8507be4bd7 in accept () from /lib64/libpthread.so.0
+#1  0x0000000027b444ca in ProcessInfo::handleConnection(void*) ()
+#2  0x0000000006e1e085 in create_head(void*) ()
+#3  0x00007f8507bdb1ca in start_thread () from /lib64/libpthread.so.0
+#4  0x00007f8507030e73 in clone () from /lib64/libc.so.6
+Thread 8 (Thread 0x7f84f5cd6700 (LWP 74142)):
+#0  0x00007f850711e81f in select () from /lib64/libc.so.6
+#1  0x0000000027b3d0cb in ProcessInfo::sampleUsage(void*) ()
+#2  0x0000000006e1e085 in create_head(void*) ()
+#3  0x00007f8507bdb1ca in start_thread () from /lib64/libpthread.so.0
+#4  0x00007f8507030e73 in clone () from /lib64/libc.so.6
+Thread 7 (Thread 0x7f84f51c9700 (LWP 74146)):
+#0  0x00007f8507be5180 in nanosleep () from /lib64/libpthread.so.0
+#1  0x0000000008ac0a8d in rdaiLicRecheck(void*) ()
+#2  0x0000000006e1e085 in create_head(void*) ()
+#3  0x00007f8507bdb1ca in start_thread () from /lib64/libpthread.so.0
+#4  0x00007f8507030e73 in clone () from /lib64/libc.so.6
+Thread 6 (Thread 0x7f84f386d700 (LWP 74148)):
+#0  0x00007f85070f19b8 in nanosleep () from /lib64/libc.so.6
+#1  0x00007f85070f18be in sleep () from /lib64/libc.so.6
+#2  0x0000000018b9159a in syiPeakMem(void*) ()
+#3  0x0000000006e1e085 in create_head(void*) ()
+#4  0x00007f8507bdb1ca in start_thread () from /lib64/libpthread.so.0
+#5  0x00007f8507030e73 in clone () from /lib64/libc.so.6
+Thread 5 (Thread 0x7f84f2c4a700 (LWP 74217)):
+#0  0x00007f850711c0e1 in poll () from /lib64/libc.so.6
+#1  0x00007f850beb46cf in ?? () from /lib64/libxcb.so.1
+#2  0x00007f850beb635a in xcb_wait_for_event () from /lib64/libxcb.so.1
+#3  0x00007f84f2c9fa59 in ?? () from /home/install/INNOVUS211/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5XcbQpa.so.5
+#4  0x00007f850f0da17a in ?? () from /home/install/INNOVUS211/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#5  0x0000000006e1e085 in create_head(void*) ()
+#6  0x00007f8507bdb1ca in start_thread () from /lib64/libpthread.so.0
+#7  0x00007f8507030e73 in clone () from /lib64/libc.so.6
+Thread 4 (Thread 0x7f84e84e6700 (LWP 74218)):
+#0  0x00007f850711e81f in select () from /lib64/libc.so.6
+#1  0x00000000293cefd8 in NotifierThreadProc ()
+#2  0x0000000006e1e085 in create_head(void*) ()
+#3  0x00007f8507bdb1ca in start_thread () from /lib64/libpthread.so.0
+#4  0x00007f8507030e73 in clone () from /lib64/libc.so.6
+Thread 3 (Thread 0x7f84e7541700 (LWP 74287)):
+#0  0x00007f85070468dc in sigtimedwait () from /lib64/libc.so.6
+#1  0x00007f8507be587c in sigwait () from /lib64/libpthread.so.0
+#2  0x0000000006a0e7b0 in ctrlCHandle(void*) ()
+#3  0x0000000006e1e085 in create_head(void*) ()
+#4  0x00007f8507bdb1ca in start_thread () from /lib64/libpthread.so.0
+#5  0x00007f8507030e73 in clone () from /lib64/libc.so.6
+Thread 2 (Thread 0x7f84c86f1700 (LWP 74303)):
+#0  0x00007f8507be145c in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007f850f0dafbb in QWaitCondition::wait(QMutex*, unsigned long) () from /home/install/INNOVUS211/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#2  0x00007f850ed26e22 in ?? () from /home/install/INNOVUS211/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Widgets.so.5
+#3  0x00007f850f0da17a in ?? () from /home/install/INNOVUS211/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#4  0x0000000006e1e085 in create_head(void*) ()
+#5  0x00007f8507bdb1ca in start_thread () from /lib64/libpthread.so.0
+#6  0x00007f8507030e73 in clone () from /lib64/libc.so.6
+Thread 1 (Thread 0x7f84fe0ec980 (LWP 73998)):
+#0  0x00007f85070f1762 in waitpid () from /lib64/libc.so.6
+#1  0x00007f8507052cf7 in do_system () from /lib64/libc.so.6
+#2  0x0000000018b77bb2 in syStackTraceDump(_IO_FILE*, bool) ()
+#3  0x0000000018b77fb9 in syStackTrace ()
+#4  0x0000000006a108e7 in rdaiErrorHandler(int, siginfo_t*, void*) ()
+#5  <signal handler called>
+#6  0x0000000010fbb87a in pesTrack::getPitch(int) ()
+#7  0x0000000010fb2912 in peEngineClient::getLayerInfoById(std::vector<eeLayerInfo, std::allocator<eeLayerInfo> >&) ()
+#8  0x0000000010fb336b in peEngineClient::getLayerInfo(std::vector<eeLayerInfo, std::allocator<eeLayerInfo> >&) ()
+#9  0x000000000719ffc8 in eeExtEngineDesignData::setLayerInfo() ()
+#10 0x0000000010ea8132 in eeExtEngineDesignData::resetDesignData ()
+#11 0x0000000010eb0a88 in dbMCRCInit() ()
+#12 0x0000000010eb0d6e in peiInitializeExtractionSetUp(bool) ()
+#13 0x0000000014d13c16 in toiCteUpdateRcCornerPostCallback(TAMmmcRcCorner*, TAMmmcUpdateRcCornerCbkInfo*) ()
+#14 0x0000000018f1c1b7 in TAMmmc::updateRcCorner(TAMmmcRcCorner*, char const*, float, taboolean, TAMmmcTripleFactor&, taboolean, float, taboolean, TAMmmcTripleFactor&, taboolean, TAMmmcTripleFactor&, taboolean, float, taboolean, float, taboolean, TAMmmcTripleFactor&, taboolean, TAMmmcTripleFactor&, taboolean, TAMmmcTripleFactor&, taboolean, char const*, char const*, char const*, float, taboolean, char const*) ()
+#15 0x000000001a6dd5ab in TaCmd_createOrUpdate_rc_corner(void*, Tcl_Interp*, int, char**, taboolean, tcmCmd*) ()
+#16 0x000000001b7d9805 in tcmBaseCmd::execute(Tcl_Interp*, int, char**) ()
+#17 0x000000001b7cd094 in tcmMgr::cmdParser(void*, Tcl_Interp*, int, char**) ()
+#18 0x00000000292c661b in TclInvokeStringCommand ()
+#19 0x00000000292cb112 in TclNRRunCallbacks ()
+#20 0x00000000292cd324 in TclEvalEx ()
+#21 0x00000000292cdd73 in Tcl_EvalEx ()
+#22 0x00000000292cde22 in TclNREvalObjEx ()
+#23 0x0000000029383970 in TclNREvalFile ()
+#24 0x00000000292e14a5 in TclNRSourceObjCmd ()
+#25 0x00000000292cb112 in TclNRRunCallbacks ()
+#26 0x00000000292cd324 in TclEvalEx ()
+#27 0x00000000292cdd73 in Tcl_EvalEx ()
+#28 0x00000000292cde22 in TclNREvalObjEx ()
+#29 0x0000000029383970 in TclNREvalFile ()
+#30 0x00000000292e14a5 in TclNRSourceObjCmd ()
+#31 0x00000000292cb112 in TclNRRunCallbacks ()
+#32 0x0000000029368dd4 in Tcl_RecordAndEvalObj ()
+#33 0x0000000029368f49 in Tcl_RecordAndEval ()
+#34 0x0000000006b0bdd7 in rdaEditCmdLineEnd(char*) ()
+#35 0x0000000014debf9f in seConsole::sesMode::DoExecute(std::string const&, void*) ()
+#36 0x000000001648a0c0 in Redline::EmacsMode::AcceptLine() ()
+#37 0x0000000016491881 in Redline::ModeCommand<Redline::EmacsMode>::CommandFnNoKeys(boost::function<void (Redline::EmacsMode&)> const&, Redline::Editor&) ()
+#38 0x000000001649fa1b in boost::detail::function::void_function_obj_invoker2<boost::_bi::bind_t<boost::_bi::unspecified, boost::function<void (Redline::Editor&)>, boost::_bi::list1<boost::arg<1> > >, void, Redline::Editor&, Redline::KeyCombination const&>::invoke(boost::detail::function::function_buffer&, Redline::Editor&, Redline::KeyCombination const&) ()
+#39 0x000000001649f23c in Redline::Command::Run(Redline::Editor&, Redline::KeyCombination const&) const ()
+#40 0x0000000016486df7 in Redline::Editor::Internals::Run(bool) ()
+#41 0x00000000293cf2de in FileHandlerEventProc ()
+#42 0x000000002938fae9 in Tcl_ServiceEvent ()
+#43 0x000000002938fdf9 in Tcl_DoOneEvent ()
+#44 0x00007f85100f823a in TqEventDispatcher::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () from /home/install/INNOVUS211/tools.lnx86/lib/64bit/libtq.so
+#45 0x00007f850f2b70ca in QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) () from /home/install/INNOVUS211/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#46 0x00007f850f2bf954 in QCoreApplication::exec() () from /home/install/INNOVUS211/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#47 0x00007f85100f7897 in TqApplication::exec() () from /home/install/INNOVUS211/tools.lnx86/lib/64bit/libtq.so
+#48 0x0000000006ae92dc in edi_app_init(Tcl_Interp*) ()
+#49 0x000000002938a53c in Tcl_MainEx ()
+#50 0x0000000005e7a681 in main ()
+========================================
+                gdb
+========================================
+Using: gdb
+
+warning: Could not load shared library symbols for linux-vdso.so.1.
+Do you need "set solib-search-path" or "set sysroot"?
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+[New LWP 74303]
+[New LWP 74287]
+[New LWP 74218]
+[New LWP 74217]
+[New LWP 74148]
+[New LWP 74146]
+[New LWP 74142]
+[New LWP 74141]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: no loadable sections found in added symbol-file system-supplied DSO at 0x7ffc22306000
+0x00007f85070f1762 in waitpid () from /lib64/libc.so.6
+
+Thread 9 (Thread 0x7f84f64d7700 (LWP 74141)):
+#0  0x00007f8507be4bd7 in accept () from /lib64/libpthread.so.0
+#1  0x0000000027b444ca in ProcessInfo::handleConnection(void*) ()
+#2  0x0000000006e1e085 in create_head(void*) ()
+#3  0x00007f8507bdb1ca in start_thread () from /lib64/libpthread.so.0
+#4  0x00007f8507030e73 in clone () from /lib64/libc.so.6
+
+Thread 8 (Thread 0x7f84f5cd6700 (LWP 74142)):
+#0  0x00007f850711e81f in select () from /lib64/libc.so.6
+#1  0x0000000027b3d0cb in ProcessInfo::sampleUsage(void*) ()
+#2  0x0000000006e1e085 in create_head(void*) ()
+#3  0x00007f8507bdb1ca in start_thread () from /lib64/libpthread.so.0
+#4  0x00007f8507030e73 in clone () from /lib64/libc.so.6
+
+Thread 7 (Thread 0x7f84f51c9700 (LWP 74146)):
+#0  0x00007f8507be5180 in nanosleep () from /lib64/libpthread.so.0
+#1  0x0000000008ac0a8d in rdaiLicRecheck(void*) ()
+#2  0x0000000006e1e085 in create_head(void*) ()
+#3  0x00007f8507bdb1ca in start_thread () from /lib64/libpthread.so.0
+#4  0x00007f8507030e73 in clone () from /lib64/libc.so.6
+
+Thread 6 (Thread 0x7f84f386d700 (LWP 74148)):
+#0  0x00007f85070f19b8 in nanosleep () from /lib64/libc.so.6
+#1  0x00007f85070f18be in sleep () from /lib64/libc.so.6
+#2  0x0000000018b9159a in syiPeakMem(void*) ()
+#3  0x0000000006e1e085 in create_head(void*) ()
+#4  0x00007f8507bdb1ca in start_thread () from /lib64/libpthread.so.0
+#5  0x00007f8507030e73 in clone () from /lib64/libc.so.6
+
+Thread 5 (Thread 0x7f84f2c4a700 (LWP 74217)):
+#0  0x00007f850711c0e1 in poll () from /lib64/libc.so.6
+#1  0x00007f850beb46cf in ?? () from /lib64/libxcb.so.1
+#2  0x00007f850beb635a in xcb_wait_for_event () from /lib64/libxcb.so.1
+#3  0x00007f84f2c9fa59 in ?? () from /home/install/INNOVUS211/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5XcbQpa.so.5
+#4  0x00007f850f0da17a in ?? () from /home/install/INNOVUS211/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#5  0x0000000006e1e085 in create_head(void*) ()
+#6  0x00007f8507bdb1ca in start_thread () from /lib64/libpthread.so.0
+#7  0x00007f8507030e73 in clone () from /lib64/libc.so.6
+
+Thread 4 (Thread 0x7f84e84e6700 (LWP 74218)):
+#0  0x00007f850711e81f in select () from /lib64/libc.so.6
+#1  0x00000000293cefd8 in NotifierThreadProc ()
+#2  0x0000000006e1e085 in create_head(void*) ()
+#3  0x00007f8507bdb1ca in start_thread () from /lib64/libpthread.so.0
+#4  0x00007f8507030e73 in clone () from /lib64/libc.so.6
+
+Thread 3 (Thread 0x7f84e7541700 (LWP 74287)):
+#0  0x00007f85070468dc in sigtimedwait () from /lib64/libc.so.6
+#1  0x00007f8507be587c in sigwait () from /lib64/libpthread.so.0
+#2  0x0000000006a0e7b0 in ctrlCHandle(void*) ()
+#3  0x0000000006e1e085 in create_head(void*) ()
+#4  0x00007f8507bdb1ca in start_thread () from /lib64/libpthread.so.0
+#5  0x00007f8507030e73 in clone () from /lib64/libc.so.6
+
+Thread 2 (Thread 0x7f84c86f1700 (LWP 74303)):
+#0  0x00007f8507be145c in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007f850f0dafbb in QWaitCondition::wait(QMutex*, unsigned long) () from /home/install/INNOVUS211/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#2  0x00007f850ed26e22 in ?? () from /home/install/INNOVUS211/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Widgets.so.5
+#3  0x00007f850f0da17a in ?? () from /home/install/INNOVUS211/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#4  0x0000000006e1e085 in create_head(void*) ()
+#5  0x00007f8507bdb1ca in start_thread () from /lib64/libpthread.so.0
+#6  0x00007f8507030e73 in clone () from /lib64/libc.so.6
+
+Thread 1 (Thread 0x7f84fe0ec980 (LWP 73998)):
+#0  0x00007f85070f1762 in waitpid () from /lib64/libc.so.6
+#1  0x00007f8507052cf7 in do_system () from /lib64/libc.so.6
+#2  0x0000000018b77bb2 in syStackTraceDump(_IO_FILE*, bool) ()
+#3  0x0000000018b77fb9 in syStackTrace ()
+#4  0x0000000006a108e7 in rdaiErrorHandler(int, siginfo_t*, void*) ()
+#5  <signal handler called>
+#6  0x0000000010fbb87a in pesTrack::getPitch(int) ()
+#7  0x0000000010fb2912 in peEngineClient::getLayerInfoById(std::vector<eeLayerInfo, std::allocator<eeLayerInfo> >&) ()
+#8  0x0000000010fb336b in peEngineClient::getLayerInfo(std::vector<eeLayerInfo, std::allocator<eeLayerInfo> >&) ()
+#9  0x000000000719ffc8 in eeExtEngineDesignData::setLayerInfo() ()
+#10 0x0000000010ea8132 in eeExtEngineDesignData::resetDesignData ()
+#11 0x0000000010eb0a88 in dbMCRCInit() ()
+#12 0x0000000010eb0d6e in peiInitializeExtractionSetUp(bool) ()
+#13 0x0000000014d13c16 in toiCteUpdateRcCornerPostCallback(TAMmmcRcCorner*, TAMmmcUpdateRcCornerCbkInfo*) ()
+#14 0x0000000018f1c1b7 in TAMmmc::updateRcCorner(TAMmmcRcCorner*, char const*, float, taboolean, TAMmmcTripleFactor&, taboolean, float, taboolean, TAMmmcTripleFactor&, taboolean, TAMmmcTripleFactor&, taboolean, float, taboolean, float, taboolean, TAMmmcTripleFactor&, taboolean, TAMmmcTripleFactor&, taboolean, TAMmmcTripleFactor&, taboolean, char const*, char const*, char const*, float, taboolean, char const*) ()
+#15 0x000000001a6dd5ab in TaCmd_createOrUpdate_rc_corner(void*, Tcl_Interp*, int, char**, taboolean, tcmCmd*) ()
+#16 0x000000001b7d9805 in tcmBaseCmd::execute(Tcl_Interp*, int, char**) ()
+#17 0x000000001b7cd094 in tcmMgr::cmdParser(void*, Tcl_Interp*, int, char**) ()
+#18 0x00000000292c661b in TclInvokeStringCommand ()
+#19 0x00000000292cb112 in TclNRRunCallbacks ()
+#20 0x00000000292cd324 in TclEvalEx ()
+#21 0x00000000292cdd73 in Tcl_EvalEx ()
+#22 0x00000000292cde22 in TclNREvalObjEx ()
+#23 0x0000000029383970 in TclNREvalFile ()
+#24 0x00000000292e14a5 in TclNRSourceObjCmd ()
+#25 0x00000000292cb112 in TclNRRunCallbacks ()
+#26 0x00000000292cd324 in TclEvalEx ()
+#27 0x00000000292cdd73 in Tcl_EvalEx ()
+#28 0x00000000292cde22 in TclNREvalObjEx ()
+#29 0x0000000029383970 in TclNREvalFile ()
+#30 0x00000000292e14a5 in TclNRSourceObjCmd ()
+#31 0x00000000292cb112 in TclNRRunCallbacks ()
+#32 0x0000000029368dd4 in Tcl_RecordAndEvalObj ()
+#33 0x0000000029368f49 in Tcl_RecordAndEval ()
+#34 0x0000000006b0bdd7 in rdaEditCmdLineEnd(char*) ()
+#35 0x0000000014debf9f in seConsole::sesMode::DoExecute(std::string const&, void*) ()
+#36 0x000000001648a0c0 in Redline::EmacsMode::AcceptLine() ()
+#37 0x0000000016491881 in Redline::ModeCommand<Redline::EmacsMode>::CommandFnNoKeys(boost::function<void (Redline::EmacsMode&)> const&, Redline::Editor&) ()
+#38 0x000000001649fa1b in boost::detail::function::void_function_obj_invoker2<boost::_bi::bind_t<boost::_bi::unspecified, boost::function<void (Redline::Editor&)>, boost::_bi::list1<boost::arg<1> > >, void, Redline::Editor&, Redline::KeyCombination const&>::invoke(boost::detail::function::function_buffer&, Redline::Editor&, Redline::KeyCombination const&) ()
+#39 0x000000001649f23c in Redline::Command::Run(Redline::Editor&, Redline::KeyCombination const&) const ()
+#40 0x0000000016486df7 in Redline::Editor::Internals::Run(bool) ()
+#41 0x00000000293cf2de in FileHandlerEventProc ()
+#42 0x000000002938fae9 in Tcl_ServiceEvent ()
+#43 0x000000002938fdf9 in Tcl_DoOneEvent ()
+#44 0x00007f85100f823a in TqEventDispatcher::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () from /home/install/INNOVUS211/tools.lnx86/lib/64bit/libtq.so
+#45 0x00007f850f2b70ca in QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) () from /home/install/INNOVUS211/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#46 0x00007f850f2bf954 in QCoreApplication::exec() () from /home/install/INNOVUS211/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#47 0x00007f85100f7897 in TqApplication::exec() () from /home/install/INNOVUS211/tools.lnx86/lib/64bit/libtq.so
+#48 0x0000000006ae92dc in edi_app_init(Tcl_Interp*) ()
+#49 0x000000002938a53c in Tcl_MainEx ()
+#50 0x0000000005e7a681 in main ()
+A debugging session is active.
+
+	Inferior 1 [process 73998] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+Crashed in AAE on net Unknown net.
+
+*** Memory Usage v#1 (Current mem = 1001.793M, initial mem = 483.863M) ***
+*** Message Summary: 0 warning(s), 3 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:27.6, real=0:02:38, mem=1001.8M) ---

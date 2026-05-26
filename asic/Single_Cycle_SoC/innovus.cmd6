@@ -1,0 +1,65 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Sun May  3 02:40:29 2026                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v21.15-s110_1 (64bit) 09/23/2022 13:08 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: NanoRoute 21.15-s110_1 NR220912-2004/21_15-UB (database version 18.20.592) {superthreading v2.17}
+#@(#)CDS: AAE 21.15-s039 (64bit) 09/23/2022 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: CTE 21.15-s038_1 () Sep 20 2022 11:42:13 ( )
+#@(#)CDS: SYNTECH 21.15-s012_1 () Sep  5 2022 10:25:51 ( )
+#@(#)CDS: CPE v21.15-s076
+#@(#)CDS: IQuantus/TQuantus 21.1.1-s867 (64bit) Sun Jun 26 22:12:54 PDT 2022 (Linux 3.10.0-693.el7.x86_64)
+
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+suppressMessage ENCEXT-2799
+getVersion
+win
+set init_verilog {Single_Cycle_Top.v Instruction_Memory.v}
+set init_top_cell Single_Cycle_Top
+set init_lef_file {all.lef Single_Cycle_Core.lef sram_32x64_180nm.lef}
+set init_pwr_net VDD
+set init_gnd_net VSS
+init_design
+floorPlan -site tsm3site -s 800 800 60 60 60 60
+loadIoFile Single_Cycle_SoC.io
+placeInstance core_top 150 200 R0
+placeInstance data_sram 550 200 R0
+fit
+zoomBox -686.80700 -100.68950 288.37500 863.71700
+editPin -pin * -spreadType start -spacing 2 -layer Metal3
+editPin -pin {clk reset} -side Top -layer Metal3 -spreadType center
+editPin -pin MemWrite_SoC -side Bottom -layer Metal3 -spreadType center
+editPin -pin {DataAddr_SoC[*] PC_out_SoC[*]} -side Left -layer Metal3 -spreadType center
+editPin -pin {WriteData_SoC[*] read_dataout_SoC[*] Instr_out_SoC[*]} -side Right -layer Metal3 -spreadType center
+placeInstance core_top 80 250 R0
+placeInstance data_sram 450 250 R0
+fit
+fit
+placeInstance core_top 50 250 R0
+placeInstance data_sram 480 250 R0
+fit
+fit
+floorPlan -site tsm3site -s 1200 1000 60 60 60 60
+floorPlan -site tsm3site -s 1200 1000 60 60 60 60
+floorPlan -site tsm3site -s 1200 1000 60 60 60 60
+editTrim
+init_design
+floorPlan -site tsm3site -s 1200 1000 60 60 60 60
+loadIoFile Single_Cycle_SoC.io
+placeInstance core_top 100 350 R0
+placeInstance data_sram 750 350 R0
+fit
+zoomBox -49.13400 33.43650 820.75300 893.71150
+zoomBox -29.94600 386.18200 141.31350 555.54900
+zoomBox -10.77900 399.48450 112.95650 521.85300
+zoomBox 0.73950 414.16800 76.72950 489.31850
+zoomBox 3.48950 417.67350 68.08100 481.55150
+zoomBox -6.30200 405.19100 98.87500 509.20600
+zoomBox -5.66350 412.45450 83.73750 500.86750
+zoomBox -5.12000 418.62850 70.87050 493.77950
+zoomBox -4.65800 423.87650 59.93400 487.75500
+zoomBox -4.23000 428.33700 50.67350 482.63400
+zoomBox -3.86600 432.12850 42.80200 478.28100

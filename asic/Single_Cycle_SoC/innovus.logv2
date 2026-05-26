@@ -1,0 +1,196 @@
+[05/03 02:26:38      0s] 
+[05/03 02:26:38      0s] Cadence Innovus(TM) Implementation System.
+[05/03 02:26:38      0s] Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+[05/03 02:26:38      0s] 
+[05/03 02:26:38      0s] Version:	v21.15-s110_1, built Fri Sep 23 13:08:12 PDT 2022
+[05/03 02:26:38      0s] Options:	
+[05/03 02:26:38      0s] Date:		Sun May  3 02:26:38 2026
+[05/03 02:26:38      0s] Host:		A17 (x86_64 w/Linux 4.18.0-425.3.1.el8.x86_64) (4cores*8cpus*Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz 8192KB)
+[05/03 02:26:38      0s] OS:		Red Hat Enterprise Linux release 8.7 (Ootpa)
+[05/03 02:26:38      0s] 
+[05/03 02:26:38      0s] License:
+[05/03 02:26:38      0s] 		[02:26:38.382377] Configured Lic search path (21.01-s002): 5280@172.17.7.7
+
+[05/03 02:26:39      0s] 		invs	Innovus Implementation System	21.1	checkout succeeded
+[05/03 02:26:39      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[05/03 02:26:49      9s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Innovus v21.15-s110_1 (64bit) 09/23/2022 13:08 (Linux 3.10.0-693.el7.x86_64)
+[05/03 02:26:51     12s] @(#)CDS: NanoRoute 21.15-s110_1 NR220912-2004/21_15-UB (database version 18.20.592) {superthreading v2.17}
+[05/03 02:26:51     12s] @(#)CDS: AAE 21.15-s039 (64bit) 09/23/2022 (Linux 3.10.0-693.el7.x86_64)
+[05/03 02:26:51     12s] @(#)CDS: CTE 21.15-s038_1 () Sep 20 2022 11:42:13 ( )
+[05/03 02:26:51     12s] @(#)CDS: SYNTECH 21.15-s012_1 () Sep  5 2022 10:25:51 ( )
+[05/03 02:26:51     12s] @(#)CDS: CPE v21.15-s076
+[05/03 02:26:51     12s] @(#)CDS: IQuantus/TQuantus 21.1.1-s867 (64bit) Sun Jun 26 22:12:54 PDT 2022 (Linux 3.10.0-693.el7.x86_64)
+[05/03 02:26:51     12s] @(#)CDS: OA 22.60-p076 Wed May 18 13:45:29 2022
+[05/03 02:26:51     12s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[05/03 02:26:51     12s] @(#)CDS: RCDB 11.15.0
+[05/03 02:26:51     12s] @(#)CDS: STYLUS 21.12-s013_1 (08/15/2022 08:25 PDT)
+[05/03 02:26:51     12s] @(#)CDS: SystemPlanner-21.15Rel-8720 (21.15) (2022-08-22 18:31:54+0800)
+[05/03 02:26:51     12s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_100289_A17_student_EdFvi5.
+
+[05/03 02:26:51     12s] Change the soft stacksize limit to 0.2%RAM (31 mbytes). Set global soft_stack_size_limit to change the value.
+[05/03 02:26:52     13s] 
+[05/03 02:26:52     13s] **INFO:  MMMC transition support version v31-84 
+[05/03 02:26:52     13s] 
+[05/03 02:26:52     13s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[05/03 02:26:52     13s] <CMD> suppressMessage ENCEXT-2799
+[05/03 02:26:53     13s] <CMD> getVersion
+[05/03 02:26:53     13s] [INFO] Loading PVS 22.20 fill procedures
+[05/03 02:26:53     13s] <CMD> win
+[05/03 02:26:58     14s] <CMD> set init_verilog {Single_Cycle_Top.v Instruction_Memory.v}
+[05/03 02:26:58     14s] <CMD> set init_top_cell Single_Cycle_Top
+[05/03 02:26:58     14s] <CMD> set init_lef_file {all.lef Single_Cycle_Core.lef sram_32x64_180nm.lef}
+[05/03 02:26:58     14s] <CMD> set init_pwr_net VDD
+[05/03 02:26:58     14s] <CMD> set init_gnd_net VSS
+[05/03 02:26:58     14s] <CMD> init_design
+[05/03 02:26:58     14s] 
+[05/03 02:26:58     14s] Loading LEF file all.lef ...
+[05/03 02:26:58     14s] Set DBUPerIGU to M2 pitch 1320.
+[05/03 02:26:58     14s] 
+[05/03 02:26:58     14s] Loading LEF file Single_Cycle_Core.lef ...
+[05/03 02:26:58     14s] 
+[05/03 02:26:58     14s] Loading LEF file sram_32x64_180nm.lef ...
+[05/03 02:26:58     14s] **WARN: (IMPLF-63):	The layer 'metal1' referenced in OBS in macro 'sram_32x64_180nm' is not found in the database. The obstruction geometries specified on the layer are being ignored. A layer must be defined in the LEF technology LAYER section before it can be referenced from a macro. Review the LEF files specified in the init_lef_file variable to see if the layer does not exist or is specified after the one that defines the macro.
+[05/03 02:26:58     14s] Type 'man IMPLF-63' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-63):	The layer 'metal2' referenced in OBS in macro 'sram_32x64_180nm' is not found in the database. The obstruction geometries specified on the layer are being ignored. A layer must be defined in the LEF technology LAYER section before it can be referenced from a macro. Review the LEF files specified in the init_lef_file variable to see if the layer does not exist or is specified after the one that defines the macro.
+[05/03 02:26:58     14s] Type 'man IMPLF-63' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-63):	The layer 'metal3' referenced in OBS in macro 'sram_32x64_180nm' is not found in the database. The obstruction geometries specified on the layer are being ignored. A layer must be defined in the LEF technology LAYER section before it can be referenced from a macro. Review the LEF files specified in the init_lef_file variable to see if the layer does not exist or is specified after the one that defines the macro.
+[05/03 02:26:58     14s] Type 'man IMPLF-63' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-63):	The layer 'metal4' referenced in OBS in macro 'sram_32x64_180nm' is not found in the database. The obstruction geometries specified on the layer are being ignored. A layer must be defined in the LEF technology LAYER section before it can be referenced from a macro. Review the LEF files specified in the init_lef_file variable to see if the layer does not exist or is specified after the one that defines the macro.
+[05/03 02:26:58     14s] Type 'man IMPLF-63' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-200):	Pin 'din0[0]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-200' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-200):	Pin 'din0[1]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-200' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-200):	Pin 'din0[2]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-200' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-200):	Pin 'din0[3]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-200' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-200):	Pin 'din0[4]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-200' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-200):	Pin 'din0[5]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-200' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-200):	Pin 'din0[6]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-200' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-200):	Pin 'din0[7]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-200' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-200):	Pin 'din0[8]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-200' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-200):	Pin 'din0[9]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-200' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-200):	Pin 'din0[10]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-200' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-200):	Pin 'din0[11]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-200' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-200):	Pin 'din0[12]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-200' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-200):	Pin 'din0[13]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-200' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-200):	Pin 'din0[14]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-200' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-200):	Pin 'din0[15]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-200' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-200):	Pin 'din0[16]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-200' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-200):	Pin 'din0[17]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-200' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-200):	Pin 'din0[18]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-200' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-200):	Pin 'din0[19]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-200' for more detail.
+[05/03 02:26:58     14s] **WARN: (EMS-27):	Message (IMPLF-200) has exceeded the current message display limit of 20.
+[05/03 02:26:58     14s] To increase the message display limit, refer to the product command reference manual.
+[05/03 02:26:58     14s] **WARN: (IMPLF-201):	Pin 'dout0[0]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-201' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-201):	Pin 'dout0[1]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-201' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-201):	Pin 'dout0[2]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-201' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-201):	Pin 'dout0[3]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-201' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-201):	Pin 'dout0[4]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-201' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-201):	Pin 'dout0[5]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-201' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-201):	Pin 'dout0[6]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-201' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-201):	Pin 'dout0[7]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-201' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-201):	Pin 'dout0[8]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-201' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-201):	Pin 'dout0[9]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-201' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-201):	Pin 'dout0[10]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-201' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-201):	Pin 'dout0[11]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-201' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-201):	Pin 'dout0[12]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-201' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-201):	Pin 'dout0[13]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-201' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-201):	Pin 'dout0[14]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-201' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-201):	Pin 'dout0[15]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-201' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-201):	Pin 'dout0[16]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-201' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-201):	Pin 'dout0[17]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-201' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-201):	Pin 'dout0[18]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-201' for more detail.
+[05/03 02:26:58     14s] **WARN: (IMPLF-201):	Pin 'dout0[19]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:26:58     14s] Type 'man IMPLF-201' for more detail.
+[05/03 02:26:58     14s] **WARN: (EMS-27):	Message (IMPLF-201) has exceeded the current message display limit of 20.
+[05/03 02:26:58     14s] To increase the message display limit, refer to the product command reference manual.
+[05/03 02:26:58     14s] 
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+[05/03 02:26:58     14s] *** End library_loading (cpu=0.00min, real=0.00min, mem=0.0M, fe_cpu=0.24min, fe_real=0.33min, fe_mem=1011.6M) ***
+[05/03 02:26:58     14s] #% Begin Load netlist data ... (date=05/03 02:26:58, mem=1013.8M)
+[05/03 02:26:58     14s] *** Begin netlist parsing (mem=1011.6M) ***
+[05/03 02:26:58     14s] Created 0 new cells from 0 timing libraries.
+[05/03 02:26:58     14s] Reading netlist ...
+[05/03 02:26:58     14s] Backslashed names will retain backslash and a trailing blank character.
+[05/03 02:26:58     14s] **ERROR: (IMPVL-209):	In Verilog file 'Single_Cycle_Top.v', check line 25 near the text ~ for the issue: 'syntax error'.  Update the text accordingly.
+Type 'man IMPVL-209' for more detail.
+[05/03 02:26:58     14s] Verilog file 'Single_Cycle_Top.v' has errors!  See above.
+[05/03 02:26:58     14s] 
+[05/03 02:26:58     14s] *** Memory Usage v#1 (Current mem = 1014.609M, initial mem = 483.863M) ***
+[05/03 02:26:58     14s] #% End Load netlist data ... (date=05/03 02:26:58, total cpu=0:00:00.0, real=0:00:00.0, peak res=1018.3M, current mem=1018.3M)
+[05/03 02:26:58     14s] **ERROR: (IMPVL-902):	Failed to read netlist Single_Cycle_Top.v Instruction_Memory.v. See previous error messages for details.  Resolve the issues and reload the design.
+[05/03 02:26:58     14s] 
+[05/03 02:26:58     14s] <CMD> floorPlan -site tsm3site -s 800 800 60 60 60 60
+[05/03 02:26:58     14s] **ERROR: (IMPTCM-162):	"tsm3site" does not match any object in design for specified type "site " object in command "floorPlan".
+
+[05/03 02:26:58     14s] Usage: floorPlan [-help] [-adjustToSite] [-coreMarginsBy {io die}]
+[05/03 02:26:58     14s]                  [-dieSizeByIoHeight {min max}] [-flip {n s f}]
+[05/03 02:26:58     14s]                  [-fplanOrigin {center llcorner}] [-noResize] [-noSnapToGrid]
+[05/03 02:26:58     14s]                  [-overlapSameSiteRow] {-b <die_box io_box core_box> | -s <W H Left Bottom Right Top> | -d <W H Left Bottom Right Top> | -r <aspectRatio [rowDensity [Left Bottom Right Top]]> | -su <aspectRatio [stdCellDensity [Left Bottom Right Top]]> | -keepShape <util>} [-site <site> | -siteOnly <site>]
+[05/03 02:26:58     14s] 
+[05/03 02:26:58     14s] **ERROR: (IMPTCM-4):	The value "tsm3site" specified for the object type of argument "-site" is not a valid object. Review the command specification and remove the argument or specify a legal value.
+
+[05/03 02:26:58     14s] <CMD> loadIoFile Single_Cycle_SoC.io
+[05/03 02:26:58     14s] **ERROR: Design must be in memory before running "loadIoFile"
+[05/03 02:26:58     14s] Design must be in memory before running "loadIoFile"
+[05/03 02:26:58     14s] <CMD> addInst -inst core_top -cell Single_Cycle_Core -loc 150 200 -ori R0
+[05/03 02:26:58     14s] **ERROR: Design must be in memory before running "addInst"
+[05/03 02:26:58     14s] Design must be in memory before running "addInst"
+[05/03 02:26:58     14s] <CMD> addInst -inst data_sram -cell sram_32x64_180nm -loc 550 200 -ori R0
+[05/03 02:26:58     14s] **ERROR: Design must be in memory before running "addInst"
+[05/03 02:26:58     14s] Design must be in memory before running "addInst"
+[05/03 02:27:48     20s] invalid command name "fitexit"
+[05/03 02:27:56     20s] 
+[05/03 02:27:56     20s] *** Memory Usage v#1 (Current mem = 1011.617M, initial mem = 483.863M) ***
+[05/03 02:27:56     20s] 
+[05/03 02:27:56     20s] *** Summary of all messages that are not suppressed in this session:
+[05/03 02:27:56     20s] Severity  ID               Count  Summary                                  
+[05/03 02:27:56     20s] WARNING   IMPLF-63             4  The layer '%s' referenced %s is not foun...
+[05/03 02:27:56     20s] WARNING   IMPLF-200          113  Pin '%s' in macro '%s' has no ANTENNAGAT...
+[05/03 02:27:56     20s] WARNING   IMPLF-201          180  Pin '%s' in macro '%s' has no ANTENNADIF...
+[05/03 02:27:56     20s] ERROR     IMPVL-902            1  Failed to read netlist %s. See previous ...
+[05/03 02:27:56     20s] ERROR     IMPVL-209            1  In Verilog file '%s', check line %d near...
+[05/03 02:27:56     20s] ERROR     IMPTCM-4             1  The value "%s" specified for the %s type...
+[05/03 02:27:56     20s] ERROR     IMPTCM-162           1  "%s" does not match any object in design...
+[05/03 02:27:56     20s] *** Message Summary: 297 warning(s), 4 error(s)
+[05/03 02:27:56     20s] 
+[05/03 02:27:56     20s] --- Ending "Innovus" (totcpu=0:00:20.9, real=0:01:18, mem=1011.6M) ---

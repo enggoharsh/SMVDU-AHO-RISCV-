@@ -1,0 +1,416 @@
+[05/03 02:40:16      0s] 
+[05/03 02:40:16      0s] Cadence Innovus(TM) Implementation System.
+[05/03 02:40:16      0s] Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+[05/03 02:40:16      0s] 
+[05/03 02:40:16      0s] Version:	v21.15-s110_1, built Fri Sep 23 13:08:12 PDT 2022
+[05/03 02:40:16      0s] Options:	
+[05/03 02:40:16      0s] Date:		Sun May  3 02:40:16 2026
+[05/03 02:40:16      0s] Host:		A17 (x86_64 w/Linux 4.18.0-425.3.1.el8.x86_64) (4cores*8cpus*Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz 8192KB)
+[05/03 02:40:16      0s] OS:		Red Hat Enterprise Linux release 8.7 (Ootpa)
+[05/03 02:40:16      0s] 
+[05/03 02:40:16      0s] License:
+[05/03 02:40:16      0s] 		[02:40:16.382313] Configured Lic search path (21.01-s002): 5280@172.17.7.7
+
+[05/03 02:40:16      0s] 		invs	Innovus Implementation System	21.1	checkout succeeded
+[05/03 02:40:16      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[05/03 02:40:26      9s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Innovus v21.15-s110_1 (64bit) 09/23/2022 13:08 (Linux 3.10.0-693.el7.x86_64)
+[05/03 02:40:28     12s] @(#)CDS: NanoRoute 21.15-s110_1 NR220912-2004/21_15-UB (database version 18.20.592) {superthreading v2.17}
+[05/03 02:40:28     12s] @(#)CDS: AAE 21.15-s039 (64bit) 09/23/2022 (Linux 3.10.0-693.el7.x86_64)
+[05/03 02:40:28     12s] @(#)CDS: CTE 21.15-s038_1 () Sep 20 2022 11:42:13 ( )
+[05/03 02:40:28     12s] @(#)CDS: SYNTECH 21.15-s012_1 () Sep  5 2022 10:25:51 ( )
+[05/03 02:40:28     12s] @(#)CDS: CPE v21.15-s076
+[05/03 02:40:28     12s] @(#)CDS: IQuantus/TQuantus 21.1.1-s867 (64bit) Sun Jun 26 22:12:54 PDT 2022 (Linux 3.10.0-693.el7.x86_64)
+[05/03 02:40:28     12s] @(#)CDS: OA 22.60-p076 Wed May 18 13:45:29 2022
+[05/03 02:40:28     12s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[05/03 02:40:28     12s] @(#)CDS: RCDB 11.15.0
+[05/03 02:40:28     12s] @(#)CDS: STYLUS 21.12-s013_1 (08/15/2022 08:25 PDT)
+[05/03 02:40:28     12s] @(#)CDS: SystemPlanner-21.15Rel-8720 (21.15) (2022-08-22 18:31:54+0800)
+[05/03 02:40:28     12s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_104821_A17_student_do9HzV.
+
+[05/03 02:40:28     12s] Change the soft stacksize limit to 0.2%RAM (31 mbytes). Set global soft_stack_size_limit to change the value.
+[05/03 02:40:30     13s] 
+[05/03 02:40:30     13s] **INFO:  MMMC transition support version v31-84 
+[05/03 02:40:30     13s] 
+[05/03 02:40:30     13s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[05/03 02:40:30     13s] <CMD> suppressMessage ENCEXT-2799
+[05/03 02:40:30     13s] <CMD> getVersion
+[05/03 02:40:31     13s] [INFO] Loading PVS 22.20 fill procedures
+[05/03 02:40:31     13s] <CMD> win
+[05/03 02:41:01     17s] <CMD> set init_verilog {Single_Cycle_Top.v Instruction_Memory.v}
+[05/03 02:41:01     17s] <CMD> set init_top_cell Single_Cycle_Top
+[05/03 02:41:01     17s] <CMD> set init_lef_file {all.lef Single_Cycle_Core.lef sram_32x64_180nm.lef}
+[05/03 02:41:01     17s] <CMD> set init_pwr_net VDD
+[05/03 02:41:01     17s] <CMD> set init_gnd_net VSS
+[05/03 02:41:01     17s] <CMD> init_design
+[05/03 02:41:01     17s] 
+[05/03 02:41:01     17s] Loading LEF file all.lef ...
+[05/03 02:41:01     17s] Set DBUPerIGU to M2 pitch 1320.
+[05/03 02:41:01     17s] 
+[05/03 02:41:01     17s] Loading LEF file Single_Cycle_Core.lef ...
+[05/03 02:41:01     17s] 
+[05/03 02:41:01     17s] Loading LEF file sram_32x64_180nm.lef ...
+[05/03 02:41:01     17s] **WARN: (IMPLF-63):	The layer 'metal1' referenced in OBS in macro 'sram_32x64_180nm' is not found in the database. The obstruction geometries specified on the layer are being ignored. A layer must be defined in the LEF technology LAYER section before it can be referenced from a macro. Review the LEF files specified in the init_lef_file variable to see if the layer does not exist or is specified after the one that defines the macro.
+[05/03 02:41:01     17s] Type 'man IMPLF-63' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-63):	The layer 'metal2' referenced in OBS in macro 'sram_32x64_180nm' is not found in the database. The obstruction geometries specified on the layer are being ignored. A layer must be defined in the LEF technology LAYER section before it can be referenced from a macro. Review the LEF files specified in the init_lef_file variable to see if the layer does not exist or is specified after the one that defines the macro.
+[05/03 02:41:01     17s] Type 'man IMPLF-63' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-63):	The layer 'metal3' referenced in OBS in macro 'sram_32x64_180nm' is not found in the database. The obstruction geometries specified on the layer are being ignored. A layer must be defined in the LEF technology LAYER section before it can be referenced from a macro. Review the LEF files specified in the init_lef_file variable to see if the layer does not exist or is specified after the one that defines the macro.
+[05/03 02:41:01     17s] Type 'man IMPLF-63' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-63):	The layer 'metal4' referenced in OBS in macro 'sram_32x64_180nm' is not found in the database. The obstruction geometries specified on the layer are being ignored. A layer must be defined in the LEF technology LAYER section before it can be referenced from a macro. Review the LEF files specified in the init_lef_file variable to see if the layer does not exist or is specified after the one that defines the macro.
+[05/03 02:41:01     17s] Type 'man IMPLF-63' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-200):	Pin 'din0[0]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-200' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-200):	Pin 'din0[1]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-200' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-200):	Pin 'din0[2]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-200' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-200):	Pin 'din0[3]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-200' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-200):	Pin 'din0[4]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-200' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-200):	Pin 'din0[5]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-200' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-200):	Pin 'din0[6]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-200' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-200):	Pin 'din0[7]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-200' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-200):	Pin 'din0[8]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-200' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-200):	Pin 'din0[9]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-200' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-200):	Pin 'din0[10]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-200' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-200):	Pin 'din0[11]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-200' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-200):	Pin 'din0[12]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-200' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-200):	Pin 'din0[13]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-200' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-200):	Pin 'din0[14]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-200' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-200):	Pin 'din0[15]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-200' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-200):	Pin 'din0[16]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-200' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-200):	Pin 'din0[17]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-200' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-200):	Pin 'din0[18]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-200' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-200):	Pin 'din0[19]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-200' for more detail.
+[05/03 02:41:01     17s] **WARN: (EMS-27):	Message (IMPLF-200) has exceeded the current message display limit of 20.
+[05/03 02:41:01     17s] To increase the message display limit, refer to the product command reference manual.
+[05/03 02:41:01     17s] **WARN: (IMPLF-201):	Pin 'dout0[0]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-201' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-201):	Pin 'dout0[1]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-201' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-201):	Pin 'dout0[2]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-201' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-201):	Pin 'dout0[3]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-201' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-201):	Pin 'dout0[4]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-201' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-201):	Pin 'dout0[5]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-201' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-201):	Pin 'dout0[6]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-201' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-201):	Pin 'dout0[7]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-201' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-201):	Pin 'dout0[8]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-201' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-201):	Pin 'dout0[9]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-201' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-201):	Pin 'dout0[10]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-201' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-201):	Pin 'dout0[11]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-201' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-201):	Pin 'dout0[12]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-201' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-201):	Pin 'dout0[13]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-201' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-201):	Pin 'dout0[14]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-201' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-201):	Pin 'dout0[15]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-201' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-201):	Pin 'dout0[16]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-201' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-201):	Pin 'dout0[17]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-201' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-201):	Pin 'dout0[18]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-201' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPLF-201):	Pin 'dout0[19]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[05/03 02:41:01     17s] Type 'man IMPLF-201' for more detail.
+[05/03 02:41:01     17s] **WARN: (EMS-27):	Message (IMPLF-201) has exceeded the current message display limit of 20.
+[05/03 02:41:01     17s] To increase the message display limit, refer to the product command reference manual.
+[05/03 02:41:01     17s] 
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+[05/03 02:41:01     17s] *** End library_loading (cpu=0.00min, real=0.00min, mem=0.0M, fe_cpu=0.29min, fe_real=0.75min, fe_mem=1003.7M) ***
+[05/03 02:41:01     17s] #% Begin Load netlist data ... (date=05/03 02:41:01, mem=1014.5M)
+[05/03 02:41:01     17s] *** Begin netlist parsing (mem=1003.7M) ***
+[05/03 02:41:01     17s] Created 0 new cells from 0 timing libraries.
+[05/03 02:41:01     17s] Reading netlist ...
+[05/03 02:41:01     17s] Backslashed names will retain backslash and a trailing blank character.
+[05/03 02:41:01     17s] Reading verilog netlist 'Single_Cycle_Top.v'
+[05/03 02:41:01     17s] Reading verilog netlist 'Instruction_Memory.v'
+[05/03 02:41:01     17s] 
+[05/03 02:41:01     17s] *** Memory Usage v#1 (Current mem = 1006.727M, initial mem = 483.863M) ***
+[05/03 02:41:01     17s] *** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=1006.7M) ***
+[05/03 02:41:01     17s] #% End Load netlist data ... (date=05/03 02:41:01, total cpu=0:00:00.0, real=0:00:00.0, peak res=1019.5M, current mem=1019.5M)
+[05/03 02:41:01     17s] Set top cell to Single_Cycle_Top.
+[05/03 02:41:01     17s] Hooked 0 DB cells to tlib cells.
+[05/03 02:41:01     17s] Ending "BindLib:" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1023.5M, current mem=1023.5M)
+[05/03 02:41:01     17s] Starting recursive module instantiation check.
+[05/03 02:41:01     17s] No recursion found.
+[05/03 02:41:01     17s] Building hierarchical netlist for Cell Single_Cycle_Top ...
+[05/03 02:41:01     17s] *** Netlist is unique.
+[05/03 02:41:01     17s] Setting Std. cell height to 10080 DBU (smallest ABS library cell).
+[05/03 02:41:01     17s] ** info: there are 492 modules.
+[05/03 02:41:01     17s] ** info: there are 0 stdCell insts.
+[05/03 02:41:01     17s] ** info: there are 2 macros.
+[05/03 02:41:01     17s] 
+[05/03 02:41:01     17s] *** Memory Usage v#1 (Current mem = 1071.141M, initial mem = 483.863M) ***
+[05/03 02:41:01     17s] **WARN: (IMPFP-3961):	The techSite 'corner' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/03 02:41:01     17s] Type 'man IMPFP-3961' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPFP-3961):	The techSite 'pad' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/03 02:41:01     17s] Type 'man IMPFP-3961' for more detail.
+[05/03 02:41:01     17s] Horizontal Layer M1 offset = 560 (derived)
+[05/03 02:41:01     17s] Vertical Layer M2 offset = 660 (derived)
+[05/03 02:41:01     17s] Start create_tracks
+[05/03 02:41:01     17s] Generated pitch 0.99 in Metal6 is different from 1.32 defined in technology file in preferred direction.
+[05/03 02:41:01     17s] Generated pitch 0.56 in Metal5 is different from 1.12 defined in technology file in preferred direction.
+[05/03 02:41:01     17s] **WARN: (IMPSYT-7328):	The design has been initialized in physical-only mode because the init_mmmc_file global variable was not defined. Timing analysis will not be possible within this session. You can only use commands that do not depend on timing data. If you need to use timing, you need to restart with an init_mmmc_file to define the timing setup, or you can save this design and use restoreDesign -mmmc_file <viewDef.tcl> to add the timing setup information.
+[05/03 02:41:01     17s] Extraction setup Started 
+[05/03 02:41:01     17s] 
+[05/03 02:41:01     17s] Trim Metal Layers:
+[05/03 02:41:01     17s] 
+[05/03 02:41:01     17s] *** Summary of all messages that are not suppressed in this session:
+[05/03 02:41:01     17s] Severity  ID               Count  Summary                                  
+[05/03 02:41:01     17s] WARNING   IMPLF-63             4  The layer '%s' referenced %s is not foun...
+[05/03 02:41:01     17s] WARNING   IMPLF-200          113  Pin '%s' in macro '%s' has no ANTENNAGAT...
+[05/03 02:41:01     17s] WARNING   IMPLF-201          180  Pin '%s' in macro '%s' has no ANTENNADIF...
+[05/03 02:41:01     17s] WARNING   IMPFP-3961           2  The techSite '%s' has no related standar...
+[05/03 02:41:01     17s] WARNING   IMPSYT-7328          1  The design has been initialized in physi...
+[05/03 02:41:01     17s] *** Message Summary: 300 warning(s), 0 error(s)
+[05/03 02:41:01     17s] 
+[05/03 02:41:01     17s] <CMD> floorPlan -site tsm3site -s 800 800 60 60 60 60
+[05/03 02:41:01     17s] **WARN: (IMPFP-3300):	FPlan core utilization is greater than 1.
+[05/03 02:41:01     17s] **WARN: (IMPFP-4026):	Adjusting core to 'Left' to 60.060000 due to track/row misalignment. To force the value, specify the -noSnapToGrid option or use fpiSetSnapRule command to specify the die/core to different grid.
+[05/03 02:41:01     17s] **WARN: (IMPFP-4026):	Adjusting core to 'Bottom' to 59.920000 due to track/row misalignment. To force the value, specify the -noSnapToGrid option or use fpiSetSnapRule command to specify the die/core to different grid.
+[05/03 02:41:01     17s] **WARN: (IMPFP-4026):	Adjusting core to 'Right' to 60.060000 due to track/row misalignment. To force the value, specify the -noSnapToGrid option or use fpiSetSnapRule command to specify the die/core to different grid.
+[05/03 02:41:01     17s] **WARN: (IMPFP-4026):	Adjusting core to 'Top' to 59.920000 due to track/row misalignment. To force the value, specify the -noSnapToGrid option or use fpiSetSnapRule command to specify the die/core to different grid.
+[05/03 02:41:01     17s] **WARN: (IMPFP-3961):	The techSite 'corner' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/03 02:41:01     17s] Type 'man IMPFP-3961' for more detail.
+[05/03 02:41:01     17s] **WARN: (IMPFP-3961):	The techSite 'pad' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/03 02:41:01     17s] Type 'man IMPFP-3961' for more detail.
+[05/03 02:41:01     17s] Horizontal Layer M1 offset = 560 (derived)
+[05/03 02:41:01     17s] Vertical Layer M2 offset = 660 (derived)
+[05/03 02:41:01     17s] Start create_tracks
+[05/03 02:41:01     17s] Generated pitch 0.99 in Metal6 is different from 1.32 defined in technology file in preferred direction.
+[05/03 02:41:01     17s] Generated pitch 0.56 in Metal5 is different from 1.12 defined in technology file in preferred direction.
+[05/03 02:41:01     17s] **WARN: (IMPFP-325):	Floorplan of the design is resized. All current floorplan objects are automatically derived based on specified new floorplan. This may change blocks, fixed standard cells, existing routes and blockages.
+[05/03 02:41:01     17s] <CMD> loadIoFile Single_Cycle_SoC.io
+[05/03 02:41:01     17s] Reading IO assignment file "Single_Cycle_SoC.io" ...
+[05/03 02:41:01     17s] **Warn: ignored IO file "Single_Cycle_SoC.io" line 1: (globals version = 3 io_order = default)
+  Reason: unable to recognize keyword.
+[05/03 02:41:01     17s] **Warn: ignored IO file "Single_Cycle_SoC.io" line 2: (iopad
+  Reason: unable to recognize keyword.
+[05/03 02:41:01     17s] **Warn: ignored IO file "Single_Cycle_SoC.io" line 3: (top (pin name="clk") (pin name="reset"))
+  Reason: unable to recognize keyword.
+[05/03 02:41:01     17s] **Warn: ignored IO file "Single_Cycle_SoC.io" line 4: (bottom (pin name="MemWrite_SoC"))
+  Reason: unable to recognize keyword.
+[05/03 02:41:01     17s] **Warn: ignored IO file "Single_Cycle_SoC.io" line 5: (left (pin name="DataAddr_SoC[31:0]") (pin name="PC_out_SoC[31:0]"))
+  Reason: unable to recognize keyword.
+[05/03 02:41:01     17s] **Warn: ignored IO file "Single_Cycle_SoC.io" line 6: (right (pin name="WriteData_SoC[31:0]") (pin name="read_dataout_SoC[31:0]") (pin name="Instr_out_SoC[31:0]"))
+  Reason: unable to recognize keyword.
+[05/03 02:41:01     17s] **Warn: ignored IO file "Single_Cycle_SoC.io" line 7: )
+  Reason: unable to recognize keyword.
+[05/03 02:41:01     17s] **WARN: (IMPFP-710):	File version 0 is too old.
+[05/03 02:41:01     17s] IO file version '0' is too old, will try to place io cell any way.
+[05/03 02:41:01     17s] **WARN: No preassigned IO.
+[05/03 02:41:01     17s] <CMD> placeInstance core_top 150 200 R0
+[05/03 02:41:01     17s] <CMD> placeInstance data_sram 550 200 R0
+[05/03 02:41:32     21s] <CMD> fit
+[05/03 02:42:02     24s] <CMD> zoomBox -686.80700 -100.68950 288.37500 863.71700
+[05/03 02:42:58     31s] invalid command name "fit#"
+[05/03 02:42:58     31s] invalid command name "setIoPinAddr"
+[05/03 02:43:00     31s] <CMD> editPin -pin * -spreadType start -spacing 2 -layer Metal3
+[05/03 02:43:00     31s] To speed up, if you have to run multiple editPin commands then wrap all editPin commands within  'setPinAssignMode -pinEditInBatch true' (then editPin commands) and 'setPinAssignMode -pinEditInBatch false'
+[05/03 02:43:00     31s] **ERROR: (IMPPTN-1237):	Required location information needed for the specified type is not specified. Spread type start requires start location value and spread type range requires start location and end location value. Specify the missing information and run the command again.
+
+[05/03 02:44:45     43s] invalid command name "reset_pin"
+[05/03 02:44:45     43s] <CMD> editPin -pin {clk reset} -side Top -layer Metal3 -spreadType center
+[05/03 02:44:45     43s] To speed up, if you have to run multiple editPin commands then wrap all editPin commands within  'setPinAssignMode -pinEditInBatch true' (then editPin commands) and 'setPinAssignMode -pinEditInBatch false'
+[05/03 02:44:45     43s] #create default rule from bind_ndr_rule rule=0x7f72c3006c10 0x7f72c739d538
+[05/03 02:44:45     43s] ### import design signature (1): route=1 fixed_route=1 flt_obj=0 vio=1905142130 swire=1 shield_wire=1 net_attr=1 dirty_area=0 del_dirty_area=0 cell=0 placement=0 pin_access=1 inst_pattern=1
+[05/03 02:44:45     43s] Successfully spread [2] pins.
+[05/03 02:44:45     43s] editPin : finished (cpu = 0:00:00.0 real = 0:00:00.0, mem = 1413.3M).
+[05/03 02:44:45     43s] <CMD> editPin -pin MemWrite_SoC -side Bottom -layer Metal3 -spreadType center
+[05/03 02:44:45     43s] To speed up, if you have to run multiple editPin commands then wrap all editPin commands within  'setPinAssignMode -pinEditInBatch true' (then editPin commands) and 'setPinAssignMode -pinEditInBatch false'
+[05/03 02:44:45     43s] ### import design signature (2): route=1 fixed_route=1 flt_obj=0 vio=1905142130 swire=1 shield_wire=1 net_attr=1 dirty_area=0 del_dirty_area=0 cell=0 placement=0 pin_access=1 inst_pattern=1
+[05/03 02:44:45     43s] Successfully spread [1] pins.
+[05/03 02:44:45     43s] editPin : finished (cpu = 0:00:00.0 real = 0:00:00.0, mem = 1413.3M).
+[05/03 02:44:45     43s] <CMD> editPin -pin {DataAddr_SoC[*] PC_out_SoC[*]} -side Left -layer Metal3 -spreadType center
+[05/03 02:44:45     43s] To speed up, if you have to run multiple editPin commands then wrap all editPin commands within  'setPinAssignMode -pinEditInBatch true' (then editPin commands) and 'setPinAssignMode -pinEditInBatch false'
+[05/03 02:44:45     43s] ### import design signature (3): route=1 fixed_route=1 flt_obj=0 vio=1905142130 swire=1 shield_wire=1 net_attr=1 dirty_area=0 del_dirty_area=0 cell=0 placement=0 pin_access=1 inst_pattern=1
+[05/03 02:44:45     43s] Successfully spread [64] pins.
+[05/03 02:44:45     43s] editPin : finished (cpu = 0:00:00.0 real = 0:00:00.0, mem = 1414.3M).
+[05/03 02:44:49     43s] <CMD> editPin -pin {WriteData_SoC[*] read_dataout_SoC[*] Instr_out_SoC[*]} -side Right -layer Metal3 -spreadType center
+[05/03 02:44:49     43s] To speed up, if you have to run multiple editPin commands then wrap all editPin commands within  'setPinAssignMode -pinEditInBatch true' (then editPin commands) and 'setPinAssignMode -pinEditInBatch false'
+[05/03 02:44:49     43s] ### import design signature (4): route=1 fixed_route=1 flt_obj=0 vio=1905142130 swire=1 shield_wire=1 net_attr=1 dirty_area=0 del_dirty_area=0 cell=0 placement=0 pin_access=1 inst_pattern=1
+[05/03 02:44:49     43s] Successfully spread [96] pins.
+[05/03 02:44:49     43s] editPin : finished (cpu = 0:00:00.0 real = 0:00:00.0, mem = 1415.3M).
+[05/03 02:45:10     46s] <CMD> placeInstance core_top 80 250 R0
+[05/03 02:45:10     46s] <CMD> placeInstance data_sram 450 250 R0
+[05/03 02:45:15     47s] <CMD> fit
+[05/03 03:00:25    156s] <CMD> fit
+[05/03 03:01:35    163s] <CMD> placeInstance core_top 50 250 R0
+[05/03 03:01:35    163s] <CMD> placeInstance data_sram 480 250 R0
+[05/03 03:01:37    164s] <CMD> fit
+[05/03 03:01:57    166s] <CMD> fit
+[05/03 03:04:30    183s] <CMD> floorPlan -site tsm3site -s 1200 1000 60 60 60 60
+[05/03 03:04:30    183s] **WARN: (IMPFP-4026):	Adjusting core to 'Left' to 60.060000 due to track/row misalignment. To force the value, specify the -noSnapToGrid option or use fpiSetSnapRule command to specify the die/core to different grid.
+[05/03 03:04:30    183s] **WARN: (IMPFP-4026):	Adjusting core to 'Bottom' to 59.920000 due to track/row misalignment. To force the value, specify the -noSnapToGrid option or use fpiSetSnapRule command to specify the die/core to different grid.
+[05/03 03:04:30    183s] **WARN: (IMPFP-4026):	Adjusting core to 'Right' to 60.060000 due to track/row misalignment. To force the value, specify the -noSnapToGrid option or use fpiSetSnapRule command to specify the die/core to different grid.
+[05/03 03:04:30    183s] **WARN: (IMPFP-4026):	Adjusting core to 'Top' to 59.920000 due to track/row misalignment. To force the value, specify the -noSnapToGrid option or use fpiSetSnapRule command to specify the die/core to different grid.
+[05/03 03:04:30    183s] **WARN: (IMPFP-3961):	The techSite 'corner' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/03 03:04:30    183s] Type 'man IMPFP-3961' for more detail.
+[05/03 03:04:30    183s] **WARN: (IMPFP-3961):	The techSite 'pad' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/03 03:04:30    183s] Type 'man IMPFP-3961' for more detail.
+[05/03 03:04:30    183s] Horizontal Layer M1 offset = 560 (derived)
+[05/03 03:04:30    183s] Vertical Layer M2 offset = 660 (derived)
+[05/03 03:04:30    183s] Start create_tracks
+[05/03 03:04:30    183s] Generated pitch 0.99 in Metal6 is different from 1.32 defined in technology file in preferred direction.
+[05/03 03:04:30    183s] Generated pitch 0.56 in Metal5 is different from 1.12 defined in technology file in preferred direction.
+[05/03 03:04:30    183s] **WARN: (IMPFP-316):	Not enough space for floorPlan resize. No change for floorPlan.
+[05/03 03:04:30    183s] Type 'man IMPFP-316' for more detail.
+[05/03 03:04:30    183s] **WARN: (IMPFP-3961):	The techSite 'corner' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/03 03:04:30    183s] **WARN: (IMPFP-3961):	The techSite 'pad' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/03 03:04:30    183s] Un-suppress "**WARN ..." messages.
+[05/03 03:04:52    186s] <CMD> floorPlan -site tsm3site -s 1200 1000 60 60 60 60
+[05/03 03:04:52    186s] Convert 0 swires and 0 svias from compressed groups
+[05/03 03:04:52    186s] **WARN: (IMPFP-4026):	Adjusting core to 'Left' to 60.060000 due to track/row misalignment. To force the value, specify the -noSnapToGrid option or use fpiSetSnapRule command to specify the die/core to different grid.
+[05/03 03:04:52    186s] **WARN: (IMPFP-4026):	Adjusting core to 'Bottom' to 59.920000 due to track/row misalignment. To force the value, specify the -noSnapToGrid option or use fpiSetSnapRule command to specify the die/core to different grid.
+[05/03 03:04:52    186s] **WARN: (IMPFP-4026):	Adjusting core to 'Right' to 60.060000 due to track/row misalignment. To force the value, specify the -noSnapToGrid option or use fpiSetSnapRule command to specify the die/core to different grid.
+[05/03 03:04:52    186s] **WARN: (IMPFP-4026):	Adjusting core to 'Top' to 59.920000 due to track/row misalignment. To force the value, specify the -noSnapToGrid option or use fpiSetSnapRule command to specify the die/core to different grid.
+[05/03 03:04:52    186s] **WARN: (IMPFP-3961):	The techSite 'corner' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/03 03:04:52    186s] Type 'man IMPFP-3961' for more detail.
+[05/03 03:04:52    186s] **WARN: (IMPFP-3961):	The techSite 'pad' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/03 03:04:52    186s] Type 'man IMPFP-3961' for more detail.
+[05/03 03:04:52    186s] Horizontal Layer M1 offset = 560 (derived)
+[05/03 03:04:52    186s] Vertical Layer M2 offset = 660 (derived)
+[05/03 03:04:52    186s] Start create_tracks
+[05/03 03:04:52    186s] Generated pitch 0.99 in Metal6 is different from 1.32 defined in technology file in preferred direction.
+[05/03 03:04:52    186s] Generated pitch 0.56 in Metal5 is different from 1.12 defined in technology file in preferred direction.
+[05/03 03:04:52    186s] **WARN: (IMPFP-316):	Not enough space for floorPlan resize. No change for floorPlan.
+[05/03 03:04:52    186s] Type 'man IMPFP-316' for more detail.
+[05/03 03:04:52    186s] **WARN: (IMPFP-3961):	The techSite 'corner' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/03 03:04:52    186s] **WARN: (IMPFP-3961):	The techSite 'pad' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/03 03:04:52    186s] Un-suppress "**WARN ..." messages.
+[05/03 03:05:39    191s] invalid command name "unplaceInst"
+[05/03 03:06:16    195s] invalid command name "unplaceInstance"
+[05/03 03:06:18    195s] <CMD> floorPlan -site tsm3site -s 1200 1000 60 60 60 60
+[05/03 03:06:18    195s] Convert 0 swires and 0 svias from compressed groups
+[05/03 03:06:18    195s] **WARN: (IMPFP-4026):	Adjusting core to 'Left' to 60.060000 due to track/row misalignment. To force the value, specify the -noSnapToGrid option or use fpiSetSnapRule command to specify the die/core to different grid.
+[05/03 03:06:18    195s] **WARN: (IMPFP-4026):	Adjusting core to 'Bottom' to 59.920000 due to track/row misalignment. To force the value, specify the -noSnapToGrid option or use fpiSetSnapRule command to specify the die/core to different grid.
+[05/03 03:06:18    195s] **WARN: (IMPFP-4026):	Adjusting core to 'Right' to 60.060000 due to track/row misalignment. To force the value, specify the -noSnapToGrid option or use fpiSetSnapRule command to specify the die/core to different grid.
+[05/03 03:06:18    195s] **WARN: (IMPFP-4026):	Adjusting core to 'Top' to 59.920000 due to track/row misalignment. To force the value, specify the -noSnapToGrid option or use fpiSetSnapRule command to specify the die/core to different grid.
+[05/03 03:06:18    195s] **WARN: (IMPFP-3961):	The techSite 'corner' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/03 03:06:18    195s] Type 'man IMPFP-3961' for more detail.
+[05/03 03:06:18    195s] **WARN: (IMPFP-3961):	The techSite 'pad' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/03 03:06:18    195s] Type 'man IMPFP-3961' for more detail.
+[05/03 03:06:18    195s] Horizontal Layer M1 offset = 560 (derived)
+[05/03 03:06:18    195s] Vertical Layer M2 offset = 660 (derived)
+[05/03 03:06:18    195s] Start create_tracks
+[05/03 03:06:18    195s] Generated pitch 0.99 in Metal6 is different from 1.32 defined in technology file in preferred direction.
+[05/03 03:06:18    195s] Generated pitch 0.56 in Metal5 is different from 1.12 defined in technology file in preferred direction.
+[05/03 03:06:18    195s] **WARN: (IMPFP-316):	Not enough space for floorPlan resize. No change for floorPlan.
+[05/03 03:06:18    195s] Type 'man IMPFP-316' for more detail.
+[05/03 03:06:18    195s] **WARN: (IMPFP-3961):	The techSite 'corner' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/03 03:06:18    195s] **WARN: (IMPFP-3961):	The techSite 'pad' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/03 03:06:18    195s] Un-suppress "**WARN ..." messages.
+[05/03 03:07:01    201s] <CMD> editTrim
+[05/03 03:07:01    201s] ### import design signature (5): route=1 fixed_route=1 flt_obj=0 vio=1905142130 swire=1 shield_wire=1 net_attr=1 dirty_area=0 del_dirty_area=0 cell=0 placement=0 pin_access=1 inst_pattern=1
+[05/03 03:07:03    201s] <CMD> init_design
+[05/03 03:07:03    201s] **ERROR: (IMPSYT-7329):	Cannot load design with init_design, after design is already in memory.  This command is skipped.
+
+[05/03 03:07:03    201s] <CMD> floorPlan -site tsm3site -s 1200 1000 60 60 60 60
+[05/03 03:07:03    201s] Convert 0 swires and 0 svias from compressed groups
+[05/03 03:07:03    201s] **WARN: (IMPFP-4026):	Adjusting core to 'Left' to 60.060000 due to track/row misalignment. To force the value, specify the -noSnapToGrid option or use fpiSetSnapRule command to specify the die/core to different grid.
+[05/03 03:07:03    201s] **WARN: (IMPFP-4026):	Adjusting core to 'Bottom' to 59.920000 due to track/row misalignment. To force the value, specify the -noSnapToGrid option or use fpiSetSnapRule command to specify the die/core to different grid.
+[05/03 03:07:03    201s] **WARN: (IMPFP-4026):	Adjusting core to 'Right' to 60.060000 due to track/row misalignment. To force the value, specify the -noSnapToGrid option or use fpiSetSnapRule command to specify the die/core to different grid.
+[05/03 03:07:03    201s] **WARN: (IMPFP-4026):	Adjusting core to 'Top' to 59.920000 due to track/row misalignment. To force the value, specify the -noSnapToGrid option or use fpiSetSnapRule command to specify the die/core to different grid.
+[05/03 03:07:03    201s] **WARN: (IMPFP-3961):	The techSite 'corner' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/03 03:07:03    201s] Type 'man IMPFP-3961' for more detail.
+[05/03 03:07:03    201s] **WARN: (IMPFP-3961):	The techSite 'pad' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/03 03:07:03    201s] Type 'man IMPFP-3961' for more detail.
+[05/03 03:07:03    201s] Horizontal Layer M1 offset = 560 (derived)
+[05/03 03:07:03    201s] Vertical Layer M2 offset = 660 (derived)
+[05/03 03:07:03    201s] Start create_tracks
+[05/03 03:07:03    201s] Generated pitch 0.99 in Metal6 is different from 1.32 defined in technology file in preferred direction.
+[05/03 03:07:03    201s] Generated pitch 0.56 in Metal5 is different from 1.12 defined in technology file in preferred direction.
+[05/03 03:07:03    201s] **WARN: (IMPFP-316):	Not enough space for floorPlan resize. No change for floorPlan.
+[05/03 03:07:03    201s] Type 'man IMPFP-316' for more detail.
+[05/03 03:07:04    201s] **WARN: (IMPFP-3961):	The techSite 'corner' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/03 03:07:04    201s] **WARN: (IMPFP-3961):	The techSite 'pad' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[05/03 03:07:04    201s] Un-suppress "**WARN ..." messages.
+[05/03 03:07:04    201s] <CMD> loadIoFile Single_Cycle_SoC.io
+[05/03 03:07:04    201s] Reading IO assignment file "Single_Cycle_SoC.io" ...
+[05/03 03:07:04    201s] **Warn: ignored IO file "Single_Cycle_SoC.io" line 1: (globals version = 3 io_order = default)
+  Reason: unable to recognize keyword.
+[05/03 03:07:04    201s] **Warn: ignored IO file "Single_Cycle_SoC.io" line 2: (iopad
+  Reason: unable to recognize keyword.
+[05/03 03:07:04    201s] **Warn: ignored IO file "Single_Cycle_SoC.io" line 3: (top (pin name="clk") (pin name="reset"))
+  Reason: unable to recognize keyword.
+[05/03 03:07:04    201s] **Warn: ignored IO file "Single_Cycle_SoC.io" line 4: (bottom (pin name="MemWrite_SoC"))
+  Reason: unable to recognize keyword.
+[05/03 03:07:04    201s] **Warn: ignored IO file "Single_Cycle_SoC.io" line 5: (left (pin name="DataAddr_SoC[31:0]") (pin name="PC_out_SoC[31:0]"))
+  Reason: unable to recognize keyword.
+[05/03 03:07:04    201s] **Warn: ignored IO file "Single_Cycle_SoC.io" line 6: (right (pin name="WriteData_SoC[31:0]") (pin name="read_dataout_SoC[31:0]") (pin name="Instr_out_SoC[31:0]"))
+  Reason: unable to recognize keyword.
+[05/03 03:07:04    201s] **Warn: ignored IO file "Single_Cycle_SoC.io" line 7: )
+  Reason: unable to recognize keyword.
+[05/03 03:07:04    201s] **WARN: (IMPFP-710):	File version 0 is too old.
+[05/03 03:07:04    201s] IO file version '0' is too old, will try to place io cell any way.
+[05/03 03:07:04    201s] **WARN: No preassigned IO.
+[05/03 03:07:04    201s] <CMD> placeInstance core_top 100 350 R0
+[05/03 03:07:04    201s] <CMD> placeInstance data_sram 750 350 R0
+[05/03 03:07:05    201s] <CMD> fit
+[05/03 03:08:31    211s] <CMD> zoomBox -49.13400 33.43650 820.75300 893.71150
+[05/03 03:08:32    211s] <CMD> zoomBox -29.94600 386.18200 141.31350 555.54900
+[05/03 03:08:33    211s] <CMD> zoomBox -10.77900 399.48450 112.95650 521.85300
+[05/03 03:08:33    211s] <CMD> zoomBox 0.73950 414.16800 76.72950 489.31850
+[05/03 03:08:33    211s] <CMD> zoomBox 3.48950 417.67350 68.08100 481.55150
+[05/03 03:08:34    211s] <CMD> zoomBox -6.30200 405.19100 98.87500 509.20600
+[05/03 03:08:35    212s] <CMD> zoomBox -5.66350 412.45450 83.73750 500.86750
+[05/03 03:08:35    212s] <CMD> zoomBox -5.12000 418.62850 70.87050 493.77950
+[05/03 03:08:35    212s] <CMD> zoomBox -4.65800 423.87650 59.93400 487.75500
+[05/03 03:08:36    212s] <CMD> zoomBox -4.23000 428.33700 50.67350 482.63400
+[05/03 03:08:36    212s] <CMD> zoomBox -3.86600 432.12850 42.80200 478.28100
+[05/03 03:08:52    214s] 
+--------------------------------------------------------------------------------
+Exiting Innovus on Sun May  3 03:08:52 2026
+  Total CPU time:     0:03:34
+  Total real time:    0:28:37
+  Peak memory (main): 1382.95MB
+
+[05/03 03:08:52    214s] 
+[05/03 03:08:52    214s] *** Memory Usage v#1 (Current mem = 1426.086M, initial mem = 483.863M) ***
+[05/03 03:08:52    214s] 
+[05/03 03:08:52    214s] *** Summary of all messages that are not suppressed in this session:
+[05/03 03:08:52    214s] Severity  ID               Count  Summary                                  
+[05/03 03:08:52    214s] WARNING   IMPLF-63             4  The layer '%s' referenced %s is not foun...
+[05/03 03:08:52    214s] WARNING   IMPLF-200          113  Pin '%s' in macro '%s' has no ANTENNAGAT...
+[05/03 03:08:52    214s] WARNING   IMPLF-201          180  Pin '%s' in macro '%s' has no ANTENNADIF...
+[05/03 03:08:52    214s] WARNING   IMPFP-710            2  File version %s is too old.              
+[05/03 03:08:52    214s] WARNING   IMPFP-3300           1  FPlan core utilization is greater than 1...
+[05/03 03:08:52    214s] WARNING   IMPFP-316            4  Not enough space for floorPlan resize. N...
+[05/03 03:08:52    214s] WARNING   IMPFP-325            1  Floorplan of the design is resized. All ...
+[05/03 03:08:52    214s] WARNING   IMPFP-3961          20  The techSite '%s' has no related standar...
+[05/03 03:08:52    214s] WARNING   IMPFP-4026          20  Adjusting core to '%s' to %f due to trac...
+[05/03 03:08:52    214s] ERROR     IMPPTN-1237          1  Required location information needed for...
+[05/03 03:08:52    214s] ERROR     IMPSYT-7329          1  Cannot load design with init_design, aft...
+[05/03 03:08:52    214s] WARNING   IMPSYT-7328          1  The design has been initialized in physi...
+[05/03 03:08:52    214s] *** Message Summary: 346 warning(s), 2 error(s)
+[05/03 03:08:52    214s] 
+[05/03 03:08:52    214s] --- Ending "Innovus" (totcpu=0:03:34, real=0:28:36, mem=1426.1M) ---

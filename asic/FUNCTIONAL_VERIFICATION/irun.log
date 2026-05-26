@@ -1,0 +1,47 @@
+irun(64): 15.20-s086: (c) Copyright 1995-2020 Cadence Design Systems, Inc.
+TOOL:	irun(64)	15.20-s086: Started on May 01, 2026 at 02:22:25 EDT
+irun
+	../TESTBENCHES/Exhaustive_TB.v
+	../Golden_Design_RTL/ALU_decoder.v
+	../Golden_Design_RTL/ALU_Mux.v
+	../Golden_Design_RTL/ALU.v
+	../Golden_Design_RTL/Control_Unit.v
+	../Golden_Design_RTL/Core_Datapath.v
+	../Golden_Design_RTL/Data_Memory.v
+	../Golden_Design_RTL/Extend.v
+	../Golden_Design_RTL/Instruction_Memory.v
+	../Golden_Design_RTL/Main_Decoder.v
+	../Golden_Design_RTL/PC_Mux.v
+	../Golden_Design_RTL/PC_Plus_4.v
+	../Golden_Design_RTL/PC_Target.v
+	../Golden_Design_RTL/PC.v
+	../Golden_Design_RTL/Register_File.v
+	../Golden_Design_RTL/Result_Mux.v
+	../Golden_Design_RTL/Single_Cycle_Core.v
+	../Golden_Design_RTL/Single_Cycle_Top.v
+	-access +rwc
+	-gui
+
+-------------------------------------
+Relinquished control to SimVision...
+ncsim> 
+ncsim> source /home/install/INCISIVE152/tools/inca/files/ncsimrc
+ncsim> database -open waves -into waves.shm -default
+Created default SHM database waves
+ncsim> probe -create -shm Exhaustive_TB.DUT.DataAddr Exhaustive_TB.DUT.Instr Exhaustive_TB.DUT.MemWrite Exhaustive_TB.DUT.PC Exhaustive_TB.DUT.ReadData Exhaustive_TB.DUT.WriteData Exhaustive_TB.DUT.clk Exhaustive_TB.DUT.reset
+Created probe 1
+ncsim> run
+=================================================
+ Starting Exhaustive Verification (Backup Core)
+=================================================
+[100000 ns] MEMORY WRITE: Addr = 0x00000064 | Data = 0x000000ff
+=================================================
+ [SUCCESS] All ISA Types Tested Successfully!
+ Hardware is verified and ready for Synthesis.
+=================================================
+Simulation stopped via $stop(1) at time 100 NS + 0
+ncsim> ^C
+ncsim> exit
+...Regained control from SimVision
+-------------------------------------
+TOOL:	irun(64)	15.20-s086: Exiting on May 01, 2026 at 02:45:25 EDT  (total: 00:23:00)

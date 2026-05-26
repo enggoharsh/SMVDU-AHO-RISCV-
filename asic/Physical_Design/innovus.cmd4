@@ -1,0 +1,211 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Sun May  3 00:42:31 2026                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v21.15-s110_1 (64bit) 09/23/2022 13:08 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: NanoRoute 21.15-s110_1 NR220912-2004/21_15-UB (database version 18.20.592) {superthreading v2.17}
+#@(#)CDS: AAE 21.15-s039 (64bit) 09/23/2022 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: CTE 21.15-s038_1 () Sep 20 2022 11:42:13 ( )
+#@(#)CDS: SYNTECH 21.15-s012_1 () Sep  5 2022 10:25:51 ( )
+#@(#)CDS: CPE v21.15-s076
+#@(#)CDS: IQuantus/TQuantus 21.1.1-s867 (64bit) Sun Jun 26 22:12:54 PDT 2022 (Linux 3.10.0-693.el7.x86_64)
+
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+suppressMessage ENCEXT-2799
+getVersion
+win
+floorPlan -site tsm3site -r 1 0.7 20 20 20 20
+set init_lef_file {/home/install/FOUNDRY/digital/180nm/dig/lef/all.lef ./inputs/sram_32x64_180nm.lef}
+set init_mmmc_file ./scripts/mmmc.tcl
+set init_verilog ./inputs/core_dft_netlist.v
+set init_top_cell Single_Cycle_Core
+set init_pwr_net VDD
+set init_gnd_net VSS
+init_design
+defIn ./inputs/core_scan.scandef
+floorPlan -site tsm3site -r 1 0.7 20 20 20 20
+fit
+globalNetConnect VDD -type pgpin -pin VDD -inst *
+globalNetConnect VSS -type pgpin -pin VSS -inst *
+addRing -type core_ring -nets {VDD VSS} -layer {top Metal5 bottom Metal5 left Metal6 right Metal6} -width 3 -spacing 1 -offset 2
+addStripe -nets {VDD VSS} -layer Metal6 -direction vertical -width 2 -spacing 2 -set_to_set_distance 50
+addRing -type core_ring -nets {VDD VSS} -layer {top Metal5 bottom Metal5 left Metal6 right Metal6} -width 5 -spacing 2 -offset 2
+zoomBox -196.61400 29.25400 141.28350 363.41800
+addRing -type core_ring -nets {VDD VSS} -layer {top Metal5 bottom Metal5 left Metal6 right Metal6} -width 5 -spacing 2 -offset 2
+editPin -fixedPin -spreadDirection clockwise -side Top -layer Metal3 -pin *
+addRing -type core_rings -nets {VDD VSS} -layer {top Metal5 bottom Metal5 left Metal6 right Metal6} -width 5 -spacing 2 -offset 2
+fit
+editPin -fixedPin -spreadDirection clockwise -side Top -layer Metal3 -pin *
+assignIoPins -pin * -layer Metal3
+editPin -pin * -layer Metal3 -assign {0 0 0 0}
+assignIoPins -pin *
+addRing -type core_rings -nets {VDD VSS} -layer {top Metal5 bottom Metal5 left Metal6 right Metal6} -width 5 -spacing 2 -offset 2
+sroute -nets {VDD VSS}
+place_design
+verifyConnectivity -type special
+sroute -nets {VDD VSS} -connect { blockPin padPin corePin floatingStripe }
+verifyConnectivity -type special
+place_design
+timeDesign -preCTS
+routeDesign -globalDetail
+verifyConnectivity -type all
+zoomBox -233.16250 19.00300 750.03800 504.38050
+zoomBox 171.59850 221.38300 336.13200 302.60850
+zoomBox 226.95050 264.41650 279.69700 290.45600
+zoomBox 239.43400 274.12250 266.96850 287.71550
+zoomBox 226.94900 264.41650 279.69700 290.45650
+zoomBox 210.57150 251.53900 296.46350 293.94150
+zoomBox 202.77200 245.85050 303.82200 295.73600
+zoomBox 155.16350 211.12500 348.74350 306.69000
+zoomBox 116.90750 183.22250 384.83950 315.49250
+zoomBox 63.95950 144.60300 434.79950 327.67600
+zoomBox 30.28800 120.04400 466.57050 335.42400
+zoomBox -9.32550 91.15100 503.94800 344.53900
+zoomBox -175.26200 -29.87950 660.51800 382.72100
+zoomBox -251.14950 -85.23000 732.12200 400.18250
+zoomBox -110.75950 17.16750 599.65500 367.87850
+zoomBox -55.93150 57.15800 547.92100 355.26250
+zoomBox 31.07150 90.54300 544.34650 343.93200
+zoomBox 363.89200 209.61700 528.43700 290.84800
+zoomBox 387.58100 217.99750 527.44450 287.04400
+zoomBox 407.71700 225.12100 526.60100 283.81050
+zoomBox 389.44000 218.90350 529.30350 287.95000
+zoomBox 367.93750 211.58850 532.48300 292.82000
+zoomBox 412.34000 225.76600 531.22500 284.45600
+zoomBox 444.45550 236.04350 530.35000 278.44700
+zoomBox 457.03250 240.14000 530.04300 276.18300
+zoomBox 467.72300 243.62200 529.78200 274.25850
+zoomBox 444.88900 233.26700 530.78450 275.67100
+zoomBox 430.48700 227.53350 531.54050 277.42050
+zoomBox 413.70300 221.42500 532.58950 280.11600
+zoomBox 178.59850 99.05850 614.89800 314.44700
+zoomBox 53.07200 50.52000 656.94800 348.63600
+zoomBox -230.86950 -58.81900 752.44250 426.61350
+zoomBox -529.44150 -254.80050 1071.71700 535.64500
+fit
+routeDesign -globalDetail
+verifyConnectivity -type all
+timeDesign -postRoute
+setAnalysisMode -analysisType onChipVariation -cppr both
+timeDesign -postRoute
+timeDesign -postRoute -hold
+report_power
+optDesign -postRoute
+streamOut Single_Cycle_Core.gds -mapFile gds2_tlef.map -libName DesignLib -units 1000 -mode ALL
+write_lef_abstract Single_Cycle_Core.lef
+addFiller -cell {FILL1 FILL2 FILL4 FILL8 FILL16 FILL32 FILL64} -prefix FILL
+verifyConnectivity -type all
+write_lef_abstract Single_Cycle_Core.lef -5.8
+do_extract_model Single_Cycle_Core.lib -view view_setup
+zoomBox -71.19850 193.31900 20.87600 284.37600
+zoomBox -60.84650 202.11950 17.41700 279.51800
+zoomBox -52.04750 209.59950 14.47650 275.38850
+zoomBox -60.84700 202.27000 17.41700 279.66900
+zoomBox -52.04750 209.59900 14.47650 275.38800
+set_analysis_view -setup {view_setup} -hold {view_setup}
+timeDesign -postRoute -hold
+do_extract_model Single_Cycle_Core.lib -view view_setup
+zoomBox -121.28600 162.44250 28.64450 310.71650
+zoomBox -439.42500 7.35400 396.31750 419.93550
+zoomBox -540.34650 -41.84450 442.88000 443.54600
+zoomBox -798.76250 -167.81850 562.10500 504.00200
+fit
+zoomBox 89.18250 107.84250 692.99150 405.92550
+zoomBox 155.34050 129.76050 668.57850 383.13100
+zoomBox 210.88700 149.65150 647.13950 365.01650
+zoomBox 258.10150 166.55900 628.91650 349.61950
+zoomBox 298.23400 180.93050 613.42700 336.53200
+zoomBox 332.34650 193.14600 600.26050 325.40750
+zoomBox 361.34200 203.52950 589.06900 315.95150
+zoomBox 385.98850 212.35500 579.55650 307.91400
+zoomBox 406.93800 219.85700 571.47100 301.08200
+zoomBox 424.74450 226.23350 564.59800 295.27500
+saveDesign Single_Cycle_Core_FINAL_COMPLETE.enc
+streamOut Single_Cycle_Core.gds -mapFile gds2_tlef.map -libName DesignLib -units 1000 -mode ALL
+streamOut Single_Cycle_Core.gds -libName DesignLib -units 1000 -mode ALL
+fit
+zoomBox -486.61250 -257.82500 409.31200 628.20000
+zoomBox -550.08750 -343.42850 503.94150 698.95400
+zoomBox -625.44900 -443.45350 614.58550 782.87900
+zoomBox -714.10950 -561.13000 744.75500 881.61450
+zoomBox -818.41600 -699.57300 897.89550 997.77350
+zoomBox -941.12900 -862.44700 1078.06100 1134.43150
+zoomBox 51.71700 -307.86050 601.92800 236.27100
+fit
+selectInst g45084
+gui_select -rect {382.78300 374.39950 381.71450 361.58000}
+deselectAll
+selectWire 361.2100 282.3800 369.4100 282.6600 3 Datapath_n_2520
+deselectAll
+selectWire 272.1100 261.1000 507.3500 261.3800 5 {Instr[14]}
+deselectAll
+selectWire 199.8400 249.3400 200.1200 256.9000 4 Datapath_ALU_inst_lt_27_20_n_9
+deselectAll
+gui_select -rect {759.88450 486.56800 780.18150 482.29500}
+fit
+setLayerPreference node_floorplan -isSelectable 0
+setLayerPreference node_floorplan -isSelectable 1
+zoomBox 214.81500 129.58400 651.06650 344.94850
+zoomBox 368.06500 181.90900 595.79150 294.33100
+zoomBox 390.62500 192.38800 584.19300 287.94700
+zoomBox 409.80150 201.29550 574.33450 282.52050
+zoomBox 426.10100 208.86650 565.95450 277.90800
+zoomBox 439.95550 215.30200 558.83150 273.98750
+zoomBox 426.10050 208.86600 565.95450 277.90800
+zoomBox 322.13450 170.12750 637.33250 325.73150
+zoomBox 151.92550 106.51350 755.74800 404.60300
+fit
+zoomBox -90.62900 167.99550 59.29800 316.26600
+zoomBox -77.41750 180.71000 237.77550 336.31150
+zoomBox -66.61050 191.86950 201.30400 324.13100
+zoomBox -49.61550 209.41800 143.95300 304.97700
+zoomBox -83.67300 200.33750 144.05450 312.76000
+zoomBox -417.34900 134.00800 186.46650 432.09400
+fit
+zoomBox -231.09550 48.32950 752.10500 533.70700
+zoomBox -158.17900 109.82500 677.54150 522.39600
+zoomBox 43.20950 260.04350 479.46050 475.40800
+zoomBox -42.87750 207.39350 560.93050 505.47600
+zoomBox 3.85800 250.15000 517.09500 503.52000
+zoomBox 77.34950 317.43300 448.16300 500.49300
+zoomBox 58.79050 291.98150 266.30200 497.20000
+selectInst g58416__5526
+fit
+zoomBox 58.88150 13.74900 551.94450 501.36400
+zoomBox 131.34250 48.61750 550.44650 463.09050
+zoomBox 193.05000 78.25600 549.28850 430.55800
+zoomBox 245.50150 103.44800 548.30450 402.90500
+zoomBox 327.98150 143.06300 546.75700 359.42100
+zoomBox 410.84650 182.86250 545.20250 315.73400
+zoomBox 430.55450 192.66100 544.75700 305.60150
+zoomBox 445.41350 202.09350 542.48550 298.09300
+zoomBox 458.07050 210.11150 540.58150 291.71100
+zoomBox 468.85100 216.92650 538.98600 286.28650
+zoomBox 478.01500 222.71900 537.63000 281.67550
+zoomBox 485.80450 227.64300 536.47750 277.75600
+zoomBox 491.73950 232.27600 598.27000 284.86700
+zoomBox 496.78450 236.21450 587.33550 280.91700
+zoomBox 501.07200 239.56200 578.04150 277.55950
+zoomBox 507.82200 244.80300 563.43300 272.25650
+fit
+zoomBox -78.78350 52.43800 756.93700 465.00900
+zoomBox 91.65300 109.07750 695.46200 407.16050
+zoomBox 158.21550 131.19750 671.45400 384.56850
+zoomBox 432.62450 222.38850 572.47900 291.43050
+zoomBox 448.04200 227.51200 566.91800 286.19750
+zoomBox 461.14650 231.86650 562.19150 281.74950
+zoomBox 471.56300 235.51200 557.45150 277.91250
+zoomBox 461.20250 231.67500 562.24800 281.55800
+zoomBox 449.01400 227.16050 567.89100 285.84650
+zoomBox 417.80400 215.60150 582.33950 296.82800
+zoomBox 397.95600 208.25050 591.52850 303.81150
+zoomBox 374.60600 199.60200 602.33850 312.02700
+zoomBox 314.81750 177.45800 630.01800 333.06350
+zoomBox 276.79550 163.37600 647.62050 346.44150
+zoomBox -40.99900 45.67450 794.74750 458.25800
+zoomBox -141.81150 8.33600 841.42000 493.72900
+zoomBox -399.94800 -87.27000 960.92750 584.55450
+deselectAll

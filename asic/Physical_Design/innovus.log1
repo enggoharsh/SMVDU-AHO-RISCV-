@@ -1,0 +1,409 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.15-s110_1, built Fri Sep 23 13:08:12 PDT 2022
+Options:	
+Date:		Sat May  2 11:58:28 2026
+Host:		A17 (x86_64 w/Linux 4.18.0-425.3.1.el8.x86_64) (4cores*8cpus*Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz 8192KB)
+OS:		Red Hat Enterprise Linux release 8.7 (Ootpa)
+
+License:
+		[11:58:28.382409] Configured Lic search path (21.01-s002): 5280@172.17.7.7
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (31 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> getVersion
+[INFO] Loading PVS 22.20 fill procedures
+<CMD> win
+<CMD> set init_lef_file {./inputs/tsmc13fsg_8lm_tech.lef ./inputs/tsmc13g_m_macros.lef ./inputs/sram_32x64_180nm.lef}
+<CMD> set init_mmmc_file ./scripts/mmmc.tcl
+<CMD> set init_verilog ./inputs/core_dft_netlist.v
+<CMD> set init_top_cell Single_Cycle_Core
+<CMD> set init_pwr_net VDD
+<CMD> set init_gnd_net VSS
+<CMD> init_design
+#% Begin Load MMMC data ... (date=05/02 11:58:50, mem=1004.9M)
+#% End Load MMMC data ... (date=05/02 11:58:50, total cpu=0:00:00.0, real=0:00:00.0, peak res=1005.8M, current mem=1005.8M)
+rc_typ
+
+Loading LEF file ./inputs/tsmc13fsg_8lm_tech.lef ...
+
+Loading LEF file ./inputs/tsmc13g_m_macros.lef ...
+Set DBUPerIGU to M2 pitch 820.
+
+Loading LEF file ./inputs/sram_32x64_180nm.lef ...
+**WARN: (IMPLF-63):	The layer 'metal1' referenced in OBS in macro 'sram_32x64_180nm' is not found in the database. The obstruction geometries specified on the layer are being ignored. A layer must be defined in the LEF technology LAYER section before it can be referenced from a macro. Review the LEF files specified in the init_lef_file variable to see if the layer does not exist or is specified after the one that defines the macro.
+Type 'man IMPLF-63' for more detail.
+**WARN: (IMPLF-63):	The layer 'metal2' referenced in OBS in macro 'sram_32x64_180nm' is not found in the database. The obstruction geometries specified on the layer are being ignored. A layer must be defined in the LEF technology LAYER section before it can be referenced from a macro. Review the LEF files specified in the init_lef_file variable to see if the layer does not exist or is specified after the one that defines the macro.
+Type 'man IMPLF-63' for more detail.
+**WARN: (IMPLF-63):	The layer 'metal3' referenced in OBS in macro 'sram_32x64_180nm' is not found in the database. The obstruction geometries specified on the layer are being ignored. A layer must be defined in the LEF technology LAYER section before it can be referenced from a macro. Review the LEF files specified in the init_lef_file variable to see if the layer does not exist or is specified after the one that defines the macro.
+Type 'man IMPLF-63' for more detail.
+**WARN: (IMPLF-63):	The layer 'metal4' referenced in OBS in macro 'sram_32x64_180nm' is not found in the database. The obstruction geometries specified on the layer are being ignored. A layer must be defined in the LEF technology LAYER section before it can be referenced from a macro. Review the LEF files specified in the init_lef_file variable to see if the layer does not exist or is specified after the one that defines the macro.
+Type 'man IMPLF-63' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[0]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[1]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[2]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[3]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[4]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[5]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[6]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[7]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[8]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[9]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[10]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[11]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[12]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[13]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[14]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[15]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[16]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[17]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[18]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (IMPLF-200):	Pin 'din0[19]' in macro 'sram_32x64_180nm' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+**WARN: (EMS-27):	Message (IMPLF-200) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+**WARN: (IMPLF-201):	Pin 'dout0[0]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[1]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[2]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[3]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[4]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[5]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[6]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[7]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[8]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[9]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[10]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[11]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[12]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[13]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[14]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[15]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[16]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[17]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[18]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (IMPLF-201):	Pin 'dout0[19]' in macro 'sram_32x64_180nm' has no ANTENNADIFFAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-201' for more detail.
+**WARN: (EMS-27):	Message (IMPLF-201) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+Loading view definition file from ./scripts/mmmc.tcl
+Reading std_set_slow timing library '/home/student/ANUPAM/Project_Test1/Physical_Design/inputs/slow.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'HOLDX1'. The cell will only be used for analysis. (File /home/student/ANUPAM/Project_Test1/Physical_Design/inputs/slow.lib)
+Read 462 cells in library 'tsmc18' 
+Reading std_set_slow timing library '/home/student/ANUPAM/Project_Test1/Physical_Design/inputs/sram_32x64_180nm_TT_5p0V_25C.lib' ...
+Read 1 cells in library 'sram_32x64_180nm_TT_5p0V_25C_lib' 
+*** End library_loading (cpu=0.01min, real=0.00min, mem=29.5M, fe_cpu=0.26min, fe_real=0.37min, fe_mem=1039.3M) ***
+#% Begin Load netlist data ... (date=05/02 11:58:50, mem=1026.7M)
+*** Begin netlist parsing (mem=1039.3M) ***
+Created 463 new cells from 2 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilog netlist './inputs/core_dft_netlist.v'
+
+*** Memory Usage v#1 (Current mem = 1041.301M, initial mem = 483.863M) ***
+*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=1041.3M) ***
+#% End Load netlist data ... (date=05/02 11:58:50, total cpu=0:00:00.1, real=0:00:00.0, peak res=1038.7M, current mem=1038.7M)
+Set top cell to Single_Cycle_Core.
+Hooked 463 DB cells to tlib cells.
+** Removed 385 unused lib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell Single_Cycle_Core ...
+*** Netlist is unique.
+**ERROR: (IMPREPO-102):	Instance g22862 of the cell INVXL has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance g22863 of the cell INVXL has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance g57801__2398 of the cell MX2X1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance g57802__5107 of the cell OAI2BB1X1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance g57803__6260 of the cell OAI2BB1X1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance g57804__4319 of the cell OAI2BB1X1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance g57805__8428 of the cell OAI2BB1X1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance g57806__5526 of the cell OAI2BB1X1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance g57807__6783 of the cell OAI2BB1X1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance g57808__3680 of the cell OAI2BB1X1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance g57809__1617 of the cell OAI2BB1X1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance g57810__2802 of the cell OAI2BB1X1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance g57811__1705 of the cell OAI2BB1X1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance g57812__5122 of the cell OAI2BB1X1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance g57813__8246 of the cell OAI2BB1X1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance g57814__7098 of the cell OAI2BB1X1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance g57815__6131 of the cell OAI2BB1X1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance g57816__1881 of the cell OAI2BB1X1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance g57817__5115 of the cell MX2X2 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance g57818__7482 of the cell MX2X1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**WARN: (EMS-27):	Message (IMPREPO-102) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+** info: there are 711 modules.
+** info: there are 5346 stdCell insts.
+**ERROR: (IMPREPO-103):	There are 5346 instances (77 cells) with no dimension defined.
+
+*** Memory Usage v#1 (Current mem = 1095.715M, initial mem = 483.863M) ***
+Start create_tracks
+Extraction setup Started 
+Initializing multi-corner RC extraction with 1 active RC Corners ...
+Reading Capacitance Table File ./inputs/tsmc13fsg.capTbl ...
+**WARN: (IMPEXT-2801):	Resistance values are not provided in the Cap Table. Sheet resistance defined in the LEF file will be used.
+**WARN: (IMPEXT-2773):	The via resistance between layers M0 and M1 could not be determined from the LEF technology file because the via resistance specification is missing. A default of 4 Ohms will be used as via resistance between these layers.
+Type 'man IMPEXT-2773' for more detail.
+**WARN: (IMPEXT-2776):	The via resistance between layers M1 and M2 is not defined in the capacitance table file. The via resistance of 1.02 Ohms defined in the LEF technology file will be used as via resistance between these layers.
+Type 'man IMPEXT-2776' for more detail.
+**WARN: (IMPEXT-2776):	The via resistance between layers M2 and M3 is not defined in the capacitance table file. The via resistance of 1.02 Ohms defined in the LEF technology file will be used as via resistance between these layers.
+Type 'man IMPEXT-2776' for more detail.
+**WARN: (IMPEXT-2776):	The via resistance between layers M3 and M4 is not defined in the capacitance table file. The via resistance of 1.02 Ohms defined in the LEF technology file will be used as via resistance between these layers.
+Type 'man IMPEXT-2776' for more detail.
+**WARN: (IMPEXT-2776):	The via resistance between layers M4 and M5 is not defined in the capacitance table file. The via resistance of 1.02 Ohms defined in the LEF technology file will be used as via resistance between these layers.
+Type 'man IMPEXT-2776' for more detail.
+**WARN: (IMPEXT-2776):	The via resistance between layers M5 and M6 is not defined in the capacitance table file. The via resistance of 1.02 Ohms defined in the LEF technology file will be used as via resistance between these layers.
+Type 'man IMPEXT-2776' for more detail.
+**WARN: (IMPEXT-2776):	The via resistance between layers M6 and M7 is not defined in the capacitance table file. The via resistance of 1.02 Ohms defined in the LEF technology file will be used as via resistance between these layers.
+Type 'man IMPEXT-2776' for more detail.
+**WARN: (IMPEXT-2776):	The via resistance between layers M7 and M8 is not defined in the capacitance table file. The via resistance of 0.63 Ohms defined in the LEF technology file will be used as via resistance between these layers.
+Type 'man IMPEXT-2776' for more detail.
+**WARN: (EMS-42):	Message (IMPEXT-2799) has been suppressed from output.
+**WARN: (IMPEXT-2773):	The via resistance between layers M0 and M1 could not be determined from the LEF technology file because the via resistance specification is missing. A default of 4 Ohms will be used as via resistance between these layers.
+Type 'man IMPEXT-2773' for more detail.
+**WARN: (IMPEXT-2776):	The via resistance between layers M1 and M2 is not defined in the capacitance table file. The via resistance of 1.02 Ohms defined in the LEF technology file will be used as via resistance between these layers.
+Type 'man IMPEXT-2776' for more detail.
+**WARN: (IMPEXT-2776):	The via resistance between layers M2 and M3 is not defined in the capacitance table file. The via resistance of 1.02 Ohms defined in the LEF technology file will be used as via resistance between these layers.
+Type 'man IMPEXT-2776' for more detail.
+**WARN: (IMPEXT-2776):	The via resistance between layers M3 and M4 is not defined in the capacitance table file. The via resistance of 1.02 Ohms defined in the LEF technology file will be used as via resistance between these layers.
+Type 'man IMPEXT-2776' for more detail.
+**WARN: (IMPEXT-2776):	The via resistance between layers M4 and M5 is not defined in the capacitance table file. The via resistance of 1.02 Ohms defined in the LEF technology file will be used as via resistance between these layers.
+Type 'man IMPEXT-2776' for more detail.
+**WARN: (IMPEXT-2776):	The via resistance between layers M5 and M6 is not defined in the capacitance table file. The via resistance of 1.02 Ohms defined in the LEF technology file will be used as via resistance between these layers.
+Type 'man IMPEXT-2776' for more detail.
+**WARN: (IMPEXT-2776):	The via resistance between layers M6 and M7 is not defined in the capacitance table file. The via resistance of 1.02 Ohms defined in the LEF technology file will be used as via resistance between these layers.
+Type 'man IMPEXT-2776' for more detail.
+**WARN: (IMPEXT-2776):	The via resistance between layers M7 and M8 is not defined in the capacitance table file. The via resistance of 0.63 Ohms defined in the LEF technology file will be used as via resistance between these layers.
+Type 'man IMPEXT-2776' for more detail.
+Importing multi-corner RC tables ... 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: view_setup
+    RC-Corner Name        : rc_typ
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : './inputs/tsmc13fsg.capTbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+ 
+ Analysis View: view_hold
+    RC-Corner Name        : rc_typ
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : './inputs/tsmc13fsg.capTbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+Updating RC grid for preRoute extraction ...
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+*Info: initialize multi-corner CTS.
+Reading timing constraints file './inputs/core_dft.sdc' ...
+Current (total cpu=0:00:16.1, real=0:00:23.0, peak res=1330.7M, current mem=1330.7M)
+**WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ./inputs/core_dft.sdc, Line 9).
+
+**WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ./inputs/core_dft.sdc, Line 10).
+
+Single_Cycle_Core
+INFO (CTE): Reading of timing constraints file ./inputs/core_dft.sdc completed, with 2 WARNING
+Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=1352.8M, current mem=1352.8M)
+Current (total cpu=0:00:16.1, real=0:00:23.0, peak res=1352.8M, current mem=1352.8M)
+Total number of combinational cells: 0
+Total number of sequential cells: 0
+Total number of tristate cells: 0
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers:
+Total number of usable buffers: 0
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters:
+Total number of usable inverters: 0
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells:
+Total number of identified usable delay cells: 0
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+No delay cells were detected in the set of buffers. Buffers will be used to fix hold violations.
+**WARN: (IMPOPT-3000):	Buffer footprint is not defined or is an invalid buffer footprint.
+Type 'man IMPOPT-3000' for more detail.
+**WARN: (IMPOPT-3001):	Inverter footprint is not defined or is an invalid inverter footprint.
+Type 'man IMPOPT-3001' for more detail.
+#% Begin Load MMMC data post ... (date=05/02 11:58:51, mem=1373.9M)
+#% End Load MMMC data post ... (date=05/02 11:58:51, total cpu=0:00:00.0, real=0:00:00.0, peak res=1373.9M, current mem=1373.9M)
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPLF-63             4  The layer '%s' referenced %s is not foun...
+WARNING   IMPLF-200           52  Pin '%s' in macro '%s' has no ANTENNAGAT...
+WARNING   IMPLF-201           33  Pin '%s' in macro '%s' has no ANTENNADIF...
+WARNING   IMPEXT-2773          2  The via resistance between layers %s and...
+WARNING   IMPEXT-2776         14  The via resistance between layers %s and...
+WARNING   IMPEXT-2801          1  Resistance values are not provided in th...
+WARNING   IMPOPT-3000          1  Buffer footprint is not defined or is an...
+WARNING   IMPOPT-3001          1  Inverter footprint is not defined or is ...
+ERROR     IMPREPO-102       5346  Instance %s of the cell %s has no physic...
+ERROR     IMPREPO-103          1  There are %d instances (%d cells) with n...
+WARNING   TCLCMD-1461          2  Skipped unsupported command: %s          
+WARNING   TECHLIB-302          1  No function defined for cell '%s'. The c...
+*** Message Summary: 111 warning(s), 5347 error(s)
+
+invalid command name "read_def"
+<CMD> zoomBox -6.34250 -3.27250 3.61650 6.57650
+<CMD> zoomBox -2.45550 -0.71250 1.96400 3.65800
+<CMD> zoomBox -1.98900 -0.40600 1.76750 3.30900
+<CMD> zoomBox -1.75900 -0.36150 1.43450 2.79650
+<CMD> zoomBox -1.56300 -0.32400 1.15150 2.36050
+<CMD> zoomBox -0.87250 -0.19100 0.15200 0.82200
+<CMD> zoomBox -0.47250 -0.02400 -0.14350 0.30150
+<CMD> zoomBox -0.78650 -0.15650 0.08800 0.70850
+<CMD> zoomBox -0.87550 -0.19350 0.15350 0.82400
+<CMD> zoomBox -1.61750 -0.50550 0.70300 1.78950
+<CMD> selectObject IO_Pin {PC[31]}
+<CMD> zoomBox -1.22150 -0.25050 0.45550 1.40800
+<CMD> zoomBox -0.61500 -0.04000 0.26100 0.82650
+<CMD> zoomBox -0.51550 -0.00550 0.22900 0.73100
+<CMD> deselectAll
+<CMD> selectObject IO_Pin {Instr[0]}
+<CMD> zoomBox -0.56500 -0.09900 0.46600 0.92050
+<CMD> zoomBox -0.59600 -0.15850 0.61700 1.04100
+<CMD> zoomBox -0.63300 -0.22850 0.79450 1.18300
+<CMD> deselectAll
+<CMD> selectObject IO_Pin clk
+<CMD> deselectAll
+<CMD> selectObject IO_Pin {PC[31]}
+<CMD> deselectAll
+<CMD> selectObject IO_Pin {Instr[0]}
+<CMD> deselectAll
+<CMD> selectObject IO_Pin {Instr[0]}
+<CMD> win off
