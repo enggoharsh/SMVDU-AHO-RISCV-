@@ -1,0 +1,22 @@
+//
+// File created by:  irun
+// Do not modify this file
+//
+/home/student/ANUPAM/Project_Test1/TESTBENCHES/tb_Single_Cycle_Top.v
+/home/student/ANUPAM/Project_Test1/Golden_Design_RTL/ALU_decoder.v
+/home/student/ANUPAM/Project_Test1/Golden_Design_RTL/ALU_Mux.v
+/home/student/ANUPAM/Project_Test1/Golden_Design_RTL/ALU.v
+/home/student/ANUPAM/Project_Test1/Golden_Design_RTL/Control_Unit.v
+/home/student/ANUPAM/Project_Test1/Golden_Design_RTL/Core_Datapath.v
+/home/student/ANUPAM/Project_Test1/Golden_Design_RTL/Data_Memory.v
+/home/student/ANUPAM/Project_Test1/Golden_Design_RTL/Extend.v
+/home/student/ANUPAM/Project_Test1/Golden_Design_RTL/Instruction_Memory.v
+/home/student/ANUPAM/Project_Test1/Golden_Design_RTL/Main_Decoder.v
+/home/student/ANUPAM/Project_Test1/Golden_Design_RTL/PC_Mux.v
+/home/student/ANUPAM/Project_Test1/Golden_Design_RTL/PC_Plus_4.v
+/home/student/ANUPAM/Project_Test1/Golden_Design_RTL/PC_Target.v
+/home/student/ANUPAM/Project_Test1/Golden_Design_RTL/PC.v
+/home/student/ANUPAM/Project_Test1/Golden_Design_RTL/Register_File.v
+/home/student/ANUPAM/Project_Test1/Golden_Design_RTL/Result_Mux.v
+/home/student/ANUPAM/Project_Test1/Golden_Design_RTL/Single_Cycle_Core.v
+/home/student/ANUPAM/Project_Test1/Golden_Design_RTL/Single_Cycle_Top.v

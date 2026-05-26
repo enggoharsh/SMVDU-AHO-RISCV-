@@ -1,0 +1,45 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2022 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[10:50:01.382265] Configured Lic search path (21.01-s002): 5280@172.17.7.7
+
+Version: 21.14-s082_1, built Thu Jun 23 11:32:08 PDT 2022
+Options: -files run_dft_core.tcl -execute {set_db design Single_Cycle_Core; write_scandef > core_scan.scandef; exit} 
+Date:    Sat May 02 10:50:01 2026
+Host:    A17 (x86_64 w/Linux 4.18.0-425.3.1.el8.x86_64) (4cores*8cpus*1physical cpu*Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz 8192KB) (15936228KB)
+PID:     64988
+OS:      Red Hat Enterprise Linux release 8.7 (Ootpa)
+
+
+[10:50:01.166514] Periodic Lic check successful
+[10:50:01.166521] Feature usage summary:
+[10:50:01.166521] Genus_Synthesis
+Checking out license: Genus_Synthesis
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Loading tool scripts...
+Finished loading tool scripts (7 seconds elapsed).
+
+#@ Processing -execute option
+@genus 1> set_db design Single_Cycle_Core; write_scandef > core_scan.scandef; exit
+Error   : <Start> word is not recognized. [TUI-182] [set_db]
+        : 'design' is not a recognized object/attribute. Type 'help root:' to get a list of all supported objects and attributes.
+        : Check if the given <Start> word is a valid object_type, object or attribute.
+1
+Encountered problems processing command: set_db design Single_Cycle_Core; write_scandef > core_scan.scandef; exit
+WARNING: This version of the tool is 1408 days old.
+@genus:root: 2> exit
+
+Lic Summary:
+[10:57:29.174939] Cdslmd servers: DESKTOP-14SB65S
+[10:57:29.174946] Feature usage summary:
+[10:57:29.174947] Genus_Synthesis
+
+Normal exit.

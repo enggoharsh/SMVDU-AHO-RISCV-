@@ -1,0 +1,334 @@
+Ignoring AAE DB Resetting ...
+Updating timing graph...
+  
+  Leaving CCOpt scope - BuildTimeGraph...
+AAE_INFO: opIsDesignInPostRouteState() is 1
+#################################################################################
+# Design Stage: PostRoute
+# Design Name: Single_Cycle_Top
+# Design Mode: 90nm
+# Analysis Mode: MMMC Non-OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI Off 
+#################################################################################
+Calculate delays in BcWc mode...
+Start delay calculation (fullDC) (1 T). (MEM=4802.99)
+**WARN: (IMPMSMV-1810):	Net WriteData_SoC[31], driver core_top/WriteData[31] (cell Single_Cycle_Core) voltage 1.62 does not match receiver data_sram/din0[31] (cell sram_32x64_180nm) voltage 5 for view typical_view.
+Type 'man IMPMSMV-1810' for more detail.
+**WARN: (IMPMSMV-1810):	Net WriteData_SoC[30], driver core_top/WriteData[30] (cell Single_Cycle_Core) voltage 1.62 does not match receiver data_sram/din0[30] (cell sram_32x64_180nm) voltage 5 for view typical_view.
+Type 'man IMPMSMV-1810' for more detail.
+**WARN: (IMPMSMV-1810):	Net WriteData_SoC[29], driver core_top/WriteData[29] (cell Single_Cycle_Core) voltage 1.62 does not match receiver data_sram/din0[29] (cell sram_32x64_180nm) voltage 5 for view typical_view.
+Type 'man IMPMSMV-1810' for more detail.
+**WARN: (IMPMSMV-1810):	Net WriteData_SoC[28], driver core_top/WriteData[28] (cell Single_Cycle_Core) voltage 1.62 does not match receiver data_sram/din0[28] (cell sram_32x64_180nm) voltage 5 for view typical_view.
+Type 'man IMPMSMV-1810' for more detail.
+**WARN: (IMPMSMV-1810):	Net WriteData_SoC[27], driver core_top/WriteData[27] (cell Single_Cycle_Core) voltage 1.62 does not match receiver data_sram/din0[27] (cell sram_32x64_180nm) voltage 5 for view typical_view.
+Type 'man IMPMSMV-1810' for more detail.
+**WARN: (IMPMSMV-1810):	Net WriteData_SoC[26], driver core_top/WriteData[26] (cell Single_Cycle_Core) voltage 1.62 does not match receiver data_sram/din0[26] (cell sram_32x64_180nm) voltage 5 for view typical_view.
+Type 'man IMPMSMV-1810' for more detail.
+**WARN: (IMPMSMV-1810):	Net WriteData_SoC[25], driver core_top/WriteData[25] (cell Single_Cycle_Core) voltage 1.62 does not match receiver data_sram/din0[25] (cell sram_32x64_180nm) voltage 5 for view typical_view.
+Type 'man IMPMSMV-1810' for more detail.
+**WARN: (IMPMSMV-1810):	Net WriteData_SoC[24], driver core_top/WriteData[24] (cell Single_Cycle_Core) voltage 1.62 does not match receiver data_sram/din0[24] (cell sram_32x64_180nm) voltage 5 for view typical_view.
+Type 'man IMPMSMV-1810' for more detail.
+**WARN: (IMPMSMV-1810):	Net WriteData_SoC[23], driver core_top/WriteData[23] (cell Single_Cycle_Core) voltage 1.62 does not match receiver data_sram/din0[23] (cell sram_32x64_180nm) voltage 5 for view typical_view.
+Type 'man IMPMSMV-1810' for more detail.
+**WARN: (IMPMSMV-1810):	Net WriteData_SoC[22], driver core_top/WriteData[22] (cell Single_Cycle_Core) voltage 1.62 does not match receiver data_sram/din0[22] (cell sram_32x64_180nm) voltage 5 for view typical_view.
+Type 'man IMPMSMV-1810' for more detail.
+**WARN: (IMPMSMV-1810):	Net WriteData_SoC[21], driver core_top/WriteData[21] (cell Single_Cycle_Core) voltage 1.62 does not match receiver data_sram/din0[21] (cell sram_32x64_180nm) voltage 5 for view typical_view.
+Type 'man IMPMSMV-1810' for more detail.
+**WARN: (IMPMSMV-1810):	Net WriteData_SoC[20], driver core_top/WriteData[20] (cell Single_Cycle_Core) voltage 1.62 does not match receiver data_sram/din0[20] (cell sram_32x64_180nm) voltage 5 for view typical_view.
+Type 'man IMPMSMV-1810' for more detail.
+**WARN: (IMPMSMV-1810):	Net WriteData_SoC[19], driver core_top/WriteData[19] (cell Single_Cycle_Core) voltage 1.62 does not match receiver data_sram/din0[19] (cell sram_32x64_180nm) voltage 5 for view typical_view.
+Type 'man IMPMSMV-1810' for more detail.
+**WARN: (IMPMSMV-1810):	Net WriteData_SoC[18], driver core_top/WriteData[18] (cell Single_Cycle_Core) voltage 1.62 does not match receiver data_sram/din0[18] (cell sram_32x64_180nm) voltage 5 for view typical_view.
+Type 'man IMPMSMV-1810' for more detail.
+**WARN: (IMPMSMV-1810):	Net WriteData_SoC[17], driver core_top/WriteData[17] (cell Single_Cycle_Core) voltage 1.62 does not match receiver data_sram/din0[17] (cell sram_32x64_180nm) voltage 5 for view typical_view.
+Type 'man IMPMSMV-1810' for more detail.
+**WARN: (IMPMSMV-1810):	Net WriteData_SoC[16], driver core_top/WriteData[16] (cell Single_Cycle_Core) voltage 1.62 does not match receiver data_sram/din0[16] (cell sram_32x64_180nm) voltage 5 for view typical_view.
+Type 'man IMPMSMV-1810' for more detail.
+**WARN: (IMPMSMV-1810):	Net WriteData_SoC[15], driver core_top/WriteData[15] (cell Single_Cycle_Core) voltage 1.62 does not match receiver data_sram/din0[15] (cell sram_32x64_180nm) voltage 5 for view typical_view.
+Type 'man IMPMSMV-1810' for more detail.
+**WARN: (IMPMSMV-1810):	Net WriteData_SoC[14], driver core_top/WriteData[14] (cell Single_Cycle_Core) voltage 1.62 does not match receiver data_sram/din0[14] (cell sram_32x64_180nm) voltage 5 for view typical_view.
+Type 'man IMPMSMV-1810' for more detail.
+**WARN: (IMPMSMV-1810):	Net WriteData_SoC[13], driver core_top/WriteData[13] (cell Single_Cycle_Core) voltage 1.62 does not match receiver data_sram/din0[13] (cell sram_32x64_180nm) voltage 5 for view typical_view.
+Type 'man IMPMSMV-1810' for more detail.
+**WARN: (IMPMSMV-1810):	Net WriteData_SoC[12], driver core_top/WriteData[12] (cell Single_Cycle_Core) voltage 1.62 does not match receiver data_sram/din0[12] (cell sram_32x64_180nm) voltage 5 for view typical_view.
+Type 'man IMPMSMV-1810' for more detail.
+**WARN: (EMS-27):	Message (IMPMSMV-1810) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+Total number of fetched objects 132
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+End delay calculation. (MEM=4803.77 CPU=0:00:00.1 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=4803.77 CPU=0:00:00.1 REAL=0:00:00.0)
+  Leaving CCOpt scope - BuildTimeGraph done. (took cpu=0:00:00.2 real=0:00:00.2)
+Updating timing graph done.
+Updating latch analysis...
+  Leaving CCOpt scope - Updating latch analysis...
+  Leaving CCOpt scope - Updating latch analysis done. (took cpu=0:00:00.0 real=0:00:00.0)
+Updating latch analysis done.
+Clock tree timing engine global stage delay update for typical_delay:both.early...
+Clock tree timing engine global stage delay update for typical_delay:both.early done. (took cpu=0:00:00.0 real=0:00:00.0)
+Clock tree timing engine global stage delay update for typical_delay:both.late...
+Clock tree timing engine global stage delay update for typical_delay:both.late done. (took cpu=0:00:00.0 real=0:00:00.0)
+
+Clock DAG stats:
+================
+
+-------------------------------------------------------
+Cell type                 Count    Area     Capacitance
+-------------------------------------------------------
+Buffers                     0      0.000       0.000
+Inverters                   0      0.000       0.000
+Integrated Clock Gates      0      0.000       0.000
+Discrete Clock Gates        0      0.000       0.000
+Clock Logic                 0      0.000       0.000
+All                         0      0.000       0.000
+-------------------------------------------------------
+
+
+Clock DAG sink counts:
+======================
+
+-------------------------
+Sink type           Count
+-------------------------
+Regular               2
+Enable Latch          0
+Load Capacitance      0
+Antenna Diode         0
+Node Sink             0
+Total                 2
+-------------------------
+
+
+Clock DAG wire lengths:
+=======================
+
+--------------------
+Type     Wire Length
+--------------------
+Top          0.000
+Trunk        0.000
+Leaf      3232.110
+Total     3232.110
+--------------------
+
+
+Clock DAG hp wire lengths:
+==========================
+
+-----------------------
+Type     hp Wire Length
+-----------------------
+Top          0.000
+Trunk        0.000
+Leaf         0.000
+Total        0.000
+-----------------------
+
+
+Clock DAG capacitances:
+=======================
+
+--------------------------------
+Type     Gate     Wire     Total
+--------------------------------
+Top      0.000    0.000    0.000
+Trunk    0.000    0.000    0.000
+Leaf     7.113    0.440    7.553
+Total    7.113    0.440    7.553
+--------------------------------
+
+
+Clock DAG sink capacitances:
+============================
+
+-----------------------------------------------
+Total    Average    Std. Dev.    Min      Max
+-----------------------------------------------
+7.113     3.556       5.016      0.010    7.103
+-----------------------------------------------
+
+
+Clock DAG net violations:
+=========================
+
+--------------------------------------------------------------------------------------------
+Type                    Units    Count    Average    Std. Dev.    Sum      Top 10 violations
+--------------------------------------------------------------------------------------------
+Remaining Transition    ns         1       8.745       0.000      8.745    [8.745]
+--------------------------------------------------------------------------------------------
+
+
+Clock DAG primary half-corner transition distribution:
+======================================================
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Net Type    Target    Count    Average    Std. Dev.    Min      Max      Distribution    Over Target
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Leaf        0.500       1       9.245       0.000      9.245    9.245         -          {0 <= 0.525ns, 0 <= 0.550ns, 0 <= 0.600ns, 0 <= 0.750ns, 1 > 0.750ns}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+Please note that the following tables reflect only the defined clock trees, so the flop counts might not include all flops in your design.
+
+Clock Tree Summary:
+===================
+
+----------------------------------------------------------------------------------------------------------------------
+Clock Tree  Clock  Bufs  Invs  Other  Max       Max     Max      Max          Standard   Wire   Gate   Clock Tree Root
+Name        Gates              Clock  Non-leaf  Leaf    Length   Source-sink  cell area  cap    cap    
+                               Cells  Fanout    Fanout  (um)     Resistance   (um^2)     (pF)   (pF)   
+                                                                 (Ohms)                                
+----------------------------------------------------------------------------------------------------------------------
+clk           0     0     0      0       0        2     3224.16    9930.08      0.000    0.440  7.113  clk
+----------------------------------------------------------------------------------------------------------------------
+
+Clock Sink Summary:
+===================
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+Clock Tree  Explicit      Implicit      Explicit     Implicit     Explicit   Implicit   Posedge  Negedge  Memory  Enable  Non enable  Other
+Name        exclude pins  exclude pins  ignore pins  ignore pins  stop pins  stop pins  Flops    Flops    Clock   Latch   Latch       Sinks
+                                                                                                          Pins    Sinks   Sinks       
+-------------------------------------------------------------------------------------------------------------------------------------------
+clk              0             0             0            0           0          0         0        0       1       0         0         1
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+Summary across all clock trees:
+===============================
+
+-------------------------------------------------------------------------------------------------------------
+Clock  Bufs  Invs  Other  Max       Average   Max     Average  Max       Max          Standard   Wire   Gate
+Gates              Clock  Non-leaf  Non-leaf  Leaf    Leaf     Length    Source-sink  cell area  cap    cap
+                   Cells  Fanout    Fanout    Fanout  Fanout   (um)      Resistance   (um^2)     (pF)   (pF)
+                                                                         (Ohms)                         
+-------------------------------------------------------------------------------------------------------------
+  0     0     0      0       0         0        2        2     3224.160    993.008      0.000    0.440  7.113
+-------------------------------------------------------------------------------------------------------------
+
+Clock Sink Summary across all clock trees:
+==========================================
+
+-------------------------------------------------------------------------------------------------------------------------------
+Explicit      Implicit      Explicit     Implicit     Explicit   Implicit   Posedge  Negedge  Memory  Enable  Non enable  Other
+exclude pins  exclude pins  ignore pins  ignore pins  stop pins  stop pins  Flops    Flops    Clock   Latch   Latch       Sinks
+                                                                                              Pins    Sinks   Sinks       
+-------------------------------------------------------------------------------------------------------------------------------
+     0             0             0            0           0          0         0        0       1       0         0         1
+-------------------------------------------------------------------------------------------------------------------------------
+
+Physical metrics across all clock trees:
+========================================
+
+--------------------------------------------------------------------------
+Metric                               Minimum   Average   Maximum   Std.dev
+--------------------------------------------------------------------------
+Source-sink routed net length (um)   3224.160  3224.160  3224.160   0.000
+Source-sink manhattan distance (um)  3036.230  3036.230  3036.230   0.000
+Source-sink resistance (Ohm)          993.008   993.008   993.008   0.000
+--------------------------------------------------------------------------
+
+Transition distribution for half-corner typical_delay:both.late:
+================================================================
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Net Type    Target    Count    Average    Std. Dev.    Min      Max      Distribution    Over Target
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Leaf        0.500       1       9.245       0.000      9.245    9.245         -          {0 <= 0.525ns, 0 <= 0.550ns, 0 <= 0.600ns, 0 <= 0.750ns, 1 > 0.750ns}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Count of violations across all clock trees:
+===========================================
+
+---------------------------------------------------------------------------------------
+Clock Tree  # Max capacitance  # Max resistance  # Max length  # Max fanout  # Slew
+Name        violations         violations        violations    violations    violations
+---------------------------------------------------------------------------------------
+clk                 0                 0               0             0            2
+---------------------------------------------------------------------------------------
+Total               0                 0               0             0            2
+---------------------------------------------------------------------------------------
+
+Note the above table per clock tree is based on CCOpt clock tree view. The violations are counted across half corners.
+
+Found a total of 0 clock tree pins with max capacitance violations.
+Found a total of 0 clock tree nets with max resistance violations.
+Found a total of 0 clock tree nets with max length violations.
+Found a total of 0 clock tree nets with max fanout violations.
+Found a total of 2 clock tree pins with a slew violation.
+
+Slew violation summary across all clock trees - Top 2 violating pins:
+=====================================================================
+
+Target and measured clock slews (in ns):
+
+----------------------------------------------------------------------------------------------------
+Half corner              Violation  Slew    Slew      Dont   Ideal  Target            Pin
+                         amount     target  achieved  touch  net?   source            
+                                                      net?                            
+----------------------------------------------------------------------------------------------------
+typical_delay:both.late    8.745    0.500    9.245    N      N      explicit          core_top/clk
+typical_delay:both.late    8.745    0.500    9.245    N      N      liberty explicit  data_sram/clk0
+----------------------------------------------------------------------------------------------------
+
+Target sources:
+auto extracted - target was extracted from SDC.
+auto computed - target was computed when balancing trees.
+explicit - target is explicitly set via target_max_trans property.
+pin explicit - target is explicitly set for this pin via pin_target_max_trans property.
+liberty explicit - target is explicitly set via max_transition from liberty library.
+
+Found 0 pins on nets marked dont_touch that have slew violations.
+Found 0 pins on nets marked dont_touch that do not have slew violations.
+Found 0 pins on nets marked ideal_network that have slew violations.
+Found 0 pins on nets marked ideal_network that do not have slew violations.
+
+
+Report for clock tree: clk:
+===========================
+
+Clock Tree Gating Structure (Logical):
+
+# Full cycle clock gates   : 0
+Minimum clock gating depth : 0
+Maximum clock gating depth : 0
+Clock gate area (um^2)     : 0.000
+
+Clock Tree Buffering Structure (Logical):
+
+# Buffers             : 0
+# Inverters           : 0
+  Total               : 0
+Minimum depth         : 0
+Maximum depth         : 0
+Buffering area (um^2) : 0.000
+
+Clock Tree Level Structure (Logical):
+
+-----------------------------------------------------------------
+Level  Full   Posedge  Negedge  Memory  Enable  Non enable  Other
+       Cycle  Flops    Flops    Clock   Latch   Latch       Sinks
+                                Pins    Sinks   Sinks       
+-----------------------------------------------------------------
+root     0       0        0       1       0         0         1
+-----------------------------------------------------------------
+Total    0       0        0       1       0         0         1
+-----------------------------------------------------------------
+
+Target and measured clock slews (in ns):
+
+-----------------------------------------------------------------------------------------------------------------------------------
+Timing Corner             Worst Rising  Worst Falling  Worst Rising  Worst Falling  Leaf Slew    Leaf Slew  Trunk Slew   Trunk Slew
+                          Leaf Slew     Leaf Slew      Trunk Slew    Trunk Slew     Target Type  Target     Target Type  Target
+-----------------------------------------------------------------------------------------------------------------------------------
+typical_delay:both.early     9.245          9.245           -              -        ignored          -      ignored          -
+typical_delay:both.late      9.245          9.245           -              -        explicit     *0.500     explicit      0.500
+-----------------------------------------------------------------------------------------------------------------------------------
+
+* - indicates that target was not met.
+
+auto extracted - target was extracted from SDC.
+auto computed - target was computed when balancing trees.
+
+

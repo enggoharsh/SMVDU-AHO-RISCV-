@@ -1,0 +1,35 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2022 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[10:59:06.382377] Configured Lic search path (21.01-s002): 5280@172.17.7.7
+
+Version: 21.14-s082_1, built Thu Jun 23 11:32:08 PDT 2022
+Options: -files run_dft_core_2.tcl -execute {write_scandef > core_scan.scandef} 
+Date:    Sat May 02 10:59:06 2026
+Host:    A17 (x86_64 w/Linux 4.18.0-425.3.1.el8.x86_64) (4cores*8cpus*1physical cpu*Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz 8192KB) (15936228KB)
+PID:     65827
+OS:      Red Hat Enterprise Linux release 8.7 (Ootpa)
+
+
+[10:59:06.295984] Periodic Lic check successful
+[10:59:06.296001] Feature usage summary:
+[10:59:06.296002] Genus_Synthesis
+Checking out license: Genus_Synthesis
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Loading tool scripts...
+Finished loading tool scripts (7 seconds elapsed).
+
+#@ Processing -execute option
+@genus 1> write_scandef > core_scan.scandef
+Not able to find out unique design.
+Failed on write_scandef
+Encountered problems processing command: write_scandef > core_scan.scandef
+WARNING: This version of the tool is 1408 days old.

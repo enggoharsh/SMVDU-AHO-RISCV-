@@ -1,0 +1,8 @@
+10:14:36:0068 [com.cadence.mdv.imc.Main] [main] INFO  - Binding debug tools http on port: 35545
+10:14:52:0755 [com.cadence.mdv.messaging.MDVASynchronicMessaging] [frontend-pool] ERROR - Error loading database file /home/student/ANUPAM/Project_Test1/coverage/cov_work/scope/icc_4fd46403_00000000.ucm:
+serialization exception.
+10:14:52:0761 [com.cadence.mdv.messaging.MDVASynchronicMessaging] [frontend-pool] ERROR - Valid data file not found for run directory /home/student/ANUPAM/Project_Test1/coverage/cov_work/scope/test. Specify a valid run directory with correct ucm, ucd files and rerun the command.	   
+10:25:25:0137 [com.cadence.mdv.imc.Main] [main] INFO  - Binding debug tools http on port: 38675
+10:25:25:0195 [com.cadence.mdv.messaging.MDVASynchronicMessaging] [frontend-pool] ERROR - Cannot read directory cov_work/scope/cov_work. Check if the directory has read permission, and rerun the command	   
+10:25:25:0196 [com.cadence.mdv.messaging.MDVASynchronicMessaging] [frontend-pool] ERROR - Valid model file not found for run directory cov_work/scope/cov_work. Specify a valid run directory with correct ucm, ucd files and rerun the command.
+10:26:39:0967 [com.cadence.mdv.imc.Main] [main] INFO  - Binding debug tools http on port: 38671

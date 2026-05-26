@@ -1,0 +1,18 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+patch.v
+core_netlist.v
+../Golden_Design_RTL/Single_Cycle_Top.v
+../Golden_Design_RTL/Instruction_Memory.v
+../Golden_Design_RTL/Data_Memory.v
+tb_Single_Cycle_Top.v
+/home/student/ANUPAM/Fresh_GPDK180/slow_vdd1v0_basicCells.v
+-v
+../Memory_Macros/sram_32x64_180nm_TT_5p0V_25C.v
+-access
++rwc
+-gui
+-timescale
+1ns/1ps
