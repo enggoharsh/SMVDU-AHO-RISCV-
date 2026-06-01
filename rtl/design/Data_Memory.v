@@ -7,7 +7,7 @@ module Data_Memory(
 		   output wire [31:0] RD
 		   );
 
-   reg [31:0] 			      RAM[63:0];
+   reg [31:0] RAM[63:0];
 
    assign RD = RAM[A[31:2]]; // word aligned
 

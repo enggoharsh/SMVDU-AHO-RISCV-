@@ -1,5 +1,11 @@
 # SMVDU-AHO-32: 32-bit Single-Cycle RISC-V Processor (RV32I)
 
+
+<p align="center">
+  <img src="images/smvdu_aho_logo.jpeg" width="900">
+</p>
+
+
 A complete end-to-end implementation of a custom **32-bit single-cycle RISC-V processor** based on the **RV32I ISA**, designed in **Verilog HDL**, functionally verified through simulation, prototyped on **Xilinx PYNQ-Z2 FPGA**, and analyzed through timing, power, RTL netlist, and physical implementation reports.
 
 ---
