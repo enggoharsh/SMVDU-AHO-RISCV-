@@ -1,0 +1,527 @@
+xrun(64): 22.09-s003: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s003: Started on May 02, 2026 at 01:08:57 EDT
+xrun
+	patch.v
+	core_netlist.v
+	../Golden_Design_RTL/Single_Cycle_Top.v
+	../Golden_Design_RTL/Instruction_Memory.v
+	../Golden_Design_RTL/Data_Memory.v
+	tb_Single_Cycle_Top.v
+	/home/student/ANUPAM/Fresh_GPDK180/slow_vdd1v0_basicCells.v
+	-v ../Memory_Macros/sram_32x64_180nm_TT_5p0V_25C.v
+	-access +rwc
+	-gui
+	-timescale 1ns/1ps
+Recompiling... reason: file './patch.v' is newer than expected.
+	expected: Fri May  1 10:54:57 2026
+	actual:   Sat May  2 01:08:29 2026
+file: /home/student/ANUPAM/Fresh_GPDK180/slow_vdd1v0_basicCells.v
+xmvlog: *W,LIBNOF: Library file or directory "../Memory_Macros/sram_32x64_180nm_TT_5p0V_25C.v" does not exist.
+	Total errors/warnings found outside modules and primitives:
+		errors: 0, warnings: 1
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		tb_Single_Cycle_Top
+		XOR3XL
+		XOR3X1
+		XOR2XL
+		XOR2X4
+		XOR2X2
+		XNOR3XL
+		XNOR3X1
+		XNOR2XL
+		XNOR2X4
+		XNOR2X2
+		TLATXL
+		TLATX4
+		TLATX2
+		TLATX1
+		TLATSRXL
+		TLATSRX4
+		TLATSRX2
+		TLATSRX1
+		TLATNXL
+		TLATNX4
+		TLATNX2
+		TLATNX1
+		TLATNTSCAX8
+		TLATNTSCAX6
+		TLATNTSCAX4
+		TLATNTSCAX3
+		TLATNTSCAX20
+		TLATNTSCAX2
+		TLATNTSCAX16
+		TLATNTSCAX12
+		TLATNSRXL
+		TLATNSRX4
+		TLATNSRX2
+		TLATNSRX1
+		TLATNCAX8
+		TLATNCAX6
+		TLATNCAX4
+		TLATNCAX3
+		TLATNCAX20
+		TLATNCAX2
+		TLATNCAX16
+		TLATNCAX12
+		TIELO
+		TIEHI
+		TBUFXL
+		TBUFX8
+		TBUFX6
+		TBUFX4
+		TBUFX3
+		TBUFX20
+		TBUFX2
+		TBUFX16
+		TBUFX12
+		TBUFX1
+		SMDFFHQX8
+		SMDFFHQX4
+		SMDFFHQX2
+		SMDFFHQX1
+		SEDFFXL
+		SEDFFX4
+		SEDFFX2
+		SEDFFX1
+		SEDFFTRXL
+		SEDFFTRX4
+		SEDFFTRX2
+		SEDFFTRX1
+		SEDFFHQX8
+		SEDFFHQX4
+		SEDFFHQX2
+		SEDFFHQX1
+		SDFFXL
+		SDFFX4
+		SDFFX2
+		SDFFX1
+		SDFFTRXL
+		SDFFTRX4
+		SDFFTRX2
+		SDFFTRX1
+		SDFFSXL
+		SDFFSX4
+		SDFFSX2
+		SDFFSX1
+		SDFFSRXL
+		SDFFSRX4
+		SDFFSRX2
+		SDFFSRX1
+		SDFFSRHQX8
+		SDFFSRHQX4
+		SDFFSRHQX2
+		SDFFSRHQX1
+		SDFFSHQX8
+		SDFFSHQX4
+		SDFFSHQX2
+		SDFFSHQX1
+		SDFFRXL
+		SDFFRX4
+		SDFFRX2
+		SDFFRX1
+		SDFFRHQX8
+		SDFFRHQX4
+		SDFFRHQX2
+		SDFFRHQX1
+		SDFFQXL
+		SDFFQX4
+		SDFFQX2
+		SDFFQX1
+		SDFFNSRXL
+		SDFFNSRX4
+		SDFFNSRX2
+		SDFFNSRX1
+		SDFFHQX8
+		SDFFHQX4
+		SDFFHQX2
+		OR4XL
+		OR4X8
+		OR4X6
+		OR4X4
+		OR4X1
+		OR3X8
+		OR3X6
+		OR3X4
+		OR3X1
+		OR2XL
+		OR2X8
+		OR2X6
+		OR2X4
+		OAI33XL
+		OAI33X4
+		OAI33X2
+		OAI33X1
+		OAI32XL
+		OAI32X4
+		OAI32X2
+		OAI31XL
+		OAI31X4
+		OAI31X2
+		OAI2BB2X4
+		OAI2BB2X2
+		OAI2BB1X4
+		OAI22XL
+		OAI22X4
+		OAI22X2
+		OAI222X4
+		OAI222X2
+		OAI222X1
+		OAI221X4
+		OAI221X2
+		OAI221X1
+		OAI21X4
+		OAI21X2
+		OAI21X1
+		OAI211XL
+		OAI211X2
+		OA22XL
+		OA22X4
+		OA22X2
+		OA22X1
+		OA21XL
+		OA21X4
+		OA21X2
+		OA21X1
+		NOR4XL
+		NOR4X8
+		NOR4X6
+		NOR4X4
+		NOR4X2
+		NOR4BXL
+		NOR4BX4
+		NOR4BX2
+		NOR4BX1
+		NOR4BBXL
+		NOR4BBX4
+		NOR4BBX2
+		NOR4BBX1
+		NOR3X8
+		NOR3X6
+		NOR3X4
+		NOR3X2
+		NOR3BXL
+		NOR3BX4
+		NOR3BX2
+		NOR2X8
+		NOR2X6
+		NOR2X4
+		NOR2BX4
+		NOR2BX2
+		NAND4X8
+		NAND4X6
+		NAND4X4
+		NAND4X2
+		NAND4BX4
+		NAND4BX2
+		NAND4BX1
+		NAND4BBXL
+		NAND4BBX4
+		NAND4BBX2
+		NAND4BBX1
+		NAND3X8
+		NAND3X6
+		NAND3X4
+		NAND3X2
+		NAND3BX4
+		NAND3BX2
+		NAND2X8
+		NAND2X6
+		NAND2X4
+		NAND2X2
+		NAND2BX4
+		MXI4XL
+		MXI4X4
+		MXI4X2
+		MXI4X1
+		MXI3XL
+		MXI3X4
+		MXI3X2
+		MXI3X1
+		MXI2X8
+		MXI2X6
+		MXI2X4
+		MXI2X2
+		MX4XL
+		MX4X4
+		MX4X2
+		MX4X1
+		MX3XL
+		MX3X4
+		MX3X2
+		MX3X1
+		MX2X8
+		MX2X6
+		MDFFHQX8
+		MDFFHQX4
+		MDFFHQX2
+		MDFFHQX1
+		INVX8
+		INVX6
+		INVX4
+		INVX3
+		INVX20
+		INVX16
+		INVX12
+		HOLDX1
+		EDFFXL
+		EDFFX4
+		EDFFX2
+		EDFFX1
+		EDFFTRXL
+		EDFFTRX4
+		EDFFTRX2
+		EDFFTRX1
+		EDFFHQX8
+		EDFFHQX4
+		EDFFHQX2
+		EDFFHQX1
+		DLY4X4
+		DLY4X1
+		DLY3X4
+		DLY3X1
+		DLY2X4
+		DLY2X1
+		DLY1X4
+		DLY1X1
+		DFFXL
+		DFFX4
+		DFFX2
+		DFFX1
+		DFFTRXL
+		DFFTRX4
+		DFFTRX2
+		DFFTRX1
+		DFFSXL
+		DFFSX4
+		DFFSX2
+		DFFSX1
+		DFFSRXL
+		DFFSRX4
+		DFFSRX2
+		DFFSRX1
+		DFFSRHQX8
+		DFFSRHQX4
+		DFFSRHQX2
+		DFFSRHQX1
+		DFFSHQX8
+		DFFSHQX4
+		DFFSHQX2
+		DFFSHQX1
+		DFFRXL
+		DFFRX4
+		DFFRX2
+		DFFRHQX8
+		DFFRHQX4
+		DFFRHQX2
+		DFFQXL
+		DFFQX4
+		DFFQX2
+		DFFQX1
+		DFFNSRXL
+		DFFNSRX4
+		DFFNSRX2
+		DFFNSRX1
+		DFFHQX8
+		DFFHQX4
+		DFFHQX2
+		DFFHQX1
+		CLKXOR2X8
+		CLKXOR2X4
+		CLKXOR2X2
+		CLKXOR2X1
+		CLKMX2X8
+		CLKMX2X6
+		CLKMX2X4
+		CLKMX2X3
+		CLKMX2X2
+		CLKMX2X12
+		CLKINVX8
+		CLKINVX6
+		CLKINVX4
+		CLKINVX20
+		CLKINVX2
+		CLKINVX16
+		CLKINVX12
+		CLKINVX1
+		CLKBUFX8
+		CLKBUFX6
+		CLKBUFX4
+		CLKBUFX3
+		CLKBUFX20
+		CLKBUFX2
+		CLKBUFX16
+		CLKBUFX12
+		CLKAND2X8
+		CLKAND2X6
+		CLKAND2X4
+		CLKAND2X3
+		CLKAND2X2
+		CLKAND2X12
+		BUFX8
+		BUFX6
+		BUFX20
+		BUFX2
+		BUFX16
+		BUFX12
+		BMXIX4
+		BMXIX2
+		AOI33XL
+		AOI33X4
+		AOI33X2
+		AOI32XL
+		AOI32X4
+		AOI32X2
+		AOI31XL
+		AOI31X4
+		AOI31X2
+		AOI2BB2XL
+		AOI2BB2X4
+		AOI2BB2X2
+		AOI2BB1X4
+		AOI2BB1X2
+		AOI22X4
+		AOI22X2
+		AOI222XL
+		AOI222X4
+		AOI222X2
+		AOI221XL
+		AOI221X4
+		AOI221X2
+		AOI21X4
+		AOI21X2
+		AOI211X4
+		AOI211X2
+		AO22XL
+		AO22X4
+		AO22X2
+		AO22X1
+		AO21XL
+		AO21X4
+		AO21X2
+		AO21X1
+		ANTENNA
+		AND4XL
+		AND4X8
+		AND4X6
+		AND4X4
+		AND4X1
+		AND3XL
+		AND3X8
+		AND3X6
+		AND3X4
+		AND3X1
+		AND2XL
+		AND2X8
+		AND2X6
+		AND2X4
+		ADDHXL
+		ADDHX4
+		ADDHX2
+		ADDHX1
+		ADDFXL
+		ADDFX4
+		ADDFX2
+		ADDFHXL
+		ADDFHX4
+		ADDFHX2
+		ADDFHX1
+		ACHCONX2
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.DFFRHQX2:v <0x5bddac2f>
+			streams:   1, words:   146
+		worklib.DFFRHQX4:v <0x3e73abb7>
+			streams:   1, words:   146
+		worklib.Data_Memory:v <0x507e30de>
+			streams:   4, words:  1902
+		worklib.Instruction_Memory:v <0x2eb8bd7e>
+			streams:   2, words:  3842
+		worklib.CLKBUFXL:v <0x2c4d10a7>
+			streams:   0, words:     0
+		worklib.CLKBUFXL:v <0x12e85218>
+			streams:   0, words:     0
+		worklib.SDFFHQX1:v <0x16465218>
+			streams:   1, words:   219
+		worklib.DFFRHQX1:v <0x67ed4732>
+			streams:   1, words:   146
+		worklib.DFFRX1:v <0x7e418d97>
+			streams:   1, words:   146
+		worklib.PC_Plus_4:v <0x0bd606ee>
+			streams:   0, words:     0
+		worklib.Extend:v <0x66cd7cc4>
+			streams:   0, words:     0
+		worklib.BUFX1:v <0x52fac321>
+			streams:   0, words:     0
+		worklib.Core_Datapath:v <0x792c0039>
+			streams:   0, words:     0
+		worklib.Main_Decoder:v <0x0bd8f85d>
+			streams:   0, words:     0
+		worklib.Control_Unit:v <0x4454a09e>
+			streams:   0, words:     0
+		worklib.Single_Cycle_Top:v <0x658873e0>
+			streams:   3, words:   510
+		worklib.tb_Single_Cycle_Top:v <0x26856833>
+			streams:   6, words:  8512
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                   Instances  Unique
+		Modules:                6503     502
+		UDPs:                   1173       2
+		Primitives:            16138       9
+		Registers:                 4       6
+		Scalar wires:           4031       -
+		Expanded wires:           64       2
+		Vectored wires:            3       -
+		Always blocks:             2       2
+		Initial blocks:            5       5
+		Cont. assignments:         7      31
+		Pseudo assignments:     1151     130
+		Simulation timescale:    1ps
+	Writing initial simulation snapshot: worklib.tb_Single_Cycle_Top:v
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /home/install/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm tb_Single_Cycle_Top.DataAddr tb_Single_Cycle_Top.Instr_out tb_Single_Cycle_Top.MemWrite tb_Single_Cycle_Top.PC_out tb_Single_Cycle_Top.WriteData tb_Single_Cycle_Top.clk tb_Single_Cycle_Top.read_dataout tb_Single_Cycle_Top.reset
+Created probe 1
+xcelium> run
+==================================================
+   SMVDU-AHO-32 Processor Simulation Started      
+==================================================
+Time: 24000 | PC: 00000000 | Instr: 00500113 | MemWrite: 0 | Addr: 00000005 | WData: xxxxxxxx
+Time: 36000 | PC: 00000004 | Instr: 00c00193 | MemWrite: 0 | Addr: 0000000c | WData: xxxxxxxx
+Time: 48000 | PC: 00000008 | Instr: ff718393 | MemWrite: 0 | Addr: 00000003 | WData: xxxxxxxx
+Time: 60000 | PC: 0000000c | Instr: 0023e233 | MemWrite: 0 | Addr: 00000007 | WData: 00000005
+Time: 72000 | PC: 00000010 | Instr: 0041f2b3 | MemWrite: 0 | Addr: 00000004 | WData: 00000007
+Time: 84000 | PC: 00000014 | Instr: 004282b3 | MemWrite: 0 | Addr: 0000000b | WData: 00000007
+Time: 96000 | PC: 00000018 | Instr: 02728863 | MemWrite: 0 | Addr: 00000008 | WData: 00000003
+Time: 108000 | PC: 0000001c | Instr: 0041a233 | MemWrite: 0 | Addr: 00000000 | WData: 00000007
+Time: 120000 | PC: 00000020 | Instr: 00020463 | MemWrite: 0 | Addr: 00000000 | WData: 00000000
+Time: 132000 | PC: 00000028 | Instr: 0023a233 | MemWrite: 0 | Addr: 00000001 | WData: 00000005
+Time: 144000 | PC: 0000002c | Instr: 005203b3 | MemWrite: 0 | Addr: 0000000c | WData: 0000000b
+Time: 156000 | PC: 00000030 | Instr: 402383b3 | MemWrite: 0 | Addr: 00000007 | WData: 00000005
+Time: 168000 | PC: 00000034 | Instr: 0471aa23 | MemWrite: 1 | Addr: 00000060 | WData: 00000007
+Time: 180000 | PC: 00000038 | Instr: 06002103 | MemWrite: 0 | Addr: 00000060 | WData: 00000000
+Time: 192000 | PC: 0000003c | Instr: 005104b3 | MemWrite: 0 | Addr: 00000012 | WData: 0000000b
+Time: 204000 | PC: 00000040 | Instr: 008001ef | MemWrite: 0 | Addr: xxxxxxxx | WData: xxxxxxxx
+Time: 216000 | PC: 00000048 | Instr: 00910133 | MemWrite: 0 | Addr: 00000019 | WData: 00000012
+Time: 228000 | PC: 0000004c | Instr: 0221a023 | MemWrite: 1 | Addr: 00000064 | WData: 00000019
+Time: 240000 | PC: 00000050 | Instr: 00210063 | MemWrite: 0 | Addr: 00000000 | WData: 00000019
+Time: 252000 | PC: 00000050 | Instr: 00210063 | MemWrite: 0 | Addr: 00000000 | WData: 00000019
+==================================================
+   Test Program Completed Successfully.           
+==================================================
+Simulation complete via $finish(1) at time 254 NS + 0
+./tb_Single_Cycle_Top.v:60         $finish;
+xcelium> ^C
+xcelium> exit
+...Regained control from SimVision
+-------------------------------------
+TOOL:	xrun(64)	22.09-s003: Exiting on May 02, 2026 at 01:14:15 EDT  (total: 00:05:18)

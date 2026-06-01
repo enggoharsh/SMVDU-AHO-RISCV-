@@ -1,5 +1,6 @@
 # SMVDU-AHO-32: 32-bit Single-Cycle RISC-V Processor (RV32I)
 
+<<<<<<< HEAD
 
 <p align="center">
   <img src="images/smvdu_aho_logo.jpeg" width="900">
@@ -7,6 +8,9 @@
 
 
 A complete end-to-end implementation of a custom **32-bit single-cycle RISC-V processor** based on the **RV32I ISA**, designed in **Verilog HDL**, functionally verified through simulation, prototyped on **Xilinx PYNQ-Z2 FPGA**, and analyzed through timing, power, RTL netlist, and physical implementation reports.
+=======
+A complete end-to-end implementation of a custom **32-bit single-cycle RISC-V processor** based on the **RV32I ISA**, designed in **Verilog HDL**, functionally verified through simulation, prototyped on **Xilinx PYNQ-Z2 FPGA**, and fully implemented through a custom **ASIC physical design flow (Synthesis, DFT, ATPG, LEC, and Layout)** using Cadence tools.
+>>>>>>> cc9598f0d04ff0437067bb17104e56c3bad2fba1
 
 ---
 
@@ -255,12 +259,53 @@ Placement visualization of synthesized logic across FPGA fabric.
 
 ---
 
+## ASIC Physical Design (Cadence Innovus)
+
+A complete physical implementation of the processor using **Cadence Innovus System**.
+
+### 1. 32-bit Single-Cycle RISC-V Core Layout
+Fully routed core layout displaying standard cell placement and clock tree synthesis (CTS).
+
+<p align="center">
+  <img src="images/core_layout_zoomed_out.png" width="700">
+</p>
+
+*Zoomed-in routing detail of the RISC-V Core:*
+<p align="center">
+  <img src="images/core_layout_zoomed_in.png" width="1000">
+</p>
+
+### 2. Single-Cycle SoC Layout
+Full SoC floorplan integrating the core top logic along with memory macros and surrounding pin connections.
+
+<p align="center">
+  <img src="images/soc_layout.png" width="700">
+</p>
+
+---
+
 # Repository Structure
 
 ```bash
 RISCV_CPU/
 │
 ├── asic/
+│   ├── ATPG/                     # Automatic Test Pattern Generation files
+│   ├── DFT/                      # Design for Testability scripts & netlists
+│   ├── FUNCTIONAL_VERIFICATION/   # Functional verification simulation environment
+│   ├── GLS/                      # Gate-Level Simulation results
+│   ├── Golden_Design_RTL/        # ASIC-specific golden Verilog design files
+│   ├── Golden_Run/               # Simulation run logs & reports
+│   ├── LEC/                      # Logic Equivalence Checking setup (Cadence Conformal)
+│   ├── LEC_DFT_Netlist/          # Post-DFT Logic Equivalence Checking files
+│   ├── Memory_Macros/            # Memory configuration macro models
+│   ├── Physical_Design/          # Cadence Innovus layout & CTS outputs
+│   ├── SMVDU_AHO32_Final_Delivery/# Sign-off delivery materials
+│   ├── SMVDU_AHO32_Signoff/      # Sign-off timing, power, & DRC/LVS reports
+│   ├── Single_Cycle_SoC/         # Full SoC level physical design flow
+│   ├── Synthesis/                # Cadence Genus synthesis scripts & outputs
+│   ├── TESTBENCHES/              # Comprehensive testbenches (including Exhaustive_TB)
+│   └── coverage/                 # Code coverage analysis runs
 │
 ├── constr/
 │   ├── FPGA_single_cycle.xdc
@@ -276,12 +321,15 @@ RISCV_CPU/
 │
 ├── images/
 │   ├── aho_micro.png
+│   ├── core_layout_zoomed_in.png # Zoomed-in Core Layout (Innovus)
+│   ├── core_layout_zoomed_out.png# Full Core Layout (Innovus)
 │   ├── floorplan_fpga.png
 │   ├── fpga_board.png
 │   ├── power_report.png
 │   ├── rtl_netlist.png
 │   ├── sim_pynq.png
 │   ├── sim_waveform.png
+│   ├── soc_layout.png            # SoC Layout integrating memories (Innovus)
 │   └── timing_report.png
 │
 ├── resources/

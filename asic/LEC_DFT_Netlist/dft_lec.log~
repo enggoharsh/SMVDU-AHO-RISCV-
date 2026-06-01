@@ -1,0 +1,37 @@
+                          CONFORMAL (R)
+                   Version 21.10-s300 (22-Aug-2021) (64 bit executable)
+   Copyright (c) Cadence Design Systems, Inc., 1997-2021. All Rights Reserved
+
+
+This program is proprietary and confidential information belonging to
+Cadence Design Systems, Inc., and may be used and disclosed only as authorized
+in a license agreement controlling such use and disclosure.
+
+// Warning: This version is 1713 days old. You can download the latest version from http://downloads.cadence.com.
+
+// Command: read library /home/student/ANUPAM/Fresh_GPDK180/slow.lib ../Memory_Macros/sram_32x64_180nm_TT_5p0V_25C.lib -liberty -both
+// Parsing file /home/student/ANUPAM/Fresh_GPDK180/slow.lib ...
+// Parsing file ../Memory_Macros/sram_32x64_180nm_TT_5p0V_25C.lib ...
+// Warning: (RTL9.17) Cell doesn't have any output pins or all output pins are undriven (blackboxed) (occurrence:1)
+// Note: Read Liberty library successfully
+CPU time     : 0.19    seconds
+Elapse time  : 0       seconds
+Memory usage : 91.28   M bytes
+// Command: read library /home/student/ANUPAM/Fresh_GPDK180/slow_vdd1v0_basicCells.v ../GLS/patch.v -verilog -both -append
+// Parsing file /home/student/ANUPAM/Fresh_GPDK180/slow_vdd1v0_basicCells.v ...
+// Parsing file ../GLS/patch.v ...
+// Warning: (RTL9.17) Cell doesn't have any output pins or all output pins are undriven (blackboxed) (occurrence:1)
+// Warning: (RTL14.1) Fanout load of the signal is removed (occurrence:29)
+// Warning: (VLG5.5) Internal primitive is recognized (occurrence:29)
+// Warning: (VLG5.6) Named port association is ignored for primitive gate (occurrence:29)
+// Warning: (IGN3.2) Duplicate modules/entities are detected. Subsequent modules/entities are ignored (occurrence:354)
+// Warning: (IGN4) Attribute instance(s) are ignored (occurrence:2)
+// Warning: (IGN7.1) trireg net is modeled as a latch to hold value (occurrence:1)
+// Warning: (HRC1.4) Module/entity is empty (blackboxed) (occurrence:1)
+// Note: (HRC3.5b) Open output port connection is detected (occurrence:16)
+// Warning: (HRC3.10b) An input port is declared, but it is not used. Module is empty (occurrence:1)
+// Note: Read VERILOG library successfully
+// Command: read design ../Synthesis/core_netlist.v -verilog -golden[cite: 2]
+// Error: -golden[cite: is not a legal option.
+// 'dofile /home/student/ANUPAM/Project_Test1/LEC_DFT_Netlist/dft_lec.do' is aborted at line 12
+// Command: exit

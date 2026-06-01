@@ -1,0 +1,192 @@
+
+Power Net Detected:
+        Voltage	    Name
+             0V	    VSS
+             5V	    VDD
+Using Power View: typical_view.
+
+Begin Power Analysis
+
+             0V	    VSS
+             5V	    VDD
+
+Begin Processing Timing Library for Power Calculation
+
+Begin Processing Timing Library for Power Calculation
+
+
+
+Begin Processing Power Net/Grid for Power Calculation
+
+Ended Processing Power Net/Grid for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=4681.49MB/6316.87MB/4908.72MB)
+
+Begin Processing Timing Window Data for Power Calculation
+
+clk(100MHz) CK: assigning clock clk to net clk
+Ended Processing Timing Window Data for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=4681.49MB/6316.87MB/4908.72MB)
+
+Begin Processing User Attributes
+
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=4681.49MB/6316.87MB/4908.72MB)
+
+Begin Processing Signal Activity
+
+
+Starting Levelizing
+2026-May-05 05:18:53 (2026-May-05 09:18:53 GMT)
+2026-May-05 05:18:53 (2026-May-05 09:18:53 GMT): 50%
+
+Finished Levelizing
+2026-May-05 05:18:53 (2026-May-05 09:18:53 GMT)
+
+Starting Activity Propagation
+2026-May-05 05:18:53 (2026-May-05 09:18:53 GMT)
+** INFO:  (VOLTUS_POWR-1356): No default input activity has been set. Defaulting to 0.2.
+Use 'set_default_switching_activity -input_activity' command to change the default activity value.
+
+2026-May-05 05:18:53 (2026-May-05 09:18:53 GMT): 10%
+2026-May-05 05:18:53 (2026-May-05 09:18:53 GMT): 20%
+2026-May-05 05:18:53 (2026-May-05 09:18:53 GMT): 30%
+2026-May-05 05:18:53 (2026-May-05 09:18:53 GMT): 40%
+2026-May-05 05:18:53 (2026-May-05 09:18:53 GMT): 50%
+2026-May-05 05:18:53 (2026-May-05 09:18:53 GMT): 60%
+2026-May-05 05:18:53 (2026-May-05 09:18:53 GMT): 70%
+
+Finished Activity Propagation
+2026-May-05 05:18:53 (2026-May-05 09:18:53 GMT)
+Ended Processing Signal Activity: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=4681.49MB/6316.87MB/4908.72MB)
+
+Begin Power Computation
+
+      ----------------------------------------------------------
+      # of cell(s) missing both power/leakage table: 0
+      # of cell(s) missing power table: 1
+      # of cell(s) missing leakage table: 1
+      ----------------------------------------------------------
+CellName                                  Missing Table(s)
+Single_Cycle_Core                         internal power, leakage power, 
+
+
+
+Starting Calculating power
+2026-May-05 05:18:53 (2026-May-05 09:18:53 GMT)
+ ... Calculating switching power
+  instance core_top is not connected to any rail
+2026-May-05 05:18:53 (2026-May-05 09:18:53 GMT): 10%
+2026-May-05 05:18:53 (2026-May-05 09:18:53 GMT): 20%
+2026-May-05 05:18:53 (2026-May-05 09:18:53 GMT): 30%
+2026-May-05 05:18:53 (2026-May-05 09:18:53 GMT): 40%
+2026-May-05 05:18:53 (2026-May-05 09:18:53 GMT): 50%
+2026-May-05 05:18:53 (2026-May-05 09:18:53 GMT): 60%
+2026-May-05 05:18:53 (2026-May-05 09:18:53 GMT): 70%
+2026-May-05 05:18:53 (2026-May-05 09:18:53 GMT): 80%
+2026-May-05 05:18:53 (2026-May-05 09:18:53 GMT): 90%
+ ... Calculating internal and leakage power
+
+Finished Calculating power
+2026-May-05 05:18:53 (2026-May-05 09:18:53 GMT)
+      # of MSMV cell(s) missing power_level: 0
+Ended Power Computation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=4684.60MB/6324.88MB/4908.72MB)
+
+Begin Processing User Attributes
+
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=4684.60MB/6324.88MB/4908.72MB)
+
+Ended Power Analysis: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=4684.60MB/6324.88MB/4908.72MB)
+
+Begin Boundary Leakage Calculation
+Ended Boundary Leakage Calculation: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=4684.60MB/6324.88MB/4908.72MB)
+Begin Static Power Report Generation
+*----------------------------------------------------------------------------------------
+*	Innovus 21.15-s110_1 (64bit) 09/23/2022 13:08 (Linux 3.10.0-693.el7.x86_64)
+*	
+*
+* 	Date & Time:	2026-May-05 05:18:53 (2026-May-05 09:18:53 GMT)
+*
+*----------------------------------------------------------------------------------------
+*
+*	Design: Single_Cycle_Top
+*
+*	Liberty Libraries used:
+*	        typical_view: sram_32x64_180nm_TT_5p0V_25C.lib
+*	        typical_view: Single_Cycle_Core.lib
+*
+*	Parasitic Files used:
+*
+*       Power View : typical_view
+*
+*       User-Defined Activity : N.A.
+*
+*       Activity File: N.A.
+*
+*       Hierarchical Global Activity: N.A.
+*
+*       Global Activity: N.A.
+*
+*       Sequential Element Activity: N.A.
+*
+*       Primary Input Activity: 0.200000
+*
+*       Default icg ratio: N.A.
+*
+*       Global Comb ClockGate Ratio: N.A.
+*
+*	Power Units = 1mW
+*
+*	Time Units = 1e-09 secs
+*
+*       report_power
+*
+-----------------------------------------------------------------------------------------
+*
+
+
+
+Total Power
+-----------------------------------------------------------------------------------------
+Total Internal Power:        2.76939385 	   13.9261%
+Total Switching Power:      17.11464114 	   86.0622%
+Total Leakage Power:         0.00232300 	    0.0117%
+Total Power:                19.88635799
+-----------------------------------------------------------------------------------------
+
+
+Group                           Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+Sequential                             0           0           0           0           0
+Macro                              2.769       17.11    0.002323       19.89         100
+IO                                     0           0           0           0           0
+Combinational                          0           0           0           0           0
+Clock (Combinational)                  0           0           0           0           0
+Clock (Sequential)                     0           0           0           0           0
+-----------------------------------------------------------------------------------------
+Total                              2.769       17.11    0.002323       19.89         100
+-----------------------------------------------------------------------------------------
+
+
+Rail                  Voltage   Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+VDD                         5      2.769       5.245    0.002323       8.017       40.31
+Default                     5          0       11.87           0       11.87       59.69
+ 
+ 
+-----------------------------------------------------------------------------------------
+*	Power Distribution Summary: 
+*              Highest Average Power:                  core_top (Single_Cycle_Core):            11.87
+*              Highest Leakage Power:                 data_sram (sram_32x64_180nm):         0.002323
+*                Total Cap:      4.93856e-11 F
+*                Total instances in design:     2
+*                Total instances in design with no power:     0
+*                Total instances in design with no activty:     0
+
+*                Total Fillers and Decap:     0
+-----------------------------------------------------------------------------------------
+ 
+** INFO:  (VOLTUS_POWR-3465): There are 0 decaps and 0 fillers in the design
+
+Ended Static Power Report Generation: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=4684.60MB/6324.88MB/4908.72MB)
+

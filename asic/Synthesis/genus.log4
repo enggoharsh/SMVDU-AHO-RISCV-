@@ -1,0 +1,141 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2022 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[08:31:57.382401] Configured Lic search path (21.01-s002): 5280@172.17.7.7
+
+Version: 21.14-s082_1, built Thu Jun 23 11:32:08 PDT 2022
+Options: 
+Date:    Fri May 01 08:31:57 2026
+Host:    A17 (x86_64 w/Linux 4.18.0-425.3.1.el8.x86_64) (4cores*8cpus*1physical cpu*Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz 8192KB) (15936228KB)
+PID:     25228
+OS:      Red Hat Enterprise Linux release 8.7 (Ootpa)
+
+
+[08:31:57.354960] Periodic Lic check successful
+[08:31:57.354962] Feature usage summary:
+[08:31:57.354963] Genus_Synthesis
+Checking out license: Genus_Synthesis
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Loading tool scripts...
+Finished loading tool scripts (8 seconds elapsed).
+
+WARNING: This version of the tool is 1407 days old.
+@genus:root: 1> set_db init_lib_search_path {/home/student/ANUPAM/Fresh_GPDK180/ ../Memory_Macros/}
+  Setting attribute of root '/': 'init_lib_search_path' = /home/student/ANUPAM/Fresh_GPDK180/ ../Memory_Macros/
+1 {/home/student/ANUPAM/Fresh_GPDK180/ ../Memory_Macros/}
+@genus:root: 2> set_db library {slow.lib sram_32x64_180nm_TT_5p0V_25C.lib}
+
+Threads Configured:6
+
+  Message Summary for Library both libraries:
+  *******************************************
+  Missing a function attribute in the output pin definition. [LBR-518]: 1
+  Missing library level attribute. [LBR-516]: 1
+  An unsupported construct was detected in this library. [LBR-40]: 3
+  *******************************************
+ 
+Warning : Libraries have inconsistent nominal operating conditions. In the Liberty library, there are attributes called nom_voltage, nom_process and nom_temperature. Genus reports the message, if the respective values of the 2 given .libs differ. [LBR-38]
+        : The libraries are 'tsmc18' and 'sram_32x64_180nm_TT_5p0V_25C_lib'.
+        : This is a common source of delay calculation confusion and should be avoided.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 1.620000, 125.000000) in library 'slow.lib'.
+        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 5.000000, 25.000000) in library 'sram_32x64_180nm_TT_5p0V_25C.lib'.
+Warning : Found libraries with and without pg_pin construct. [LBR-12]
+        : Libraries with and without pg_pin construct have been loaded.
+        : This can lead to issues later in the flow.
+  Setting attribute of root '/': 'library' = slow.lib sram_32x64_180nm_TT_5p0V_25C.lib
+1 {slow.lib sram_32x64_180nm_TT_5p0V_25C.lib}
+@genus:root: 3> read_hdl full_system_netlist.v
+@genus:root: 4> elaborate Single_Cycle_Top
+Info    : Elaborating Design. [ELAB-1]
+        : Elaborating top-level block 'Single_Cycle_Top' from file 'full_system_netlist.v'.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'A1' of instance 'g65631' of module 'AOI221X1' in file 'full_system_netlist.v' on line 10593, column 18, hid = 0.
+        : Run check_design to check 'Undriven Port(s)/Pin(s)' section for all undriven module input ports. It is better to double confirm with designer if these undriven ports are expected. During syn_gen the undriven ports are controlled by attribute 'hdl_unconnected_value', the default value is 0.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'B1' of instance 'g65631' of module 'AOI221X1' in file 'full_system_netlist.v' on line 10593, column 18, hid = 0.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'A0N' of instance 'g65716' of module 'OAI2BB1X1' in file 'full_system_netlist.v' on line 10759, column 19, hid = 0.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'A1' of instance 'g65726' of module 'AOI21X1' in file 'full_system_netlist.v' on line 10772, column 17, hid = 0.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'A1' of instance 'g65731' of module 'AOI21X1' in file 'full_system_netlist.v' on line 10778, column 17, hid = 0.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'A1' of instance 'g65732' of module 'AOI21X1' in file 'full_system_netlist.v' on line 10780, column 17, hid = 0.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'A1' of instance 'g65763' of module 'AOI211X1' in file 'full_system_netlist.v' on line 10836, column 18, hid = 0.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'A1' of instance 'g65764' of module 'AOI211X1' in file 'full_system_netlist.v' on line 10838, column 18, hid = 0.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'A1' of instance 'g65765' of module 'AOI211X1' in file 'full_system_netlist.v' on line 10840, column 18, hid = 0.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'A1' of instance 'g65772' of module 'AOI221X1' in file 'full_system_netlist.v' on line 10848, column 18, hid = 0.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'B1' of instance 'g65772' of module 'AOI221X1' in file 'full_system_netlist.v' on line 10848, column 18, hid = 0.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'A1' of instance 'g65773' of module 'AOI221X1' in file 'full_system_netlist.v' on line 10851, column 18, hid = 0.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'B1' of instance 'g65773' of module 'AOI221X1' in file 'full_system_netlist.v' on line 10851, column 18, hid = 0.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'A1' of instance 'g65775' of module 'AOI221X1' in file 'full_system_netlist.v' on line 10855, column 18, hid = 0.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'B1' of instance 'g65775' of module 'AOI221X1' in file 'full_system_netlist.v' on line 10855, column 18, hid = 0.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'A1' of instance 'g65776' of module 'AOI221X1' in file 'full_system_netlist.v' on line 10858, column 18, hid = 0.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'B1' of instance 'g65776' of module 'AOI221X1' in file 'full_system_netlist.v' on line 10858, column 18, hid = 0.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'A1' of instance 'g65788' of module 'AOI211X1' in file 'full_system_netlist.v' on line 10876, column 18, hid = 0.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'A1' of instance 'g65790' of module 'AOI211X1' in file 'full_system_netlist.v' on line 10879, column 18, hid = 0.
+Warning : Undriven module input port. [ELABUTL-127]
+        : Undriven bits of port 'A1' of instance 'g65791' of module 'AOI211X1' in file 'full_system_netlist.v' on line 10881, column 18, hid = 0.
+Warning : Maximum message print count reached. [MESG-11]
+        : Maximum print count of '20' reached for message 'ELABUTL-127'.
+Info    : Done Elaborating Design. [ELAB-3]
+        : Done elaborating 'Single_Cycle_Top'.
+Checking for analog nets...
+Check completed for analog nets.
+Checking for source RTL...
+Check completed for source RTL.
+Running Unified Mux Engine Tricks...
+Completed Unified Mux Engine Tricks
+
+Stage: post_elab
+--------------------------------------------------------
+| Trick             | Accepts | Rejects | Runtime (ms) | 
+--------------------------------------------------------
+| ume_constant_bmux |       0 |       0 |         0.00 | 
+--------------------------------------------------------
+Starting clip mux common data inputs [v1.0] (stage: post_elab, startdef: Single_Cycle_Top, recur: true)
+Completed clip mux common data inputs (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting clip the non-user hierarchies [v2.0] (stage: post_elab, startdef: Single_Cycle_Top, recur: true)
+Completed clip the non-user hierarchies (accepts: 0, rejects: 0, runtime: 0.001s)
+
+Stage: post_elab
+---------------------------------------------------------
+| Transform          | Accepts | Rejects | Runtime (ms) | 
+---------------------------------------------------------
+| hlo_clip_mux_input |       0 |       0 |         0.00 | 
+| hlo_clip           |       0 |       0 |         1.00 | 
+---------------------------------------------------------
+UM:   flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   elaborate
+design:Single_Cycle_Top
+
+Lic Summary:
+[09:39:21.417633] Cdslmd servers: DESKTOP-14SB65S
+[09:39:21.417641] Feature usage summary:
+[09:39:21.417642] Genus_Synthesis
+
+Normal exit.

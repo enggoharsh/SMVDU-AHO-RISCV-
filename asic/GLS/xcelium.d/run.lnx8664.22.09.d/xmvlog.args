@@ -1,0 +1,26 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-XLMODE
+./xcelium.d/run.lnx8664.22.09.d
+-RUNMODE
+patch.v
+core_netlist.v
+../Golden_Design_RTL/Single_Cycle_Top.v
+../Golden_Design_RTL/Instruction_Memory.v
+../Golden_Design_RTL/Data_Memory.v
+tb_Single_Cycle_Top.v
+/home/student/ANUPAM/Fresh_GPDK180/slow_vdd1v0_basicCells.v
+-VFILE
+../Memory_Macros/sram_32x64_180nm_TT_5p0V_25C.v
+-CDSLIB
+./xcelium.d/run.lnx8664.22.09.d/cdsrun.lib
+-HDLVAR
+./xcelium.d/run.lnx8664.22.09.d/hdlrun.var
+-no_analogsolver
+-MESSAGES
+-UPDATE
+-XLLIBSTORE
+./xcelium.d/run.lnx8664.22.09.d/xllibs
+-ALLOWUNBOUND

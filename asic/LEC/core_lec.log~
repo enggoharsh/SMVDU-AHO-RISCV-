@@ -1,0 +1,74 @@
+                          CONFORMAL (R)
+                   Version 21.10-s300 (22-Aug-2021) (64 bit executable)
+   Copyright (c) Cadence Design Systems, Inc., 1997-2021. All Rights Reserved
+
+
+This program is proprietary and confidential information belonging to
+Cadence Design Systems, Inc., and may be used and disclosed only as authorized
+in a license agreement controlling such use and disclosure.
+
+// Warning: This version is 1713 days old. You can download the latest version from http://downloads.cadence.com.
+
+CPU time     : 0.58    seconds
+Elapse time  : 12      seconds
+Memory usage : 107.85  M bytes
+// Command: read library /home/student/ANUPAM/Fresh_GPDK180/slow_vdd1v0_basicCells.v -verilog -both
+// Parsing file /home/student/ANUPAM/Fresh_GPDK180/slow_vdd1v0_basicCells.v ...
+// Warning: (RTL14.1) Fanout load of the signal is removed (occurrence:56)
+// Warning: (VLG5.5) Internal primitive is recognized (occurrence:120)
+// Warning: (VLG5.6) Named port association is ignored for primitive gate (occurrence:120)
+// Warning: (IGN4) Attribute instance(s) are ignored (occurrence:2)
+// Warning: (IGN7.1) trireg net is modeled as a latch to hold value (occurrence:1)
+// Warning: (HRC1.4) Module/entity is empty (blackboxed) (occurrence:1)
+// Note: (HRC3.5b) Open output port connection is detected (occurrence:16)
+// Warning: (HRC3.10b) An input port is declared, but it is not used. Module is empty (occurrence:1)
+// Note: Read VERILOG library successfully
+// Command: read design ../Golden_Design_RTL/*.v -verilog -golden
+// Parsing file ../Golden_Design_RTL/ALU.v ...
+// Parsing file ../Golden_Design_RTL/ALU_Mux.v ...
+// Parsing file ../Golden_Design_RTL/ALU_decoder.v ...
+// Parsing file ../Golden_Design_RTL/Control_Unit.v ...
+// Parsing file ../Golden_Design_RTL/Core_Datapath.v ...
+// Parsing file ../Golden_Design_RTL/Data_Memory.v ...
+// Parsing file ../Golden_Design_RTL/Extend.v ...
+// Parsing file ../Golden_Design_RTL/Instruction_Memory.v ...
+// Parsing file ../Golden_Design_RTL/Main_Decoder.v ...
+// Parsing file ../Golden_Design_RTL/PC.v ...
+// Parsing file ../Golden_Design_RTL/PC_Mux.v ...
+// Parsing file ../Golden_Design_RTL/PC_Plus_4.v ...
+// Parsing file ../Golden_Design_RTL/PC_Target.v ...
+// Parsing file ../Golden_Design_RTL/Register_File.v ...
+// Parsing file ../Golden_Design_RTL/Result_Mux.v ...
+// Parsing file ../Golden_Design_RTL/Single_Cycle_Core.v ...
+// Parsing file ../Golden_Design_RTL/Single_Cycle_Top.v ...
+// Golden root module is set to 'Single_Cycle_Top'
+// Warning: (RTL1.5b) Potential loss of RHS msb or carry-out bit (occurrence:4)
+// Warning: (RTL1.7) Non-blocking assignment is in combinational always block (occurrence:14)
+// Warning: (RTL2.2) Variable is referenced but never assigned (occurrence:1)
+// Warning: (RTL2.5) Net is referenced without an assignment. Design verification will be based on set_undriven_signal setting (occurrence:2048)
+// Note: (RTL5.1c) Case items have nonconsequential overlapping condition (occurrence:1)
+// Warning: (RTL6.1) X created due to the assignment of value X (occurrence:1)
+// Warning: (RTL6.1a) X created due to default case item with X assignment(s) (occurrence:3)
+// Warning: (RTL7.3) Array index in RHS might be out of range (occurrence:2)
+// Warning: (RTL7.4) Array index in LHS might be out of range (occurrence:1)
+// Warning: (RTL7.8b) Overflowed sized integer number is truncated with no bit value(s) lost (occurrence:3)
+// Warning: (RTL7.11b) Unsigned reference with index/part selection to a signed variable (occurrence:15)
+// Warning: (RTL14) Signal has input but it has no output (occurrence:2)
+// Warning: (DIR6.1) Ignored compiler directive is detected (occurrence:17)
+// Warning: (IGN1.1) Initial construct is not supported. The entire initial construct will be ignored (occurrence:2)
+// Warning: (HRC3.6) Port connection width mis-matches. Undriven signals are floating (occurrence:1)
+// Warning: (HRC3.10a) An input port is declared, but it is not completely used in the module (occurrence:41)
+// Warning: (HRC3.16) A wire is declared, but not used in the module (occurrence:1)
+// Warning: There are 2048 undriven nets in Golden
+// Note: Read VERILOG design successfully
+CPU time     : 0.77    seconds
+Elapse time  : 13      seconds
+Memory usage : 147.09  M bytes
+// Command: set root module Single_Cycle_Core -golden
+// Command: read design ../Synthesis/core_netlist.v -verilog -revised
+// Parsing file ../Synthesis/core_netlist.v ...
+// Error: ../Synthesis/core_netlist.v:600 Module 'BUFX1' is referenced but not defined.
+CPU time     : 0.92    seconds
+Elapse time  : 13      seconds
+Memory usage : 162.89  M bytes
+// 'dofile /home/student/ANUPAM/Project_Test1/LEC/core_lec.do' is aborted at line 12

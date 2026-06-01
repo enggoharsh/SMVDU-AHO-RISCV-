@@ -1,0 +1,24 @@
+//
+// File created by:  irun
+// Do not modify this file
+//
+../TESTBENCHES/Exhaustive_TB.v
+../Golden_Design_RTL/ALU_decoder.v
+../Golden_Design_RTL/ALU_Mux.v
+../Golden_Design_RTL/ALU.v
+../Golden_Design_RTL/Control_Unit.v
+../Golden_Design_RTL/Core_Datapath.v
+../Golden_Design_RTL/Data_Memory.v
+../Golden_Design_RTL/Extend.v
+../Golden_Design_RTL/Instruction_Memory.v
+../Golden_Design_RTL/Main_Decoder.v
+../Golden_Design_RTL/PC_Mux.v
+../Golden_Design_RTL/PC_Plus_4.v
+../Golden_Design_RTL/PC_Target.v
+../Golden_Design_RTL/PC.v
+../Golden_Design_RTL/Register_File.v
+../Golden_Design_RTL/Result_Mux.v
+../Golden_Design_RTL/Single_Cycle_Core.v
+../Golden_Design_RTL/Single_Cycle_Top.v
+-access
++rwc
